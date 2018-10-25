@@ -1,0 +1,17 @@
+.labelLeft{
+    padding-left: 10px;
+    min-width: 100px;
+}
+.leftPadding{
+    margin-left: 100px;
+    width: 90%;
+    padding-bottom: 3px;
+    margin-bottom: 5px;
+}
+
+@media only screen and (max-width:620px) {
+    .leftPadding{
+        margin-left: 7px;
+        min-width: 380px;
+    }
+  }

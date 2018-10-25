@@ -1,0 +1,13018 @@
+webpackJsonp([0],{
+
+/***/ "./node_modules/babel-runtime/helpers/defineProperty.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+
+var _defineProperty = __webpack_require__("./node_modules/babel-runtime/core-js/object/define-property.js");
+
+var _defineProperty2 = _interopRequireDefault(_defineProperty);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = function (obj, key, value) {
+  if (key in obj) {
+    (0, _defineProperty2.default)(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+};
+
+/***/ }),
+
+/***/ "./node_modules/chain-function/index.js":
+/***/ (function(module, exports) {
+
+
+module.exports = function chain(){
+  var len = arguments.length
+  var args = [];
+
+  for (var i = 0; i < len; i++)
+    args[i] = arguments[i]
+
+  args = args.filter(function(fn){ return fn != null })
+
+  if (args.length === 0) return undefined
+  if (args.length === 1) return args[0]
+
+  return args.reduce(function(current, next){
+    return function chainedFunction() {
+      current.apply(this, arguments);
+      next.apply(this, arguments);
+    };
+  })
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/classnames/index.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+  Copyright (c) 2016 Jed Watson.
+  Licensed under the MIT License (MIT), see
+  http://jedwatson.github.io/classnames
+*/
+/* global define */
+
+(function () {
+	'use strict';
+
+	var hasOwn = {}.hasOwnProperty;
+
+	function classNames () {
+		var classes = [];
+
+		for (var i = 0; i < arguments.length; i++) {
+			var arg = arguments[i];
+			if (!arg) continue;
+
+			var argType = typeof arg;
+
+			if (argType === 'string' || argType === 'number') {
+				classes.push(arg);
+			} else if (Array.isArray(arg)) {
+				classes.push(classNames.apply(null, arg));
+			} else if (argType === 'object') {
+				for (var key in arg) {
+					if (hasOwn.call(arg, key) && arg[key]) {
+						classes.push(key);
+					}
+				}
+			}
+		}
+
+		return classes.join(' ');
+	}
+
+	if (typeof module !== 'undefined' && module.exports) {
+		module.exports = classNames;
+	} else if (true) {
+		// register as 'classnames', consistent with npm package name
+		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
+			return classNames;
+		}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	} else {
+		window.classNames = classNames;
+	}
+}());
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"D:/projects/oyapeyzaj/oya/src/styles\"]}!./node_modules/video-react/dist/video-react.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(true);
+// imports
+
+
+// module
+exports.push([module.i, ".video-react .video-react-big-play-button:before,.video-react .video-react-control:before{position:absolute;top:0;left:0;width:100%;height:100%;text-align:center}@font-face{font-family:video-react;src:url(data:application/vnd.ms-fontobject;base64,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?#iefix) format(\"eot\")}@font-face{font-family:video-react;src:url(data:application/font-woff;base64,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) format(\"woff\"),url(data:application/x-font-ttf;base64,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) format(\"truetype\");font-weight:400;font-style:normal}.video-react-icon,.video-react .video-react-bezel .video-react-bezel-icon,.video-react .video-react-big-play-button,.video-react .video-react-mouse-display,.video-react .video-react-mute-control,.video-react .video-react-play-control,.video-react .video-react-play-progress,.video-react .video-react-volume-level,.video-react .video-react-volume-menu-button{font-family:video-react!important;speak:none;font-style:normal;font-weight:400;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.video-react-icon-play-arrow:before,.video-react .video-react-bezel .video-react-bezel-icon-play:before,.video-react .video-react-big-play-button:before,.video-react .video-react-play-control:before{content:\"\\F200\"}.video-react-icon-play-circle-filled:before{content:\"\\F201\"}.video-react-icon-play-circle-outline:before{content:\"\\F202\"}.video-react-icon-pause:before,.video-react .video-react-bezel .video-react-bezel-icon-pause:before,.video-react .video-react-play-control.video-react-playing:before{content:\"\\F203\"}.video-react-icon-pause-circle-filled:before{content:\"\\F204\"}.video-react-icon-pause-circle-outline:before{content:\"\\F205\"}.video-react-icon-stop:before{content:\"\\F206\"}.video-react-icon-fast-rewind:before,.video-react .video-react-bezel .video-react-bezel-icon-fast-rewind:before{content:\"\\F207\"}.video-react-icon-fast-forward:before,.video-react .video-react-bezel .video-react-bezel-icon-fast-forward:before{content:\"\\F208\"}.video-react-icon-skip-previous:before{content:\"\\F209\"}.video-react-icon-skip-next:before{content:\"\\F20A\"}.video-react-icon-replay-5:before,.video-react .video-react-bezel .video-react-bezel-icon-replay-5:before{content:\"\\F20B\"}.video-react-icon-replay-10:before,.video-react .video-react-bezel .video-react-bezel-icon-replay-10:before{content:\"\\F20C\"}.video-react-icon-replay-30:before,.video-react .video-react-bezel .video-react-bezel-icon-replay-30:before{content:\"\\F20D\"}.video-react-icon-forward-5:before,.video-react .video-react-bezel .video-react-bezel-icon-forward-5:before{content:\"\\F20E\"}.video-react-icon-forward-10:before,.video-react .video-react-bezel .video-react-bezel-icon-forward-10:before{content:\"\\F20F\"}.video-react-icon-forward-30:before,.video-react .video-react-bezel .video-react-bezel-icon-forward-30:before{content:\"\\F210\"}.video-react-icon-volume-off:before,.video-react .video-react-bezel .video-react-bezel-icon-volume-off:before,.video-react .video-react-mute-control.video-react-vol-muted:before,.video-react .video-react-volume-menu-button.video-react-vol-muted:before{content:\"\\F211\"}.video-react-icon-volume-mute:before,.video-react .video-react-mute-control.video-react-vol-0:before,.video-react .video-react-volume-menu-button.video-react-vol-0:before{content:\"\\F212\"}.video-react-icon-volume-down:before,.video-react .video-react-bezel .video-react-bezel-icon-volume-down:before,.video-react .video-react-mute-control.video-react-vol-1:before,.video-react .video-react-mute-control.video-react-vol-2:before,.video-react .video-react-volume-menu-button.video-react-vol-1:before,.video-react .video-react-volume-menu-button.video-react-vol-2:before{content:\"\\F213\"}.video-react-icon-volume-up:before,.video-react .video-react-bezel .video-react-bezel-icon-volume-up:before,.video-react .video-react-mute-control:before,.video-react .video-react-volume-menu-button:before{content:\"\\F214\"}.video-react-icon-fullscreen:before{content:\"\\F215\"}.video-react-icon-fullscreen-exit:before{content:\"\\F216\"}.video-react-icon-closed-caption:before{content:\"\\F217\"}.video-react-icon-hd:before{content:\"\\F218\"}.video-react-icon-settings:before{content:\"\\F219\"}.video-react-icon-share:before{content:\"\\F21A\"}.video-react-icon-info:before{content:\"\\F21B\"}.video-react-icon-info-outline:before{content:\"\\F21C\"}.video-react-icon-close:before{content:\"\\F21D\"}.video-react-icon-circle:before,.video-react .video-react-mouse-display:before,.video-react .video-react-play-progress:before,.video-react .video-react-volume-level:before{content:\"\\F21E\"}.video-react-icon-circle-outline:before{content:\"\\F21F\"}.video-react-icon-circle-inner-circle:before{content:\"\\F220\"}.video-react{display:block;vertical-align:top;box-sizing:border-box;color:#fff;background-color:#000;position:relative;font-size:10px;line-height:1;font-family:serif;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.video-react:-moz-full-screen{position:absolute}.video-react:-webkit-full-screen{width:100%!important;height:100%!important}.video-react *,.video-react :after,.video-react :before{box-sizing:inherit}.video-react ul{font-family:inherit;font-size:inherit;line-height:inherit;list-style-position:outside;margin:0}.video-react.video-react-4-3,.video-react.video-react-16-9,.video-react.video-react-fluid{width:100%;max-width:100%;height:0}.video-react.video-react-16-9{padding-top:56.25%}.video-react.video-react-4-3{padding-top:75%}.video-react.video-react-fill{width:100%;height:100%}.video-react .video-react-video{position:absolute;top:0;left:0;width:100%;height:100%}.video-react.video-react-fullscreen{width:100%!important;height:100%!important;padding-top:0!important}.video-react.video-react-fullscreen.video-react-user-inactive{cursor:none}body.video-react-full-window{padding:0;margin:0;height:100%;overflow-y:auto}body.video-react-full-window .video-react-fullscreen{position:fixed;overflow:hidden;z-index:1000;left:0;top:0;bottom:0;right:0}.video-react button{background:none;border:none;color:inherit;display:inline-block;cursor:pointer;overflow:visible;font-size:inherit;line-height:inherit;text-transform:none;text-decoration:none;transition:none;-webkit-appearance:none;-moz-appearance:none;appearance:none}.video-react .video-react-loading-spinner{display:none;position:absolute;top:50%;left:50%;margin:-25px 0 0 -25px;opacity:.85;text-align:left;border:6px solid rgba(43,51,63,.7);box-sizing:border-box;background-clip:padding-box;width:50px;height:50px;border-radius:25px}.video-react .video-react-loading-spinner:after,.video-react .video-react-loading-spinner:before{content:\"\";position:absolute;margin:-6px;box-sizing:inherit;width:inherit;height:inherit;border-radius:inherit;opacity:1;border:inherit;border-color:transparent;border-top-color:#fff;animation:video-react-spinner-spin 1.1s cubic-bezier(.6,.2,0,.8) infinite,video-react-spinner-fade 1.1s linear infinite}.video-react-seeking .video-react-loading-spinner,.video-react-waiting .video-react-loading-spinner{display:block}.video-react-seeking .video-react-loading-spinner:before,.video-react-waiting .video-react-loading-spinner:before{border-top-color:#fff}.video-react-seeking .video-react-loading-spinner:after,.video-react-waiting .video-react-loading-spinner:after{border-top-color:#fff;animation-delay:.44s}@keyframes video-react-spinner-spin{to{transform:rotate(1turn)}}@keyframes video-react-spinner-fade{0%{border-top-color:#73859f}20%{border-top-color:#73859f}35%{border-top-color:#fff}60%{border-top-color:#73859f}to{border-top-color:#73859f}}.video-react .video-react-big-play-button{font-size:3em;line-height:1.5em;height:1.5em;width:3em;display:block;position:absolute;top:10px;left:10px;padding:0;cursor:pointer;opacity:1;border:.06666em solid #fff;background-color:#2b333f;background-color:rgba(43,51,63,.7);border-radius:.3em;transition:all .4s}.video-react .video-react-big-play-button.video-react-big-play-button-center{top:50%;left:50%;margin-top:-.75em;margin-left:-1.5em}.video-react .video-react-big-play-button.big-play-button-hide{display:none}.video-react .video-react-big-play-button:focus,.video-react:hover .video-react-big-play-button{outline:0;border-color:#fff;background-color:#73859f;background-color:rgba(115,133,159,.5);transition:all 0s}.video-react-menu-button{cursor:pointer}.video-react-menu-button.video-react-disabled{cursor:default}.video-react-menu .video-react-menu-content{display:block;padding:0;margin:0;overflow:auto;font-family:serif}.video-react-menu li{list-style:none;margin:0;padding:.2em 0;line-height:1.4em;font-size:1.2em;text-align:center;text-transform:lowercase}.video-react-menu li:focus,.video-react-menu li:hover{outline:0;background-color:#73859f;background-color:rgba(115,133,159,.5)}.video-react-menu li.video-react-selected,.video-react-menu li.video-react-selected:focus,.video-react-menu li.video-react-selected:hover{background-color:#fff;color:#2b333f}.video-react-menu li.vjs-menu-title{text-align:center;text-transform:uppercase;font-size:1em;line-height:2em;padding:0;margin:0 0 .3em;font-weight:700;cursor:default}.video-react-scrubbing .vjs-menu-button:hover .video-react-menu{display:none}.video-react .video-react-menu-button-popup .video-react-menu{display:none;position:absolute;bottom:0;width:10em;left:-3em;height:0;margin-bottom:1.5em;border-top-color:rgba(43,51,63,.7)}.video-react .video-react-menu-button-popup .video-react-menu .video-react-menu-content{background-color:#2b333f;background-color:rgba(43,51,63,.7);position:absolute;width:100%;bottom:1.5em;max-height:15em}.video-react-menu-button-popup .video-react-menu.video-react-lock-showing{display:block}.video-react .video-react-menu-button-inline{transition:all .4s;overflow:hidden}.video-react .video-react-menu-button-inline:before{width:2.222222222em}.video-react .video-react-menu-button-inline.video-react-slider-active,.video-react .video-react-menu-button-inline:focus,.video-react .video-react-menu-button-inline:hover{width:12em}.video-react .video-react-menu-button-inline.video-react-slider-active .video-react-menu,.video-react .video-react-menu-button-inline:focus .video-react-menu,.video-react .video-react-menu-button-inline:hover .video-react-menu{display:block;opacity:1}.video-react .video-react-menu-button-inline.video-react-slider-active{transition:none}.video-react .video-react-menu-button-inline .video-react-menu{opacity:0;height:100%;width:auto;position:absolute;left:4em;top:0;padding:0;margin:0;transition:all .4s}.video-react .video-react-menu-button-inline .video-react-menu-content{width:auto;height:100%;margin:0;overflow:hidden}.video-react-no-flex .video-react-menu-button-inline .video-react-menu{display:block;opacity:1;position:relative;width:auto}.video-react-no-flex .video-react-menu-button-inline.video-react-slider-active,.video-react-no-flex .video-react-menu-button-inline:focus,.video-react-no-flex .video-react-menu-button-inline:hover{width:auto}.video-react .video-react-poster{display:inline-block;vertical-align:middle;background-repeat:no-repeat;background-position:50% 50%;background-size:contain;background-color:#000;cursor:pointer;margin:0;padding:0;position:absolute;top:0;right:0;bottom:0;left:0;height:100%}.video-react .video-react-poster img{display:block;vertical-align:middle;margin:0 auto;max-height:100%;padding:0;width:100%}.video-react .video-react-slider{outline:0;position:relative;cursor:pointer;padding:0;margin:0 .45em;background-color:#73859f;background-color:rgba(115,133,159,.5)}.video-react .video-react-slider:focus{text-shadow:0 0 1em #fff;box-shadow:0 0 1em #fff}.video-react .video-react-control{outline:none;position:relative;text-align:center;margin:0;padding:0;height:100%;width:4em;-ms-flex:none;flex:none}.video-react .video-react-control:before{font-size:1.8em;line-height:1.67}.video-react .video-react-control:focus,.video-react .video-react-control:focus:before,.video-react .video-react-control:hover:before{text-shadow:0 0 1em #fff}.video-react .video-react-control-text{border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.video-react-no-flex .video-react-control{display:table-cell;vertical-align:middle}.video-react .video-react-control-bar{display:none;width:100%;position:absolute;bottom:0;left:0;right:0;height:3em;background-color:#2b333f;background-color:rgba(43,51,63,.7)}.video-react-has-started .video-react-control-bar{display:-ms-flexbox;display:flex;visibility:visible;opacity:1;transition:visibility .1s,opacity .1s}.video-react-has-started.video-react-user-inactive.video-react-playing .video-react-control-bar.video-react-control-bar-auto-hide{visibility:visible;opacity:0;transition:visibility 1s,opacity 1s}.video-react-controls-disabled .video-react-control-bar,.video-react-error .video-react-control-bar,.video-react-using-native-controls .video-react-control-bar{display:none!important}.video-react-audio.video-react-has-started.video-react-user-inactive.video-react-playing .video-react-control-bar{opacity:1;visibility:visible}.video-react-has-started.video-react-no-flex .video-react-control-bar{display:table}.video-react .video-react-progress-control{-ms-flex:auto;flex:auto;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;min-width:4em}.video-react-live .video-react-progress-control{display:none}.video-react .video-react-progress-holder{-ms-flex:auto;flex:auto;transition:all .2s;height:.3em}.video-react .video-react-progress-control:hover .video-react-progress-holder{font-size:1.6666666666666667em}.video-react .video-react-progress-control:hover .video-react-mouse-display:after,.video-react .video-react-progress-control:hover .video-react-play-progress:after,.video-react .video-react-progress-control:hover .video-react-time-tooltip{visibility:visible;font-size:.6em}.video-react .video-react-progress-holder .video-react-load-progress,.video-react .video-react-progress-holder .video-react-load-progress div,.video-react .video-react-progress-holder .video-react-play-progress,.video-react .video-react-progress-holder .video-react-tooltip-progress-bar{position:absolute;display:block;height:.3em;margin:0;padding:0;width:0;left:0;top:0}.video-react .video-react-mouse-display:before{display:none}.video-react .video-react-play-progress{background-color:#fff}.video-react .video-react-play-progress:before{position:absolute;top:-.333333333333333em;right:-.5em;font-size:.9em}.video-react .video-react-mouse-display:after,.video-react .video-react-play-progress:after,.video-react .video-react-time-tooltip{visibility:hidden;pointer-events:none;position:absolute;top:-3.4em;right:-1.9em;font-size:.9em;color:#000;content:attr(data-current-time);padding:6px 8px 8px;background-color:#fff;background-color:hsla(0,0%,100%,.8);border-radius:.3em}.video-react .video-react-play-progress:after,.video-react .video-react-play-progress:before,.video-react .video-react-time-tooltip{z-index:1}.video-react .video-react-progress-control .video-react-keep-tooltips-inside:after{display:none}.video-react .video-react-load-progress{background:#bfc7d3;background:rgba(115,133,159,.5)}.video-react .video-react-load-progress div{background:#fff;background:rgba(115,133,159,.75)}.video-react.video-react-no-flex .video-react-progress-control{width:auto}.video-react .video-react-time-tooltip{display:inline-block;height:2.4em;position:relative;float:right;right:-1.9em}.video-react .video-react-tooltip-progress-bar{visibility:hidden}.video-react .video-react-progress-control .video-react-mouse-display{display:none;position:absolute;width:1px;height:100%;background-color:#000;z-index:1}.video-react-no-flex .video-react-progress-control .video-react-mouse-display{z-index:0}.video-react .video-react-progress-control:hover .video-react-mouse-display{display:block}.video-react.video-react-user-inactive .video-react-progress-control .video-react-mouse-display,.video-react.video-react-user-inactive .video-react-progress-control .video-react-mouse-display:after{visibility:hidden;opacity:0;transition:visibility 1s,opacity 1s}.video-react.video-react-user-inactive.video-react-no-flex .video-react-progress-control .video-react-mouse-display,.video-react.video-react-user-inactive.video-react-no-flex .video-react-progress-control .video-react-mouse-display:after{display:none}.video-react .video-react-mouse-display .video-react-time-tooltip,.video-react .video-react-progress-control .video-react-mouse-display:after{color:#fff;background-color:#000;background-color:rgba(0,0,0,.8)}.video-react .video-react-fullscreen-control,.video-react .video-react-play-control{cursor:pointer;-ms-flex:none;flex:none}.video-react.video-react-fullscreen{position:fixed;left:0;top:0;bottom:0;right:0;z-index:9999}.video-react .video-react-time-control{-ms-flex:none;flex:none;font-size:1em;line-height:3em;min-width:2em;width:auto;padding-left:1em;padding-right:1em}.video-react .video-react-time-divider{line-height:3em;min-width:0;padding:0}.video-react .video-react-mute-control,.video-react .video-react-volume-menu-button{cursor:pointer;-ms-flex:none;flex:none}.video-react .video-react-volume-control{width:5em;-ms-flex:none;flex:none;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center}.video-react .video-react-volume-bar{margin:1.35em .45em}.video-react .video-react-volume-bar.video-react-slider-horizontal{width:5em;height:.3em}.video-react .video-react-volume-bar.video-react-slider-horizontal .video-react-volume-level{width:100%}.video-react .video-react-volume-bar.video-react-slider-vertical{width:.3em;height:5em;margin:1.35em auto}.video-react .video-react-volume-bar.video-react-slider-vertical .video-react-volume-level{height:100%}.video-react .video-react-volume-level{position:absolute;bottom:0;left:0;background-color:#fff}.video-react .video-react-volume-level:before{position:absolute;font-size:.9em}.video-react .video-react-slider-vertical .video-react-volume-level{width:.3em}.video-react .video-react-slider-vertical .video-react-volume-level:before{top:-.5em;left:-.3em}.video-react .video-react-slider-horizontal .video-react-volume-level{height:.3em}.video-react .video-react-slider-horizontal .video-react-volume-level:before{top:-.3em;right:-.5em}.video-react .video-react-menu-button-popup.video-react-volume-menu-button .video-react-menu{display:block;width:0;height:0;border-top-color:transparent}.video-react .video-react-menu-button-popup.video-react-volume-menu-button-vertical .video-react-menu{left:.5em;height:8em}.video-react .video-react-menu-button-popup.video-react-volume-menu-button-horizontal .video-react-menu{left:-2em}.video-react .video-react-menu-button-popup.video-react-volume-menu-button .video-react-menu-content{height:0;width:0;overflow-x:hidden;overflow-y:hidden}.video-react .video-react-volume-menu-button-vertical .video-react-lock-showing .video-react-menu-content,.video-react .video-react-volume-menu-button-vertical.video-react-slider-active .video-react-menu-content,.video-react .video-react-volume-menu-button-vertical:focus .video-react-menu-content,.video-react .video-react-volume-menu-button-vertical:hover .video-react-menu-content{height:8em;width:2.9em}.video-react .video-react-volume-menu-button-horizontal .video-react-lock-showing .video-react-menu-content,.video-react .video-react-volume-menu-button-horizontal .video-react-slider-active .video-react-menu-content,.video-react .video-react-volume-menu-button-horizontal:focus .video-react-menu-content,.video-react .video-react-volume-menu-button-horizontal:hover .video-react-menu-content{height:2.9em;width:8em}.video-react .video-react-volume-menu-button.video-react-menu-button-inline .video-react-menu-content{background-color:transparent!important}.video-react .video-react-playback-rate .video-react-playback-rate-value{line-height:3em;text-align:center}.video-react .video-react-playback-rate .video-react-menu{width:4em;left:0}.video-react .video-react-bezel{position:absolute;left:50%;top:50%;width:52px;height:52px;z-index:17;margin-left:-26px;margin-top:-26px;background:rgba(0,0,0,.5);border-radius:26px}.video-react .video-react-bezel.video-react-bezel-animation{animation:video-react-bezel-fadeout .5s linear 1 normal forwards;pointer-events:none}.video-react .video-react-bezel.video-react-bezel-animation-alt{animation:video-react-bezel-fadeout-alt .5s linear 1 normal forwards;pointer-events:none}.video-react .video-react-bezel .video-react-bezel-icon{width:36px;height:36px;margin:8px;font-size:26px;line-height:36px;text-align:center}@keyframes video-react-bezel-fadeout{0%{opacity:1}to{opacity:0;transform:scale(2)}}@keyframes video-react-bezel-fadeout-alt{0%{opacity:1}to{opacity:0;transform:scale(2)}}", "", {"version":3,"sources":["D:/projects/oyapeyzaj/oya/node_modules/video-react/dist/node_modules/video-react/dist/video-react.css"],"names":[],"mappings":"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","file":"video-react.css","sourcesContent":["@charset \"UTF-8\";\n.video-react .video-react-big-play-button:before, .video-react .video-react-control:before {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%; }\n\n.video-react .video-react-big-play-button:before, .video-react .video-react-control:before {\n  text-align: center; }\n\n@font-face {\n  font-family: \"video-react\";\n  src: url(data:application/vnd.ms-fontobject;base64,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?#iefix) format(\"eot\"); }\n\n@font-face {\n  font-family: \"video-react\";\n  src: url(data:application/font-woff;base64,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) format(\"woff\"), url(data:application/x-font-ttf;base64,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) format(\"truetype\");\n  font-weight: normal;\n  font-style: normal; }\n\n.video-react-icon, .video-react .video-react-big-play-button, .video-react .video-react-mouse-display, .video-react .video-react-play-progress, .video-react .video-react-play-control, .video-react .video-react-mute-control,\n.video-react .video-react-volume-menu-button, .video-react .video-react-volume-level, .video-react .video-react-bezel .video-react-bezel-icon {\n  /* use !important to prevent issues with browser extensions that change fonts */\n  font-family: 'video-react' !important;\n  speak: none;\n  font-style: normal;\n  font-weight: normal;\n  font-variant: normal;\n  text-transform: none;\n  line-height: 1;\n  /* Better Font Rendering =========== */\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale; }\n\n.video-react-icon-play-arrow:before, .video-react .video-react-big-play-button:before, .video-react .video-react-play-control:before, .video-react .video-react-bezel .video-react-bezel-icon-play:before {\n  content: \"\"; }\n\n.video-react-icon-play-circle-filled:before {\n  content: \"\"; }\n\n.video-react-icon-play-circle-outline:before {\n  content: \"\"; }\n\n.video-react-icon-pause:before, .video-react .video-react-play-control.video-react-playing:before, .video-react .video-react-bezel .video-react-bezel-icon-pause:before {\n  content: \"\"; }\n\n.video-react-icon-pause-circle-filled:before {\n  content: \"\"; }\n\n.video-react-icon-pause-circle-outline:before {\n  content: \"\"; }\n\n.video-react-icon-stop:before {\n  content: \"\"; }\n\n.video-react-icon-fast-rewind:before, .video-react .video-react-bezel .video-react-bezel-icon-fast-rewind:before {\n  content: \"\"; }\n\n.video-react-icon-fast-forward:before, .video-react .video-react-bezel .video-react-bezel-icon-fast-forward:before {\n  content: \"\"; }\n\n.video-react-icon-skip-previous:before {\n  content: \"\"; }\n\n.video-react-icon-skip-next:before {\n  content: \"\"; }\n\n.video-react-icon-replay-5:before, .video-react .video-react-bezel .video-react-bezel-icon-replay-5:before {\n  content: \"\"; }\n\n.video-react-icon-replay-10:before, .video-react .video-react-bezel .video-react-bezel-icon-replay-10:before {\n  content: \"\"; }\n\n.video-react-icon-replay-30:before, .video-react .video-react-bezel .video-react-bezel-icon-replay-30:before {\n  content: \"\"; }\n\n.video-react-icon-forward-5:before, .video-react .video-react-bezel .video-react-bezel-icon-forward-5:before {\n  content: \"\"; }\n\n.video-react-icon-forward-10:before, .video-react .video-react-bezel .video-react-bezel-icon-forward-10:before {\n  content: \"\"; }\n\n.video-react-icon-forward-30:before, .video-react .video-react-bezel .video-react-bezel-icon-forward-30:before {\n  content: \"\"; }\n\n.video-react-icon-volume-off:before, .video-react .video-react-mute-control.video-react-vol-muted:before,\n.video-react .video-react-volume-menu-button.video-react-vol-muted:before, .video-react .video-react-bezel .video-react-bezel-icon-volume-off:before {\n  content: \"\"; }\n\n.video-react-icon-volume-mute:before, .video-react .video-react-mute-control.video-react-vol-0:before,\n.video-react .video-react-volume-menu-button.video-react-vol-0:before {\n  content: \"\"; }\n\n.video-react-icon-volume-down:before, .video-react .video-react-mute-control.video-react-vol-1:before,\n.video-react .video-react-volume-menu-button.video-react-vol-1:before, .video-react .video-react-mute-control.video-react-vol-2:before,\n.video-react .video-react-volume-menu-button.video-react-vol-2:before, .video-react .video-react-bezel .video-react-bezel-icon-volume-down:before {\n  content: \"\"; }\n\n.video-react-icon-volume-up:before, .video-react .video-react-mute-control:before,\n.video-react .video-react-volume-menu-button:before, .video-react .video-react-bezel .video-react-bezel-icon-volume-up:before {\n  content: \"\"; }\n\n.video-react-icon-fullscreen:before {\n  content: \"\"; }\n\n.video-react-icon-fullscreen-exit:before {\n  content: \"\"; }\n\n.video-react-icon-closed-caption:before {\n  content: \"\"; }\n\n.video-react-icon-hd:before {\n  content: \"\"; }\n\n.video-react-icon-settings:before {\n  content: \"\"; }\n\n.video-react-icon-share:before {\n  content: \"\"; }\n\n.video-react-icon-info:before {\n  content: \"\"; }\n\n.video-react-icon-info-outline:before {\n  content: \"\"; }\n\n.video-react-icon-close:before {\n  content: \"\"; }\n\n.video-react-icon-circle:before, .video-react .video-react-mouse-display:before, .video-react .video-react-play-progress:before, .video-react .video-react-volume-level:before {\n  content: \"\"; }\n\n.video-react-icon-circle-outline:before {\n  content: \"\"; }\n\n.video-react-icon-circle-inner-circle:before {\n  content: \"\"; }\n\n.video-react {\n  display: block;\n  vertical-align: top;\n  box-sizing: border-box;\n  color: #fff;\n  background-color: #000;\n  position: relative;\n  font-size: 10px;\n  line-height: 1;\n  font-family: serif, Times, \"Times New Roman\";\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none; }\n  .video-react:-moz-full-screen {\n    position: absolute; }\n  .video-react:-webkit-full-screen {\n    width: 100% !important;\n    height: 100% !important; }\n  .video-react *,\n  .video-react *:before,\n  .video-react *:after {\n    box-sizing: inherit; }\n  .video-react ul {\n    font-family: inherit;\n    font-size: inherit;\n    line-height: inherit;\n    list-style-position: outside;\n    margin-left: 0;\n    margin-right: 0;\n    margin-top: 0;\n    margin-bottom: 0; }\n  .video-react.video-react-fluid, .video-react.video-react-16-9, .video-react.video-react-4-3 {\n    width: 100%;\n    max-width: 100%;\n    height: 0; }\n  .video-react.video-react-16-9 {\n    padding-top: 56.25%; }\n  .video-react.video-react-4-3 {\n    padding-top: 75%; }\n  .video-react.video-react-fill {\n    width: 100%;\n    height: 100%; }\n  .video-react .video-react-video {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%; }\n  .video-react.video-react-fullscreen {\n    width: 100% !important;\n    height: 100% !important;\n    padding-top: 0 !important; }\n    .video-react.video-react-fullscreen.video-react-user-inactive {\n      cursor: none; }\n\nbody.video-react-full-window {\n  padding: 0;\n  margin: 0;\n  height: 100%;\n  overflow-y: auto; }\n  body.video-react-full-window .video-react-fullscreen {\n    position: fixed;\n    overflow: hidden;\n    z-index: 1000;\n    left: 0;\n    top: 0;\n    bottom: 0;\n    right: 0; }\n\n.video-react button {\n  background: none;\n  border: none;\n  color: inherit;\n  display: inline-block;\n  cursor: pointer;\n  overflow: visible;\n  font-size: inherit;\n  line-height: inherit;\n  text-transform: none;\n  text-decoration: none;\n  transition: none;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none; }\n\n.video-react .video-react-loading-spinner {\n  display: none;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  margin: -25px 0 0 -25px;\n  opacity: 0.85;\n  text-align: left;\n  border: 6px solid rgba(43, 51, 63, 0.7);\n  box-sizing: border-box;\n  background-clip: padding-box;\n  width: 50px;\n  height: 50px;\n  border-radius: 25px; }\n  .video-react .video-react-loading-spinner:before, .video-react .video-react-loading-spinner:after {\n    content: \"\";\n    position: absolute;\n    margin: -6px;\n    box-sizing: inherit;\n    width: inherit;\n    height: inherit;\n    border-radius: inherit;\n    opacity: 1;\n    border: inherit;\n    border-color: transparent;\n    border-top-color: white;\n    -webkit-animation: video-react-spinner-spin 1.1s cubic-bezier(0.6, 0.2, 0, 0.8) infinite, video-react-spinner-fade 1.1s linear infinite;\n    animation: video-react-spinner-spin 1.1s cubic-bezier(0.6, 0.2, 0, 0.8) infinite, video-react-spinner-fade 1.1s linear infinite; }\n\n.video-react-seeking .video-react-loading-spinner,\n.video-react-waiting .video-react-loading-spinner {\n  display: block; }\n\n.video-react-seeking .video-react-loading-spinner:before,\n.video-react-waiting .video-react-loading-spinner:before {\n  border-top-color: white; }\n\n.video-react-seeking .video-react-loading-spinner:after,\n.video-react-waiting .video-react-loading-spinner:after {\n  border-top-color: white;\n  -webkit-animation-delay: 0.44s;\n  animation-delay: 0.44s; }\n\n@keyframes video-react-spinner-spin {\n  100% {\n    transform: rotate(360deg); } }\n\n@-webkit-keyframes video-react-spinner-spin {\n  100% {\n    -webkit-transform: rotate(360deg); } }\n\n@keyframes video-react-spinner-fade {\n  0% {\n    border-top-color: #73859f; }\n  20% {\n    border-top-color: #73859f; }\n  35% {\n    border-top-color: white; }\n  60% {\n    border-top-color: #73859f; }\n  100% {\n    border-top-color: #73859f; } }\n\n@-webkit-keyframes video-react-spinner-fade {\n  0% {\n    border-top-color: #73859f; }\n  20% {\n    border-top-color: #73859f; }\n  35% {\n    border-top-color: white; }\n  60% {\n    border-top-color: #73859f; }\n  100% {\n    border-top-color: #73859f; } }\n\n.video-react .video-react-big-play-button {\n  font-size: 3em;\n  line-height: 1.5em;\n  height: 1.5em;\n  width: 3em;\n  display: block;\n  position: absolute;\n  top: 10px;\n  left: 10px;\n  padding: 0;\n  cursor: pointer;\n  opacity: 1;\n  border: 0.06666em solid #fff;\n  background-color: #2B333F;\n  background-color: rgba(43, 51, 63, 0.7);\n  -webkit-border-radius: 0.3em;\n  -moz-border-radius: 0.3em;\n  border-radius: 0.3em;\n  -webkit-transition: all 0.4s;\n  -moz-transition: all 0.4s;\n  -o-transition: all 0.4s;\n  transition: all 0.4s; }\n  .video-react .video-react-big-play-button.video-react-big-play-button-center {\n    top: 50%;\n    left: 50%;\n    margin-top: -0.75em;\n    margin-left: -1.5em; }\n  .video-react .video-react-big-play-button.big-play-button-hide {\n    display: none; }\n\n.video-react:hover .video-react-big-play-button,\n.video-react .video-react-big-play-button:focus {\n  outline: 0;\n  border-color: #fff;\n  background-color: #73859f;\n  background-color: rgba(115, 133, 159, 0.5);\n  -webkit-transition: all 0s;\n  -moz-transition: all 0s;\n  -o-transition: all 0s;\n  transition: all 0s; }\n\n.video-react-menu-button {\n  cursor: pointer; }\n  .video-react-menu-button.video-react-disabled {\n    cursor: default; }\n\n.video-react-menu .video-react-menu-content {\n  display: block;\n  padding: 0;\n  margin: 0;\n  overflow: auto;\n  font-family: serif, Times, \"Times New Roman\"; }\n\n.video-react-menu li {\n  list-style: none;\n  margin: 0;\n  padding: 0.2em 0;\n  line-height: 1.4em;\n  font-size: 1.2em;\n  text-align: center;\n  text-transform: lowercase; }\n  .video-react-menu li:focus, .video-react-menu li:hover {\n    outline: 0;\n    background-color: #73859f;\n    background-color: rgba(115, 133, 159, 0.5); }\n  .video-react-menu li.video-react-selected, .video-react-menu li.video-react-selected:focus, .video-react-menu li.video-react-selected:hover {\n    background-color: #fff;\n    color: #2B333F; }\n  .video-react-menu li.vjs-menu-title {\n    text-align: center;\n    text-transform: uppercase;\n    font-size: 1em;\n    line-height: 2em;\n    padding: 0;\n    margin: 0 0 0.3em 0;\n    font-weight: bold;\n    cursor: default; }\n\n.video-react-scrubbing .vjs-menu-button:hover .video-react-menu {\n  display: none; }\n\n.video-react .video-react-menu-button-popup .video-react-menu {\n  display: none;\n  position: absolute;\n  bottom: 0;\n  width: 10em;\n  left: -3em;\n  height: 0em;\n  margin-bottom: 1.5em;\n  border-top-color: rgba(43, 51, 63, 0.7); }\n  .video-react .video-react-menu-button-popup .video-react-menu .video-react-menu-content {\n    background-color: #2B333F;\n    background-color: rgba(43, 51, 63, 0.7);\n    position: absolute;\n    width: 100%;\n    bottom: 1.5em;\n    max-height: 15em; }\n\n.video-react-menu-button-popup .video-react-menu.video-react-lock-showing {\n  display: block; }\n\n.video-react .video-react-menu-button-inline {\n  -webkit-transition: all 0.4s;\n  -moz-transition: all 0.4s;\n  -o-transition: all 0.4s;\n  transition: all 0.4s;\n  overflow: hidden; }\n  .video-react .video-react-menu-button-inline:before {\n    width: 2.222222222em; }\n  .video-react .video-react-menu-button-inline:hover, .video-react .video-react-menu-button-inline:focus, .video-react .video-react-menu-button-inline.video-react-slider-active {\n    width: 12em; }\n    .video-react .video-react-menu-button-inline:hover .video-react-menu, .video-react .video-react-menu-button-inline:focus .video-react-menu, .video-react .video-react-menu-button-inline.video-react-slider-active .video-react-menu {\n      display: block;\n      opacity: 1; }\n  .video-react .video-react-menu-button-inline.video-react-slider-active {\n    -webkit-transition: none;\n    -moz-transition: none;\n    -o-transition: none;\n    transition: none; }\n  .video-react .video-react-menu-button-inline .video-react-menu {\n    opacity: 0;\n    height: 100%;\n    width: auto;\n    position: absolute;\n    left: 4em;\n    top: 0;\n    padding: 0;\n    margin: 0;\n    -webkit-transition: all 0.4s;\n    -moz-transition: all 0.4s;\n    -o-transition: all 0.4s;\n    transition: all 0.4s; }\n  .video-react .video-react-menu-button-inline .video-react-menu-content {\n    width: auto;\n    height: 100%;\n    margin: 0;\n    overflow: hidden; }\n\n.video-react-no-flex .video-react-menu-button-inline .video-react-menu {\n  display: block;\n  opacity: 1;\n  position: relative;\n  width: auto; }\n\n.video-react-no-flex .video-react-menu-button-inline:hover, .video-react-no-flex .video-react-menu-button-inline:focus, .video-react-no-flex .video-react-menu-button-inline.video-react-slider-active {\n  width: auto; }\n\n.video-react .video-react-poster {\n  display: inline-block;\n  vertical-align: middle;\n  background-repeat: no-repeat;\n  background-position: 50% 50%;\n  background-size: contain;\n  background-color: #000000;\n  cursor: pointer;\n  margin: 0;\n  padding: 0;\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  height: 100%; }\n  .video-react .video-react-poster img {\n    display: block;\n    vertical-align: middle;\n    margin: 0 auto;\n    max-height: 100%;\n    padding: 0;\n    width: 100%; }\n\n.video-react .video-react-slider {\n  outline: 0;\n  position: relative;\n  cursor: pointer;\n  padding: 0;\n  margin: 0 0.45em 0 0.45em;\n  background-color: #73859f;\n  background-color: rgba(115, 133, 159, 0.5); }\n  .video-react .video-react-slider:focus {\n    text-shadow: 0em 0em 1em white;\n    -webkit-box-shadow: 0 0 1em #fff;\n    -moz-box-shadow: 0 0 1em #fff;\n    box-shadow: 0 0 1em #fff; }\n\n.video-react .video-react-control {\n  outline: none;\n  position: relative;\n  text-align: center;\n  margin: 0;\n  padding: 0;\n  height: 100%;\n  width: 4em;\n  -webkit-box-flex: none;\n  -moz-box-flex: none;\n  -webkit-flex: none;\n  -ms-flex: none;\n  flex: none; }\n  .video-react .video-react-control:before {\n    font-size: 1.8em;\n    line-height: 1.67; }\n  .video-react .video-react-control:focus:before, .video-react .video-react-control:hover:before, .video-react .video-react-control:focus {\n    text-shadow: 0em 0em 1em white; }\n\n.video-react .video-react-control-text {\n  border: 0;\n  clip: rect(0 0 0 0);\n  height: 1px;\n  margin: -1px;\n  overflow: hidden;\n  padding: 0;\n  position: absolute;\n  width: 1px; }\n\n.video-react-no-flex .video-react-control {\n  display: table-cell;\n  vertical-align: middle; }\n\n.video-react .video-react-control-bar {\n  display: none;\n  width: 100%;\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  height: 3.0em;\n  background-color: #2B333F;\n  background-color: rgba(43, 51, 63, 0.7); }\n\n.video-react-has-started .video-react-control-bar {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  visibility: visible;\n  opacity: 1;\n  -webkit-transition: visibility 0.1s, opacity 0.1s;\n  -moz-transition: visibility 0.1s, opacity 0.1s;\n  -o-transition: visibility 0.1s, opacity 0.1s;\n  transition: visibility 0.1s, opacity 0.1s; }\n\n.video-react-has-started.video-react-user-inactive.video-react-playing .video-react-control-bar.video-react-control-bar-auto-hide {\n  visibility: visible;\n  opacity: 0;\n  -webkit-transition: visibility 1s, opacity 1s;\n  -moz-transition: visibility 1s, opacity 1s;\n  -o-transition: visibility 1s, opacity 1s;\n  transition: visibility 1s, opacity 1s; }\n\n.video-react-controls-disabled .video-react-control-bar,\n.video-react-using-native-controls .video-react-control-bar,\n.video-react-error .video-react-control-bar {\n  display: none !important; }\n\n.video-react-audio.video-react-has-started.video-react-user-inactive.video-react-playing .video-react-control-bar {\n  opacity: 1;\n  visibility: visible; }\n\n.video-react-has-started.video-react-no-flex .video-react-control-bar {\n  display: table; }\n\n.video-react .video-react-progress-control {\n  -webkit-box-flex: auto;\n  -moz-box-flex: auto;\n  -webkit-flex: auto;\n  -ms-flex: auto;\n  flex: auto;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n  -ms-flex-align: center;\n  align-items: center;\n  min-width: 4em; }\n\n.video-react-live .video-react-progress-control {\n  display: none; }\n\n.video-react .video-react-progress-holder {\n  -webkit-box-flex: auto;\n  -moz-box-flex: auto;\n  -webkit-flex: auto;\n  -ms-flex: auto;\n  flex: auto;\n  -webkit-transition: all 0.2s;\n  -moz-transition: all 0.2s;\n  -o-transition: all 0.2s;\n  transition: all 0.2s;\n  height: 0.3em; }\n\n.video-react .video-react-progress-control:hover .video-react-progress-holder {\n  font-size: 1.666666666666666666em; }\n\n/* If we let the font size grow as much as everything else, the current time tooltip ends up\n ginormous. If you'd like to enable the current time tooltip all the time, this should be disabled\n to avoid a weird hitch when you roll off the hover. */\n.video-react .video-react-progress-control:hover .video-react-time-tooltip,\n.video-react .video-react-progress-control:hover .video-react-mouse-display:after,\n.video-react .video-react-progress-control:hover .video-react-play-progress:after {\n  visibility: visible;\n  font-size: 0.6em; }\n\n.video-react .video-react-progress-holder .video-react-play-progress,\n.video-react .video-react-progress-holder .video-react-load-progress,\n.video-react .video-react-progress-holder .video-react-tooltip-progress-bar,\n.video-react .video-react-progress-holder .video-react-load-progress div {\n  position: absolute;\n  display: block;\n  height: 0.3em;\n  margin: 0;\n  padding: 0;\n  width: 0;\n  left: 0;\n  top: 0; }\n\n.video-react .video-react-mouse-display:before {\n  display: none; }\n\n.video-react .video-react-play-progress {\n  background-color: #fff; }\n  .video-react .video-react-play-progress:before {\n    position: absolute;\n    top: -0.333333333333333em;\n    right: -0.5em;\n    font-size: 0.9em; }\n\n.video-react .video-react-time-tooltip,\n.video-react .video-react-mouse-display:after,\n.video-react .video-react-play-progress:after {\n  visibility: hidden;\n  pointer-events: none;\n  position: absolute;\n  top: -3.4em;\n  right: -1.9em;\n  font-size: 0.9em;\n  color: #000;\n  content: attr(data-current-time);\n  padding: 6px 8px 8px 8px;\n  background-color: #fff;\n  background-color: rgba(255, 255, 255, 0.8);\n  -webkit-border-radius: 0.3em;\n  -moz-border-radius: 0.3em;\n  border-radius: 0.3em; }\n\n.video-react .video-react-time-tooltip,\n.video-react .video-react-play-progress:before,\n.video-react .video-react-play-progress:after {\n  z-index: 1; }\n\n.video-react .video-react-progress-control .video-react-keep-tooltips-inside:after {\n  display: none; }\n\n.video-react .video-react-load-progress {\n  background: #bfc7d3;\n  background: rgba(115, 133, 159, 0.5); }\n\n.video-react .video-react-load-progress div {\n  background: white;\n  background: rgba(115, 133, 159, 0.75); }\n\n.video-react.video-react-no-flex .video-react-progress-control {\n  width: auto; }\n\n.video-react .video-react-time-tooltip {\n  display: inline-block;\n  height: 2.4em;\n  position: relative;\n  float: right;\n  right: -1.9em; }\n\n.video-react .video-react-tooltip-progress-bar {\n  visibility: hidden; }\n\n.video-react .video-react-progress-control .video-react-mouse-display {\n  display: none;\n  position: absolute;\n  width: 1px;\n  height: 100%;\n  background-color: #000;\n  z-index: 1; }\n\n.video-react-no-flex .video-react-progress-control .video-react-mouse-display {\n  z-index: 0; }\n\n.video-react .video-react-progress-control:hover .video-react-mouse-display {\n  display: block; }\n\n.video-react.video-react-user-inactive .video-react-progress-control .video-react-mouse-display,\n.video-react.video-react-user-inactive .video-react-progress-control .video-react-mouse-display:after {\n  visibility: hidden;\n  opacity: 0;\n  -webkit-transition: visibility 1s, opacity 1s;\n  -moz-transition: visibility 1s, opacity 1s;\n  -o-transition: visibility 1s, opacity 1s;\n  transition: visibility 1s, opacity 1s; }\n\n.video-react.video-react-user-inactive.video-react-no-flex .video-react-progress-control .video-react-mouse-display,\n.video-react.video-react-user-inactive.video-react-no-flex .video-react-progress-control .video-react-mouse-display:after {\n  display: none; }\n\n.video-react .video-react-mouse-display .video-react-time-tooltip,\n.video-react .video-react-progress-control .video-react-mouse-display:after {\n  color: #fff;\n  background-color: #000;\n  background-color: rgba(0, 0, 0, 0.8); }\n\n.video-react .video-react-play-control {\n  cursor: pointer;\n  -webkit-box-flex: none;\n  -moz-box-flex: none;\n  -webkit-flex: none;\n  -ms-flex: none;\n  flex: none; }\n\n.video-react .video-react-fullscreen-control {\n  cursor: pointer;\n  -webkit-box-flex: none;\n  -moz-box-flex: none;\n  -webkit-flex: none;\n  -ms-flex: none;\n  flex: none; }\n\n.video-react.video-react-fullscreen {\n  position: fixed;\n  left: 0;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  z-index: 9999; }\n\n.video-react .video-react-time-control {\n  -webkit-box-flex: none;\n  -moz-box-flex: none;\n  -webkit-flex: none;\n  -ms-flex: none;\n  flex: none;\n  font-size: 1em;\n  line-height: 3em;\n  min-width: 2em;\n  width: auto;\n  padding-left: 1em;\n  padding-right: 1em; }\n\n.video-react .video-react-time-divider {\n  line-height: 3em;\n  min-width: initial;\n  padding: 0; }\n\n.video-react .video-react-mute-control,\n.video-react .video-react-volume-menu-button {\n  cursor: pointer;\n  -webkit-box-flex: none;\n  -moz-box-flex: none;\n  -webkit-flex: none;\n  -ms-flex: none;\n  flex: none; }\n\n.video-react .video-react-volume-control {\n  width: 5em;\n  -webkit-box-flex: none;\n  -moz-box-flex: none;\n  -webkit-flex: none;\n  -ms-flex: none;\n  flex: none;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n  -ms-flex-align: center;\n  align-items: center; }\n\n.video-react .video-react-volume-bar {\n  margin: 1.35em 0.45em; }\n  .video-react .video-react-volume-bar.video-react-slider-horizontal {\n    width: 5em;\n    height: 0.3em; }\n    .video-react .video-react-volume-bar.video-react-slider-horizontal .video-react-volume-level {\n      width: 100%; }\n  .video-react .video-react-volume-bar.video-react-slider-vertical {\n    width: 0.3em;\n    height: 5em;\n    margin: 1.35em auto; }\n    .video-react .video-react-volume-bar.video-react-slider-vertical .video-react-volume-level {\n      height: 100%; }\n\n.video-react .video-react-volume-level {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  background-color: #fff; }\n  .video-react .video-react-volume-level:before {\n    position: absolute;\n    font-size: 0.9em; }\n\n.video-react .video-react-slider-vertical .video-react-volume-level {\n  width: 0.3em; }\n  .video-react .video-react-slider-vertical .video-react-volume-level:before {\n    top: -0.5em;\n    left: -0.3em; }\n\n.video-react .video-react-slider-horizontal .video-react-volume-level {\n  height: 0.3em; }\n  .video-react .video-react-slider-horizontal .video-react-volume-level:before {\n    top: -0.3em;\n    right: -0.5em; }\n\n.video-react .video-react-menu-button-popup.video-react-volume-menu-button .video-react-menu {\n  display: block;\n  width: 0;\n  height: 0;\n  border-top-color: transparent; }\n\n.video-react .video-react-menu-button-popup.video-react-volume-menu-button-vertical .video-react-menu {\n  left: 0.5em;\n  height: 8em; }\n\n.video-react .video-react-menu-button-popup.video-react-volume-menu-button-horizontal .video-react-menu {\n  left: -2em; }\n\n.video-react .video-react-menu-button-popup.video-react-volume-menu-button .video-react-menu-content {\n  height: 0;\n  width: 0;\n  overflow-x: hidden;\n  overflow-y: hidden; }\n\n.video-react .video-react-volume-menu-button-vertical:hover .video-react-menu-content,\n.video-react .video-react-volume-menu-button-vertical:focus .video-react-menu-content,\n.video-react .video-react-volume-menu-button-vertical.video-react-slider-active .video-react-menu-content,\n.video-react .video-react-volume-menu-button-vertical .video-react-lock-showing .video-react-menu-content {\n  height: 8em;\n  width: 2.9em; }\n\n.video-react .video-react-volume-menu-button-horizontal:hover .video-react-menu-content,\n.video-react .video-react-volume-menu-button-horizontal:focus .video-react-menu-content,\n.video-react .video-react-volume-menu-button-horizontal .video-react-slider-active .video-react-menu-content,\n.video-react .video-react-volume-menu-button-horizontal .video-react-lock-showing .video-react-menu-content {\n  height: 2.9em;\n  width: 8em; }\n\n.video-react .video-react-volume-menu-button.video-react-menu-button-inline .video-react-menu-content {\n  background-color: transparent !important; }\n\n.video-react .video-react-playback-rate .video-react-playback-rate-value {\n  line-height: 3em;\n  text-align: center; }\n\n.video-react .video-react-playback-rate .video-react-menu {\n  width: 4em;\n  left: 0em; }\n\n.video-react .video-react-bezel {\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  width: 52px;\n  height: 52px;\n  z-index: 17;\n  margin-left: -26px;\n  margin-top: -26px;\n  background: rgba(0, 0, 0, 0.5);\n  border-radius: 26px; }\n  .video-react .video-react-bezel.video-react-bezel-animation {\n    -moz-animation: video-react-bezel-fadeout .5s linear 1 normal forwards;\n    -webkit-animation: video-react-bezel-fadeout .5s linear 1 normal forwards;\n    animation: video-react-bezel-fadeout .5s linear 1 normal forwards;\n    pointer-events: none; }\n  .video-react .video-react-bezel.video-react-bezel-animation-alt {\n    -moz-animation: video-react-bezel-fadeout-alt .5s linear 1 normal forwards;\n    -webkit-animation: video-react-bezel-fadeout-alt .5s linear 1 normal forwards;\n    animation: video-react-bezel-fadeout-alt .5s linear 1 normal forwards;\n    pointer-events: none; }\n  .video-react .video-react-bezel .video-react-bezel-icon {\n    width: 36px;\n    height: 36px;\n    margin: 8px;\n    font-size: 26px;\n    line-height: 36px;\n    text-align: center; }\n\n@keyframes video-react-bezel-fadeout {\n  0% {\n    opacity: 1; }\n  to {\n    opacity: 0;\n    transform: scale(2); } }\n\n@keyframes video-react-bezel-fadeout-alt {\n  0% {\n    opacity: 1; }\n  to {\n    opacity: 0;\n    transform: scale(2); } }\n"],"sourceRoot":""}]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/dom-helpers/class/addClass.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = addClass;
+
+var _hasClass = __webpack_require__("./node_modules/dom-helpers/class/hasClass.js");
+
+var _hasClass2 = _interopRequireDefault(_hasClass);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function addClass(element, className) {
+  if (element.classList) element.classList.add(className);else if (!(0, _hasClass2.default)(element, className)) if (typeof element.className === 'string') element.className = element.className + ' ' + className;else element.setAttribute('class', (element.className && element.className.baseVal || '') + ' ' + className);
+}
+module.exports = exports['default'];
+
+/***/ }),
+
+/***/ "./node_modules/dom-helpers/class/hasClass.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = hasClass;
+function hasClass(element, className) {
+  if (element.classList) return !!className && element.classList.contains(className);else return (" " + (element.className.baseVal || element.className) + " ").indexOf(" " + className + " ") !== -1;
+}
+module.exports = exports["default"];
+
+/***/ }),
+
+/***/ "./node_modules/dom-helpers/class/removeClass.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+function replaceClassName(origClass, classToRemove) {
+  return origClass.replace(new RegExp('(^|\\s)' + classToRemove + '(?:\\s|$)', 'g'), '$1').replace(/\s+/g, ' ').replace(/^\s*|\s*$/g, '');
+}
+
+module.exports = function removeClass(element, className) {
+  if (element.classList) element.classList.remove(className);else if (typeof element.className === 'string') element.className = replaceClassName(element.className, className);else element.setAttribute('class', replaceClassName(element.className && element.className.baseVal || '', className));
+};
+
+/***/ }),
+
+/***/ "./node_modules/dom-helpers/transition/properties.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.animationEnd = exports.animationDelay = exports.animationTiming = exports.animationDuration = exports.animationName = exports.transitionEnd = exports.transitionDuration = exports.transitionDelay = exports.transitionTiming = exports.transitionProperty = exports.transform = undefined;
+
+var _inDOM = __webpack_require__("./node_modules/dom-helpers/util/inDOM.js");
+
+var _inDOM2 = _interopRequireDefault(_inDOM);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var transform = 'transform';
+var prefix = void 0,
+    transitionEnd = void 0,
+    animationEnd = void 0;
+var transitionProperty = void 0,
+    transitionDuration = void 0,
+    transitionTiming = void 0,
+    transitionDelay = void 0;
+var animationName = void 0,
+    animationDuration = void 0,
+    animationTiming = void 0,
+    animationDelay = void 0;
+
+if (_inDOM2.default) {
+  var _getTransitionPropert = getTransitionProperties();
+
+  prefix = _getTransitionPropert.prefix;
+  exports.transitionEnd = transitionEnd = _getTransitionPropert.transitionEnd;
+  exports.animationEnd = animationEnd = _getTransitionPropert.animationEnd;
+
+
+  exports.transform = transform = prefix + '-' + transform;
+  exports.transitionProperty = transitionProperty = prefix + '-transition-property';
+  exports.transitionDuration = transitionDuration = prefix + '-transition-duration';
+  exports.transitionDelay = transitionDelay = prefix + '-transition-delay';
+  exports.transitionTiming = transitionTiming = prefix + '-transition-timing-function';
+
+  exports.animationName = animationName = prefix + '-animation-name';
+  exports.animationDuration = animationDuration = prefix + '-animation-duration';
+  exports.animationTiming = animationTiming = prefix + '-animation-delay';
+  exports.animationDelay = animationDelay = prefix + '-animation-timing-function';
+}
+
+exports.transform = transform;
+exports.transitionProperty = transitionProperty;
+exports.transitionTiming = transitionTiming;
+exports.transitionDelay = transitionDelay;
+exports.transitionDuration = transitionDuration;
+exports.transitionEnd = transitionEnd;
+exports.animationName = animationName;
+exports.animationDuration = animationDuration;
+exports.animationTiming = animationTiming;
+exports.animationDelay = animationDelay;
+exports.animationEnd = animationEnd;
+exports.default = {
+  transform: transform,
+  end: transitionEnd,
+  property: transitionProperty,
+  timing: transitionTiming,
+  delay: transitionDelay,
+  duration: transitionDuration
+};
+
+
+function getTransitionProperties() {
+  var style = document.createElement('div').style;
+
+  var vendorMap = {
+    O: function O(e) {
+      return 'o' + e.toLowerCase();
+    },
+    Moz: function Moz(e) {
+      return e.toLowerCase();
+    },
+    Webkit: function Webkit(e) {
+      return 'webkit' + e;
+    },
+    ms: function ms(e) {
+      return 'MS' + e;
+    }
+  };
+
+  var vendors = Object.keys(vendorMap);
+
+  var transitionEnd = void 0,
+      animationEnd = void 0;
+  var prefix = '';
+
+  for (var i = 0; i < vendors.length; i++) {
+    var vendor = vendors[i];
+
+    if (vendor + 'TransitionProperty' in style) {
+      prefix = '-' + vendor.toLowerCase();
+      transitionEnd = vendorMap[vendor]('TransitionEnd');
+      animationEnd = vendorMap[vendor]('AnimationEnd');
+      break;
+    }
+  }
+
+  if (!transitionEnd && 'transitionProperty' in style) transitionEnd = 'transitionend';
+
+  if (!animationEnd && 'animationName' in style) animationEnd = 'animationend';
+
+  style = null;
+
+  return { animationEnd: animationEnd, transitionEnd: transitionEnd, prefix: prefix };
+}
+
+/***/ }),
+
+/***/ "./node_modules/dom-helpers/util/inDOM.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = !!(typeof window !== 'undefined' && window.document && window.document.createElement);
+module.exports = exports['default'];
+
+/***/ }),
+
+/***/ "./node_modules/dom-helpers/util/requestAnimationFrame.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _inDOM = __webpack_require__("./node_modules/dom-helpers/util/inDOM.js");
+
+var _inDOM2 = _interopRequireDefault(_inDOM);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var vendors = ['', 'webkit', 'moz', 'o', 'ms'];
+var cancel = 'clearTimeout';
+var raf = fallback;
+var compatRaf = void 0;
+
+var getKey = function getKey(vendor, k) {
+  return vendor + (!vendor ? k : k[0].toUpperCase() + k.substr(1)) + 'AnimationFrame';
+};
+
+if (_inDOM2.default) {
+  vendors.some(function (vendor) {
+    var rafKey = getKey(vendor, 'request');
+
+    if (rafKey in window) {
+      cancel = getKey(vendor, 'cancel');
+      return raf = function raf(cb) {
+        return window[rafKey](cb);
+      };
+    }
+  });
+}
+
+/* https://github.com/component/raf */
+var prev = new Date().getTime();
+function fallback(fn) {
+  var curr = new Date().getTime(),
+      ms = Math.max(0, 16 - (curr - prev)),
+      req = setTimeout(fn, ms);
+
+  prev = curr;
+  return req;
+}
+
+compatRaf = function compatRaf(cb) {
+  return raf(cb);
+};
+compatRaf.cancel = function (id) {
+  window[cancel] && typeof window[cancel] === 'function' && window[cancel](id);
+};
+exports.default = compatRaf;
+module.exports = exports['default'];
+
+/***/ }),
+
+/***/ "./node_modules/lodash.isfunction/index.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global) {/**
+ * Lodash (Custom Build) <https://lodash.com/>
+ * Build: `lodash modularize exports="npm" -o ./`
+ * Copyright JS Foundation and other contributors <https://js.foundation/>
+ * Released under MIT license <https://lodash.com/license>
+ * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
+ * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+ */
+
+/** `Object#toString` result references. */
+var asyncTag = '[object AsyncFunction]',
+    funcTag = '[object Function]',
+    genTag = '[object GeneratorFunction]',
+    nullTag = '[object Null]',
+    proxyTag = '[object Proxy]',
+    undefinedTag = '[object Undefined]';
+
+/** Detect free variable `global` from Node.js. */
+var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
+
+/** Detect free variable `self`. */
+var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
+
+/** Used as a reference to the global object. */
+var root = freeGlobal || freeSelf || Function('return this')();
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * Used to resolve the
+ * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+ * of values.
+ */
+var nativeObjectToString = objectProto.toString;
+
+/** Built-in value references. */
+var Symbol = root.Symbol,
+    symToStringTag = Symbol ? Symbol.toStringTag : undefined;
+
+/**
+ * The base implementation of `getTag` without fallbacks for buggy environments.
+ *
+ * @private
+ * @param {*} value The value to query.
+ * @returns {string} Returns the `toStringTag`.
+ */
+function baseGetTag(value) {
+  if (value == null) {
+    return value === undefined ? undefinedTag : nullTag;
+  }
+  return (symToStringTag && symToStringTag in Object(value))
+    ? getRawTag(value)
+    : objectToString(value);
+}
+
+/**
+ * A specialized version of `baseGetTag` which ignores `Symbol.toStringTag` values.
+ *
+ * @private
+ * @param {*} value The value to query.
+ * @returns {string} Returns the raw `toStringTag`.
+ */
+function getRawTag(value) {
+  var isOwn = hasOwnProperty.call(value, symToStringTag),
+      tag = value[symToStringTag];
+
+  try {
+    value[symToStringTag] = undefined;
+    var unmasked = true;
+  } catch (e) {}
+
+  var result = nativeObjectToString.call(value);
+  if (unmasked) {
+    if (isOwn) {
+      value[symToStringTag] = tag;
+    } else {
+      delete value[symToStringTag];
+    }
+  }
+  return result;
+}
+
+/**
+ * Converts `value` to a string using `Object.prototype.toString`.
+ *
+ * @private
+ * @param {*} value The value to convert.
+ * @returns {string} Returns the converted string.
+ */
+function objectToString(value) {
+  return nativeObjectToString.call(value);
+}
+
+/**
+ * Checks if `value` is classified as a `Function` object.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a function, else `false`.
+ * @example
+ *
+ * _.isFunction(_);
+ * // => true
+ *
+ * _.isFunction(/abc/);
+ * // => false
+ */
+function isFunction(value) {
+  if (!isObject(value)) {
+    return false;
+  }
+  // The use of `Object#toString` avoids issues with the `typeof` operator
+  // in Safari 9 which returns 'object' for typed arrays and other constructors.
+  var tag = baseGetTag(value);
+  return tag == funcTag || tag == genTag || tag == asyncTag || tag == proxyTag;
+}
+
+/**
+ * Checks if `value` is the
+ * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
+ * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an object, else `false`.
+ * @example
+ *
+ * _.isObject({});
+ * // => true
+ *
+ * _.isObject([1, 2, 3]);
+ * // => true
+ *
+ * _.isObject(_.noop);
+ * // => true
+ *
+ * _.isObject(null);
+ * // => false
+ */
+function isObject(value) {
+  var type = typeof value;
+  return value != null && (type == 'object' || type == 'function');
+}
+
+module.exports = isFunction;
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__("./node_modules/webpack/buildin/global.js")))
+
+/***/ }),
+
+/***/ "./node_modules/lodash.isobject/index.js":
+/***/ (function(module, exports) {
+
+/**
+ * lodash 3.0.2 (Custom Build) <https://lodash.com/>
+ * Build: `lodash modern modularize exports="npm" -o ./`
+ * Copyright 2012-2015 The Dojo Foundation <http://dojofoundation.org/>
+ * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
+ * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+ * Available under MIT license <https://lodash.com/license>
+ */
+
+/**
+ * Checks if `value` is the [language type](https://es5.github.io/#x8) of `Object`.
+ * (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
+ *
+ * @static
+ * @memberOf _
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an object, else `false`.
+ * @example
+ *
+ * _.isObject({});
+ * // => true
+ *
+ * _.isObject([1, 2, 3]);
+ * // => true
+ *
+ * _.isObject(1);
+ * // => false
+ */
+function isObject(value) {
+  // Avoid a V8 JIT bug in Chrome 19-20.
+  // See https://code.google.com/p/v8/issues/detail?id=2291 for more details.
+  var type = typeof value;
+  return !!value && (type == 'object' || type == 'function');
+}
+
+module.exports = isObject;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash.tonumber/index.js":
+/***/ (function(module, exports) {
+
+/**
+ * lodash (Custom Build) <https://lodash.com/>
+ * Build: `lodash modularize exports="npm" -o ./`
+ * Copyright jQuery Foundation and other contributors <https://jquery.org/>
+ * Released under MIT license <https://lodash.com/license>
+ * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
+ * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+ */
+
+/** Used as references for various `Number` constants. */
+var NAN = 0 / 0;
+
+/** `Object#toString` result references. */
+var symbolTag = '[object Symbol]';
+
+/** Used to match leading and trailing whitespace. */
+var reTrim = /^\s+|\s+$/g;
+
+/** Used to detect bad signed hexadecimal string values. */
+var reIsBadHex = /^[-+]0x[0-9a-f]+$/i;
+
+/** Used to detect binary string values. */
+var reIsBinary = /^0b[01]+$/i;
+
+/** Used to detect octal string values. */
+var reIsOctal = /^0o[0-7]+$/i;
+
+/** Built-in method references without a dependency on `root`. */
+var freeParseInt = parseInt;
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/**
+ * Used to resolve the
+ * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+ * of values.
+ */
+var objectToString = objectProto.toString;
+
+/**
+ * Checks if `value` is the
+ * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
+ * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an object, else `false`.
+ * @example
+ *
+ * _.isObject({});
+ * // => true
+ *
+ * _.isObject([1, 2, 3]);
+ * // => true
+ *
+ * _.isObject(_.noop);
+ * // => true
+ *
+ * _.isObject(null);
+ * // => false
+ */
+function isObject(value) {
+  var type = typeof value;
+  return !!value && (type == 'object' || type == 'function');
+}
+
+/**
+ * Checks if `value` is object-like. A value is object-like if it's not `null`
+ * and has a `typeof` result of "object".
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
+ * @example
+ *
+ * _.isObjectLike({});
+ * // => true
+ *
+ * _.isObjectLike([1, 2, 3]);
+ * // => true
+ *
+ * _.isObjectLike(_.noop);
+ * // => false
+ *
+ * _.isObjectLike(null);
+ * // => false
+ */
+function isObjectLike(value) {
+  return !!value && typeof value == 'object';
+}
+
+/**
+ * Checks if `value` is classified as a `Symbol` primitive or object.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a symbol, else `false`.
+ * @example
+ *
+ * _.isSymbol(Symbol.iterator);
+ * // => true
+ *
+ * _.isSymbol('abc');
+ * // => false
+ */
+function isSymbol(value) {
+  return typeof value == 'symbol' ||
+    (isObjectLike(value) && objectToString.call(value) == symbolTag);
+}
+
+/**
+ * Converts `value` to a number.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to process.
+ * @returns {number} Returns the number.
+ * @example
+ *
+ * _.toNumber(3.2);
+ * // => 3.2
+ *
+ * _.toNumber(Number.MIN_VALUE);
+ * // => 5e-324
+ *
+ * _.toNumber(Infinity);
+ * // => Infinity
+ *
+ * _.toNumber('3.2');
+ * // => 3.2
+ */
+function toNumber(value) {
+  if (typeof value == 'number') {
+    return value;
+  }
+  if (isSymbol(value)) {
+    return NAN;
+  }
+  if (isObject(value)) {
+    var other = typeof value.valueOf == 'function' ? value.valueOf() : value;
+    value = isObject(other) ? (other + '') : other;
+  }
+  if (typeof value != 'string') {
+    return value === 0 ? value : +value;
+  }
+  value = value.replace(reTrim, '');
+  var isBinary = reIsBinary.test(value);
+  return (isBinary || reIsOctal.test(value))
+    ? freeParseInt(value.slice(2), isBinary ? 2 : 8)
+    : (reIsBadHex.test(value) ? NAN : +value);
+}
+
+module.exports = toNumber;
+
+
+/***/ }),
+
+/***/ "./node_modules/react-prism/lib/components/PrismCode.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true,
+})
+
+var _createClass = (function() {
+  function defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i]
+      descriptor.enumerable = descriptor.enumerable || false
+      descriptor.configurable = true
+      if ("value" in descriptor) descriptor.writable = true
+      Object.defineProperty(target, descriptor.key, descriptor)
+    }
+  }
+  return function(Constructor, protoProps, staticProps) {
+    if (protoProps) defineProperties(Constructor.prototype, protoProps)
+    if (staticProps) defineProperties(Constructor, staticProps)
+    return Constructor
+  }
+})()
+
+var _react = __webpack_require__("./node_modules/react/index.js")
+
+var _react2 = _interopRequireDefault(_react)
+
+var _propTypes = __webpack_require__("./node_modules/prop-types/index.js")
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj }
+}
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function")
+  }
+}
+
+function _possibleConstructorReturn(self, call) {
+  if (!self) {
+    throw new ReferenceError(
+      "this hasn't been initialised - super() hasn't been called"
+    )
+  }
+  return call && (typeof call === "object" || typeof call === "function")
+    ? call
+    : self
+}
+
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError(
+      "Super expression must either be null or a function, not " +
+        typeof superClass
+    )
+  }
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      enumerable: false,
+      writable: true,
+      configurable: true,
+    },
+  })
+  if (superClass)
+    Object.setPrototypeOf
+      ? Object.setPrototypeOf(subClass, superClass)
+      : (subClass.__proto__ = superClass)
+} /* global Prism */
+
+var PrismCode = (function(_PureComponent) {
+  _inherits(PrismCode, _PureComponent)
+
+  function PrismCode() {
+    var _ref
+
+    var _temp, _this, _ret
+
+    _classCallCheck(this, PrismCode)
+
+    for (
+      var _len = arguments.length, args = Array(_len), _key = 0;
+      _key < _len;
+      _key++
+    ) {
+      args[_key] = arguments[_key]
+    }
+
+    return (
+      (_ret = ((_temp = ((_this = _possibleConstructorReturn(
+        this,
+        (_ref =
+          PrismCode.__proto__ || Object.getPrototypeOf(PrismCode)).call.apply(
+          _ref,
+          [this].concat(args)
+        )
+      )),
+      _this)),
+      (_this._handleRefMount = function(domNode) {
+        _this._domNode = domNode
+      }),
+      _temp)),
+      _possibleConstructorReturn(_this, _ret)
+    )
+  }
+
+  _createClass(PrismCode, [
+    {
+      key: "componentDidMount",
+      value: function componentDidMount() {
+        this._hightlight()
+      },
+    },
+    {
+      key: "componentDidUpdate",
+      value: function componentDidUpdate() {
+        this._hightlight()
+      },
+    },
+    {
+      key: "_hightlight",
+      value: function _hightlight() {
+        Prism.highlightElement(this._domNode, this.props.async)
+      },
+    },
+    {
+      key: "render",
+      value: function render() {
+        var _props = this.props,
+          className = _props.className,
+          Wrapper = _props.component,
+          children = _props.children
+
+        return _react2.default.createElement(
+          Wrapper,
+          { ref: this._handleRefMount, className: className },
+          children
+        )
+      },
+    },
+  ])
+
+  return PrismCode
+})(_react.PureComponent)
+
+PrismCode.propTypes = {
+  async: _propTypes.PropTypes.bool,
+  className: _propTypes.PropTypes.string,
+  children: _propTypes.PropTypes.any,
+  component: _propTypes.PropTypes.node,
+}
+PrismCode.defaultProps = {
+  component: "code",
+}
+exports.default = PrismCode
+
+
+/***/ }),
+
+/***/ "./node_modules/react-prism/lib/index.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _PrismCode = __webpack_require__("./node_modules/react-prism/lib/components/PrismCode.js");
+
+Object.defineProperty(exports, "PrismCode", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_PrismCode).default;
+  }
+});
+Object.defineProperty(exports, "default", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_PrismCode).default;
+  }
+});
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ }),
+
+/***/ "./node_modules/react-transition-group/CSSTransitionGroup.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _react = __webpack_require__("./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__("./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _TransitionGroup = __webpack_require__("./node_modules/react-transition-group/TransitionGroup.js");
+
+var _TransitionGroup2 = _interopRequireDefault(_TransitionGroup);
+
+var _CSSTransitionGroupChild = __webpack_require__("./node_modules/react-transition-group/CSSTransitionGroupChild.js");
+
+var _CSSTransitionGroupChild2 = _interopRequireDefault(_CSSTransitionGroupChild);
+
+var _PropTypes = __webpack_require__("./node_modules/react-transition-group/utils/PropTypes.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var propTypes = {
+  transitionName: _PropTypes.nameShape.isRequired,
+
+  transitionAppear: _propTypes2.default.bool,
+  transitionEnter: _propTypes2.default.bool,
+  transitionLeave: _propTypes2.default.bool,
+  transitionAppearTimeout: (0, _PropTypes.transitionTimeout)('Appear'),
+  transitionEnterTimeout: (0, _PropTypes.transitionTimeout)('Enter'),
+  transitionLeaveTimeout: (0, _PropTypes.transitionTimeout)('Leave')
+};
+
+var defaultProps = {
+  transitionAppear: false,
+  transitionEnter: true,
+  transitionLeave: true
+};
+
+var CSSTransitionGroup = function (_React$Component) {
+  _inherits(CSSTransitionGroup, _React$Component);
+
+  function CSSTransitionGroup() {
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, CSSTransitionGroup);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, _React$Component.call.apply(_React$Component, [this].concat(args))), _this), _this._wrapChild = function (child) {
+      return _react2.default.createElement(_CSSTransitionGroupChild2.default, {
+        name: _this.props.transitionName,
+        appear: _this.props.transitionAppear,
+        enter: _this.props.transitionEnter,
+        leave: _this.props.transitionLeave,
+        appearTimeout: _this.props.transitionAppearTimeout,
+        enterTimeout: _this.props.transitionEnterTimeout,
+        leaveTimeout: _this.props.transitionLeaveTimeout
+      }, child);
+    }, _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  // We need to provide this childFactory so that
+  // ReactCSSTransitionGroupChild can receive updates to name, enter, and
+  // leave while it is leaving.
+
+
+  CSSTransitionGroup.prototype.render = function render() {
+    return _react2.default.createElement(_TransitionGroup2.default, _extends({}, this.props, { childFactory: this._wrapChild }));
+  };
+
+  return CSSTransitionGroup;
+}(_react2.default.Component);
+
+CSSTransitionGroup.displayName = 'CSSTransitionGroup';
+
+
+CSSTransitionGroup.propTypes =  true ? propTypes : {};
+CSSTransitionGroup.defaultProps = defaultProps;
+
+exports.default = CSSTransitionGroup;
+module.exports = exports['default'];
+
+/***/ }),
+
+/***/ "./node_modules/react-transition-group/CSSTransitionGroupChild.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _addClass = __webpack_require__("./node_modules/dom-helpers/class/addClass.js");
+
+var _addClass2 = _interopRequireDefault(_addClass);
+
+var _removeClass = __webpack_require__("./node_modules/dom-helpers/class/removeClass.js");
+
+var _removeClass2 = _interopRequireDefault(_removeClass);
+
+var _requestAnimationFrame = __webpack_require__("./node_modules/dom-helpers/util/requestAnimationFrame.js");
+
+var _requestAnimationFrame2 = _interopRequireDefault(_requestAnimationFrame);
+
+var _properties = __webpack_require__("./node_modules/dom-helpers/transition/properties.js");
+
+var _react = __webpack_require__("./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__("./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _reactDom = __webpack_require__("./node_modules/react-dom/index.js");
+
+var _PropTypes = __webpack_require__("./node_modules/react-transition-group/utils/PropTypes.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var events = [];
+if (_properties.transitionEnd) events.push(_properties.transitionEnd);
+if (_properties.animationEnd) events.push(_properties.animationEnd);
+
+function addEndListener(node, listener) {
+  if (events.length) {
+    events.forEach(function (e) {
+      return node.addEventListener(e, listener, false);
+    });
+  } else {
+    setTimeout(listener, 0);
+  }
+
+  return function () {
+    if (!events.length) return;
+    events.forEach(function (e) {
+      return node.removeEventListener(e, listener, false);
+    });
+  };
+}
+
+var propTypes = {
+  children: _propTypes2.default.node,
+  name: _PropTypes.nameShape.isRequired,
+
+  // Once we require timeouts to be specified, we can remove the
+  // boolean flags (appear etc.) and just accept a number
+  // or a bool for the timeout flags (appearTimeout etc.)
+  appear: _propTypes2.default.bool,
+  enter: _propTypes2.default.bool,
+  leave: _propTypes2.default.bool,
+  appearTimeout: _propTypes2.default.number,
+  enterTimeout: _propTypes2.default.number,
+  leaveTimeout: _propTypes2.default.number
+};
+
+var CSSTransitionGroupChild = function (_React$Component) {
+  _inherits(CSSTransitionGroupChild, _React$Component);
+
+  function CSSTransitionGroupChild() {
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, CSSTransitionGroupChild);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, _React$Component.call.apply(_React$Component, [this].concat(args))), _this), _this.componentWillAppear = function (done) {
+      if (_this.props.appear) {
+        _this.transition('appear', done, _this.props.appearTimeout);
+      } else {
+        done();
+      }
+    }, _this.componentWillEnter = function (done) {
+      if (_this.props.enter) {
+        _this.transition('enter', done, _this.props.enterTimeout);
+      } else {
+        done();
+      }
+    }, _this.componentWillLeave = function (done) {
+      if (_this.props.leave) {
+        _this.transition('leave', done, _this.props.leaveTimeout);
+      } else {
+        done();
+      }
+    }, _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  CSSTransitionGroupChild.prototype.componentWillMount = function componentWillMount() {
+    this.classNameAndNodeQueue = [];
+    this.transitionTimeouts = [];
+  };
+
+  CSSTransitionGroupChild.prototype.componentWillUnmount = function componentWillUnmount() {
+    this.unmounted = true;
+
+    if (this.timeout) {
+      clearTimeout(this.timeout);
+    }
+    this.transitionTimeouts.forEach(function (timeout) {
+      clearTimeout(timeout);
+    });
+
+    this.classNameAndNodeQueue.length = 0;
+  };
+
+  CSSTransitionGroupChild.prototype.transition = function transition(animationType, finishCallback, timeout) {
+    var node = (0, _reactDom.findDOMNode)(this);
+
+    if (!node) {
+      if (finishCallback) {
+        finishCallback();
+      }
+      return;
+    }
+
+    var className = this.props.name[animationType] || this.props.name + '-' + animationType;
+    var activeClassName = this.props.name[animationType + 'Active'] || className + '-active';
+    var timer = null;
+    var removeListeners = void 0;
+
+    (0, _addClass2.default)(node, className);
+
+    // Need to do this to actually trigger a transition.
+    this.queueClassAndNode(activeClassName, node);
+
+    // Clean-up the animation after the specified delay
+    var finish = function finish(e) {
+      if (e && e.target !== node) {
+        return;
+      }
+
+      clearTimeout(timer);
+      if (removeListeners) removeListeners();
+
+      (0, _removeClass2.default)(node, className);
+      (0, _removeClass2.default)(node, activeClassName);
+
+      if (removeListeners) removeListeners();
+
+      // Usually this optional callback is used for informing an owner of
+      // a leave animation and telling it to remove the child.
+      if (finishCallback) {
+        finishCallback();
+      }
+    };
+
+    if (timeout) {
+      timer = setTimeout(finish, timeout);
+      this.transitionTimeouts.push(timer);
+    } else if (_properties.transitionEnd) {
+      removeListeners = addEndListener(node, finish);
+    }
+  };
+
+  CSSTransitionGroupChild.prototype.queueClassAndNode = function queueClassAndNode(className, node) {
+    var _this2 = this;
+
+    this.classNameAndNodeQueue.push({
+      className: className,
+      node: node
+    });
+
+    if (!this.rafHandle) {
+      this.rafHandle = (0, _requestAnimationFrame2.default)(function () {
+        return _this2.flushClassNameAndNodeQueue();
+      });
+    }
+  };
+
+  CSSTransitionGroupChild.prototype.flushClassNameAndNodeQueue = function flushClassNameAndNodeQueue() {
+    if (!this.unmounted) {
+      this.classNameAndNodeQueue.forEach(function (obj) {
+        // This is for to force a repaint,
+        // which is necessary in order to transition styles when adding a class name.
+        /* eslint-disable no-unused-expressions */
+        obj.node.scrollTop;
+        /* eslint-enable no-unused-expressions */
+        (0, _addClass2.default)(obj.node, obj.className);
+      });
+    }
+    this.classNameAndNodeQueue.length = 0;
+    this.rafHandle = null;
+  };
+
+  CSSTransitionGroupChild.prototype.render = function render() {
+    var props = _extends({}, this.props);
+    delete props.name;
+    delete props.appear;
+    delete props.enter;
+    delete props.leave;
+    delete props.appearTimeout;
+    delete props.enterTimeout;
+    delete props.leaveTimeout;
+    delete props.children;
+    return _react2.default.cloneElement(_react2.default.Children.only(this.props.children), props);
+  };
+
+  return CSSTransitionGroupChild;
+}(_react2.default.Component);
+
+CSSTransitionGroupChild.displayName = 'CSSTransitionGroupChild';
+
+
+CSSTransitionGroupChild.propTypes =  true ? propTypes : {};
+
+exports.default = CSSTransitionGroupChild;
+module.exports = exports['default'];
+
+/***/ }),
+
+/***/ "./node_modules/react-transition-group/TransitionGroup.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _chainFunction = __webpack_require__("./node_modules/chain-function/index.js");
+
+var _chainFunction2 = _interopRequireDefault(_chainFunction);
+
+var _react = __webpack_require__("./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__("./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _warning = __webpack_require__("./node_modules/warning/browser.js");
+
+var _warning2 = _interopRequireDefault(_warning);
+
+var _ChildMapping = __webpack_require__("./node_modules/react-transition-group/utils/ChildMapping.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var propTypes = {
+  component: _propTypes2.default.any,
+  childFactory: _propTypes2.default.func,
+  children: _propTypes2.default.node
+};
+
+var defaultProps = {
+  component: 'span',
+  childFactory: function childFactory(child) {
+    return child;
+  }
+};
+
+var TransitionGroup = function (_React$Component) {
+  _inherits(TransitionGroup, _React$Component);
+
+  function TransitionGroup(props, context) {
+    _classCallCheck(this, TransitionGroup);
+
+    var _this = _possibleConstructorReturn(this, _React$Component.call(this, props, context));
+
+    _this.performAppear = function (key, component) {
+      _this.currentlyTransitioningKeys[key] = true;
+
+      if (component.componentWillAppear) {
+        component.componentWillAppear(_this._handleDoneAppearing.bind(_this, key, component));
+      } else {
+        _this._handleDoneAppearing(key, component);
+      }
+    };
+
+    _this._handleDoneAppearing = function (key, component) {
+      if (component.componentDidAppear) {
+        component.componentDidAppear();
+      }
+
+      delete _this.currentlyTransitioningKeys[key];
+
+      var currentChildMapping = (0, _ChildMapping.getChildMapping)(_this.props.children);
+
+      if (!currentChildMapping || !currentChildMapping.hasOwnProperty(key)) {
+        // This was removed before it had fully appeared. Remove it.
+        _this.performLeave(key, component);
+      }
+    };
+
+    _this.performEnter = function (key, component) {
+      _this.currentlyTransitioningKeys[key] = true;
+
+      if (component.componentWillEnter) {
+        component.componentWillEnter(_this._handleDoneEntering.bind(_this, key, component));
+      } else {
+        _this._handleDoneEntering(key, component);
+      }
+    };
+
+    _this._handleDoneEntering = function (key, component) {
+      if (component.componentDidEnter) {
+        component.componentDidEnter();
+      }
+
+      delete _this.currentlyTransitioningKeys[key];
+
+      var currentChildMapping = (0, _ChildMapping.getChildMapping)(_this.props.children);
+
+      if (!currentChildMapping || !currentChildMapping.hasOwnProperty(key)) {
+        // This was removed before it had fully entered. Remove it.
+        _this.performLeave(key, component);
+      }
+    };
+
+    _this.performLeave = function (key, component) {
+      _this.currentlyTransitioningKeys[key] = true;
+
+      if (component.componentWillLeave) {
+        component.componentWillLeave(_this._handleDoneLeaving.bind(_this, key, component));
+      } else {
+        // Note that this is somewhat dangerous b/c it calls setState()
+        // again, effectively mutating the component before all the work
+        // is done.
+        _this._handleDoneLeaving(key, component);
+      }
+    };
+
+    _this._handleDoneLeaving = function (key, component) {
+      if (component.componentDidLeave) {
+        component.componentDidLeave();
+      }
+
+      delete _this.currentlyTransitioningKeys[key];
+
+      var currentChildMapping = (0, _ChildMapping.getChildMapping)(_this.props.children);
+
+      if (currentChildMapping && currentChildMapping.hasOwnProperty(key)) {
+        // This entered again before it fully left. Add it again.
+        _this.keysToEnter.push(key);
+      } else {
+        _this.setState(function (state) {
+          var newChildren = _extends({}, state.children);
+          delete newChildren[key];
+          return { children: newChildren };
+        });
+      }
+    };
+
+    _this.childRefs = Object.create(null);
+
+    _this.state = {
+      children: (0, _ChildMapping.getChildMapping)(props.children)
+    };
+    return _this;
+  }
+
+  TransitionGroup.prototype.componentWillMount = function componentWillMount() {
+    this.currentlyTransitioningKeys = {};
+    this.keysToEnter = [];
+    this.keysToLeave = [];
+  };
+
+  TransitionGroup.prototype.componentDidMount = function componentDidMount() {
+    var initialChildMapping = this.state.children;
+    for (var key in initialChildMapping) {
+      if (initialChildMapping[key]) {
+        this.performAppear(key, this.childRefs[key]);
+      }
+    }
+  };
+
+  TransitionGroup.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
+    var nextChildMapping = (0, _ChildMapping.getChildMapping)(nextProps.children);
+    var prevChildMapping = this.state.children;
+
+    this.setState({
+      children: (0, _ChildMapping.mergeChildMappings)(prevChildMapping, nextChildMapping)
+    });
+
+    for (var key in nextChildMapping) {
+      var hasPrev = prevChildMapping && prevChildMapping.hasOwnProperty(key);
+      if (nextChildMapping[key] && !hasPrev && !this.currentlyTransitioningKeys[key]) {
+        this.keysToEnter.push(key);
+      }
+    }
+
+    for (var _key in prevChildMapping) {
+      var hasNext = nextChildMapping && nextChildMapping.hasOwnProperty(_key);
+      if (prevChildMapping[_key] && !hasNext && !this.currentlyTransitioningKeys[_key]) {
+        this.keysToLeave.push(_key);
+      }
+    }
+
+    // If we want to someday check for reordering, we could do it here.
+  };
+
+  TransitionGroup.prototype.componentDidUpdate = function componentDidUpdate() {
+    var _this2 = this;
+
+    var keysToEnter = this.keysToEnter;
+    this.keysToEnter = [];
+    keysToEnter.forEach(function (key) {
+      return _this2.performEnter(key, _this2.childRefs[key]);
+    });
+
+    var keysToLeave = this.keysToLeave;
+    this.keysToLeave = [];
+    keysToLeave.forEach(function (key) {
+      return _this2.performLeave(key, _this2.childRefs[key]);
+    });
+  };
+
+  TransitionGroup.prototype.render = function render() {
+    var _this3 = this;
+
+    // TODO: we could get rid of the need for the wrapper node
+    // by cloning a single child
+    var childrenToRender = [];
+
+    var _loop = function _loop(key) {
+      var child = _this3.state.children[key];
+      if (child) {
+        var isCallbackRef = typeof child.ref !== 'string';
+        var factoryChild = _this3.props.childFactory(child);
+        var ref = function ref(r) {
+          _this3.childRefs[key] = r;
+        };
+
+         true ? (0, _warning2.default)(isCallbackRef, 'string refs are not supported on children of TransitionGroup and will be ignored. ' + 'Please use a callback ref instead: https://facebook.github.io/react/docs/refs-and-the-dom.html#the-ref-callback-attribute') : void 0;
+
+        // Always chaining the refs leads to problems when the childFactory
+        // wraps the child. The child ref callback gets called twice with the
+        // wrapper and the child. So we only need to chain the ref if the
+        // factoryChild is not different from child.
+        if (factoryChild === child && isCallbackRef) {
+          ref = (0, _chainFunction2.default)(child.ref, ref);
+        }
+
+        // You may need to apply reactive updates to a child as it is leaving.
+        // The normal React way to do it won't work since the child will have
+        // already been removed. In case you need this behavior you can provide
+        // a childFactory function to wrap every child, even the ones that are
+        // leaving.
+        childrenToRender.push(_react2.default.cloneElement(factoryChild, {
+          key: key,
+          ref: ref
+        }));
+      }
+    };
+
+    for (var key in this.state.children) {
+      _loop(key);
+    }
+
+    // Do not forward TransitionGroup props to primitive DOM nodes
+    var props = _extends({}, this.props);
+    delete props.transitionLeave;
+    delete props.transitionName;
+    delete props.transitionAppear;
+    delete props.transitionEnter;
+    delete props.childFactory;
+    delete props.transitionLeaveTimeout;
+    delete props.transitionEnterTimeout;
+    delete props.transitionAppearTimeout;
+    delete props.component;
+
+    return _react2.default.createElement(this.props.component, props, childrenToRender);
+  };
+
+  return TransitionGroup;
+}(_react2.default.Component);
+
+TransitionGroup.displayName = 'TransitionGroup';
+
+
+TransitionGroup.propTypes =  true ? propTypes : {};
+TransitionGroup.defaultProps = defaultProps;
+
+exports.default = TransitionGroup;
+module.exports = exports['default'];
+
+/***/ }),
+
+/***/ "./node_modules/react-transition-group/index.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _CSSTransitionGroup = __webpack_require__("./node_modules/react-transition-group/CSSTransitionGroup.js");
+
+var _CSSTransitionGroup2 = _interopRequireDefault(_CSSTransitionGroup);
+
+var _TransitionGroup = __webpack_require__("./node_modules/react-transition-group/TransitionGroup.js");
+
+var _TransitionGroup2 = _interopRequireDefault(_TransitionGroup);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = {
+  TransitionGroup: _TransitionGroup2.default,
+  CSSTransitionGroup: _CSSTransitionGroup2.default
+};
+
+/***/ }),
+
+/***/ "./node_modules/react-transition-group/utils/ChildMapping.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+exports.getChildMapping = getChildMapping;
+exports.mergeChildMappings = mergeChildMappings;
+
+var _react = __webpack_require__("./node_modules/react/index.js");
+
+/**
+ * Given `this.props.children`, return an object mapping key to child.
+ *
+ * @param {*} children `this.props.children`
+ * @return {object} Mapping of key to child
+ */
+function getChildMapping(children) {
+  if (!children) {
+    return children;
+  }
+  var result = {};
+  _react.Children.map(children, function (child) {
+    return child;
+  }).forEach(function (child) {
+    result[child.key] = child;
+  });
+  return result;
+}
+
+/**
+ * When you're adding or removing children some may be added or removed in the
+ * same render pass. We want to show *both* since we want to simultaneously
+ * animate elements in and out. This function takes a previous set of keys
+ * and a new set of keys and merges them with its best guess of the correct
+ * ordering. In the future we may expose some of the utilities in
+ * ReactMultiChild to make this easy, but for now React itself does not
+ * directly have this concept of the union of prevChildren and nextChildren
+ * so we implement it here.
+ *
+ * @param {object} prev prev children as returned from
+ * `ReactTransitionChildMapping.getChildMapping()`.
+ * @param {object} next next children as returned from
+ * `ReactTransitionChildMapping.getChildMapping()`.
+ * @return {object} a key set that contains all keys in `prev` and all keys
+ * in `next` in a reasonable order.
+ */
+function mergeChildMappings(prev, next) {
+  prev = prev || {};
+  next = next || {};
+
+  function getValueForKey(key) {
+    if (next.hasOwnProperty(key)) {
+      return next[key];
+    }
+
+    return prev[key];
+  }
+
+  // For each key of `next`, the list of keys to insert before that key in
+  // the combined list
+  var nextKeysPending = {};
+
+  var pendingKeys = [];
+  for (var prevKey in prev) {
+    if (next.hasOwnProperty(prevKey)) {
+      if (pendingKeys.length) {
+        nextKeysPending[prevKey] = pendingKeys;
+        pendingKeys = [];
+      }
+    } else {
+      pendingKeys.push(prevKey);
+    }
+  }
+
+  var i = void 0;
+  var childMapping = {};
+  for (var nextKey in next) {
+    if (nextKeysPending.hasOwnProperty(nextKey)) {
+      for (i = 0; i < nextKeysPending[nextKey].length; i++) {
+        var pendingNextKey = nextKeysPending[nextKey][i];
+        childMapping[nextKeysPending[nextKey][i]] = getValueForKey(pendingNextKey);
+      }
+    }
+    childMapping[nextKey] = getValueForKey(nextKey);
+  }
+
+  // Finally, add the keys which didn't appear before any key in `next`
+  for (i = 0; i < pendingKeys.length; i++) {
+    childMapping[pendingKeys[i]] = getValueForKey(pendingKeys[i]);
+  }
+
+  return childMapping;
+}
+
+/***/ }),
+
+/***/ "./node_modules/react-transition-group/utils/PropTypes.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+exports.nameShape = undefined;
+exports.transitionTimeout = transitionTimeout;
+
+var _react = __webpack_require__("./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__("./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function transitionTimeout(transitionType) {
+  var timeoutPropName = 'transition' + transitionType + 'Timeout';
+  var enabledPropName = 'transition' + transitionType;
+
+  return function (props) {
+    // If the transition is enabled
+    if (props[enabledPropName]) {
+      // If no timeout duration is provided
+      if (props[timeoutPropName] == null) {
+        return new Error(timeoutPropName + ' wasn\'t supplied to CSSTransitionGroup: ' + 'this can cause unreliable animations and won\'t be supported in ' + 'a future version of React. See ' + 'https://fb.me/react-animation-transition-group-timeout for more ' + 'information.');
+
+        // If the duration isn't a number
+      } else if (typeof props[timeoutPropName] !== 'number') {
+        return new Error(timeoutPropName + ' must be a number (in milliseconds)');
+      }
+    }
+
+    return null;
+  };
+}
+
+var nameShape = exports.nameShape = _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.shape({
+  enter: _propTypes2.default.string,
+  leave: _propTypes2.default.string,
+  active: _propTypes2.default.string
+}), _propTypes2.default.shape({
+  enter: _propTypes2.default.string,
+  enterActive: _propTypes2.default.string,
+  leave: _propTypes2.default.string,
+  leaveActive: _propTypes2.default.string,
+  appear: _propTypes2.default.string,
+  appearActive: _propTypes2.default.string
+})]);
+
+/***/ }),
+
+/***/ "./node_modules/reactstrap-tether/dist/js/tether.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+var require;var require;/*! tether 1.3.4 */
+(function(f){if(true){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.Tether = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return require(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+'use strict';
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+var _utils = require('./utils');
+
+var _utils2 = _interopRequireDefault(_utils);
+
+var _TetherBase$Utils = _utils2['default'].Utils;
+var getBounds = _TetherBase$Utils.getBounds;
+var updateClasses = _TetherBase$Utils.updateClasses;
+var defer = _TetherBase$Utils.defer;
+
+_utils2['default'].modules.push({
+  position: function position(_ref) {
+    var _this = this;
+
+    var top = _ref.top;
+    var left = _ref.left;
+
+    var _cache = this.cache('element-bounds', function () {
+      return getBounds(_this.element);
+    });
+
+    var height = _cache.height;
+    var width = _cache.width;
+
+    var targetPos = this.getTargetBounds();
+
+    var bottom = top + height;
+    var right = left + width;
+
+    var abutted = [];
+    if (top <= targetPos.bottom && bottom >= targetPos.top) {
+      ['left', 'right'].forEach(function (side) {
+        var targetPosSide = targetPos[side];
+        if (targetPosSide === left || targetPosSide === right) {
+          abutted.push(side);
+        }
+      });
+    }
+
+    if (left <= targetPos.right && right >= targetPos.left) {
+      ['top', 'bottom'].forEach(function (side) {
+        var targetPosSide = targetPos[side];
+        if (targetPosSide === top || targetPosSide === bottom) {
+          abutted.push(side);
+        }
+      });
+    }
+
+    var allClasses = [];
+    var addClasses = [];
+
+    var sides = ['left', 'top', 'right', 'bottom'];
+    allClasses.push(this.getClass('abutted'));
+    sides.forEach(function (side) {
+      allClasses.push(_this.getClass('abutted') + '-' + side);
+    });
+
+    if (abutted.length) {
+      addClasses.push(this.getClass('abutted'));
+    }
+
+    abutted.forEach(function (side) {
+      addClasses.push(_this.getClass('abutted') + '-' + side);
+    });
+
+    defer(function () {
+      if (!(_this.options.addTargetClasses === false)) {
+        updateClasses(_this.target, addClasses, allClasses);
+      }
+      updateClasses(_this.element, addClasses, allClasses);
+    });
+
+    return true;
+  }
+});
+
+},{"./utils":5}],2:[function(require,module,exports){
+'use strict';
+
+var _slicedToArray = (function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i['return']) _i['return'](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError('Invalid attempt to destructure non-iterable instance'); } }; })();
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+var _utils = require('./utils');
+
+var _utils2 = _interopRequireDefault(_utils);
+
+var _TetherBase$Utils = _utils2['default'].Utils;
+var getBounds = _TetherBase$Utils.getBounds;
+var extend = _TetherBase$Utils.extend;
+var updateClasses = _TetherBase$Utils.updateClasses;
+var defer = _TetherBase$Utils.defer;
+
+var BOUNDS_FORMAT = ['left', 'top', 'right', 'bottom'];
+
+function getBoundingRect(tether, to) {
+  if (to === 'scrollParent') {
+    to = tether.scrollParents[0];
+  } else if (to === 'window') {
+    to = [pageXOffset, pageYOffset, innerWidth + pageXOffset, innerHeight + pageYOffset];
+  }
+
+  if (to === document) {
+    to = to.documentElement;
+  }
+
+  if (typeof to.nodeType !== 'undefined') {
+    (function () {
+      var node = to;
+      var size = getBounds(to);
+      var pos = size;
+      var style = getComputedStyle(to);
+
+      to = [pos.left, pos.top, size.width + pos.left, size.height + pos.top];
+
+      // Account any parent Frames scroll offset
+      if (node.ownerDocument !== document) {
+        var win = node.ownerDocument.defaultView;
+        to[0] += win.pageXOffset;
+        to[1] += win.pageYOffset;
+        to[2] += win.pageXOffset;
+        to[3] += win.pageYOffset;
+      }
+
+      BOUNDS_FORMAT.forEach(function (side, i) {
+        side = side[0].toUpperCase() + side.substr(1);
+        if (side === 'Top' || side === 'Left') {
+          to[i] += parseFloat(style['border' + side + 'Width']);
+        } else {
+          to[i] -= parseFloat(style['border' + side + 'Width']);
+        }
+      });
+    })();
+  }
+
+  return to;
+}
+
+_utils2['default'].modules.push({
+  position: function position(_ref) {
+    var _this = this;
+
+    var top = _ref.top;
+    var left = _ref.left;
+    var targetAttachment = _ref.targetAttachment;
+
+    if (!this.options.constraints) {
+      return true;
+    }
+
+    var _cache = this.cache('element-bounds', function () {
+      return getBounds(_this.element);
+    });
+
+    var height = _cache.height;
+    var width = _cache.width;
+
+    if (width === 0 && height === 0 && typeof this.lastSize !== 'undefined') {
+      var _lastSize = this.lastSize;
+
+      // Handle the item getting hidden as a result of our positioning without glitching
+      // the classes in and out
+      width = _lastSize.width;
+      height = _lastSize.height;
+    }
+
+    var targetSize = this.cache('target-bounds', function () {
+      return _this.getTargetBounds();
+    });
+
+    var targetHeight = targetSize.height;
+    var targetWidth = targetSize.width;
+
+    var allClasses = [this.getClass('pinned'), this.getClass('out-of-bounds')];
+
+    this.options.constraints.forEach(function (constraint) {
+      var outOfBoundsClass = constraint.outOfBoundsClass;
+      var pinnedClass = constraint.pinnedClass;
+
+      if (outOfBoundsClass) {
+        allClasses.push(outOfBoundsClass);
+      }
+      if (pinnedClass) {
+        allClasses.push(pinnedClass);
+      }
+    });
+
+    allClasses.forEach(function (cls) {
+      ['left', 'top', 'right', 'bottom'].forEach(function (side) {
+        allClasses.push(cls + '-' + side);
+      });
+    });
+
+    var addClasses = [];
+
+    var tAttachment = extend({}, targetAttachment);
+    var eAttachment = extend({}, this.attachment);
+
+    this.options.constraints.forEach(function (constraint) {
+      var to = constraint.to;
+      var attachment = constraint.attachment;
+      var pin = constraint.pin;
+
+      if (typeof attachment === 'undefined') {
+        attachment = '';
+      }
+
+      var changeAttachX = undefined,
+          changeAttachY = undefined;
+      if (attachment.indexOf(' ') >= 0) {
+        var _attachment$split = attachment.split(' ');
+
+        var _attachment$split2 = _slicedToArray(_attachment$split, 2);
+
+        changeAttachY = _attachment$split2[0];
+        changeAttachX = _attachment$split2[1];
+      } else {
+        changeAttachX = changeAttachY = attachment;
+      }
+
+      var bounds = getBoundingRect(_this, to);
+
+      if (changeAttachY === 'target' || changeAttachY === 'both') {
+        if (top < bounds[1] && tAttachment.top === 'top') {
+          top += targetHeight;
+          tAttachment.top = 'bottom';
+        }
+
+        if (top + height > bounds[3] && tAttachment.top === 'bottom') {
+          top -= targetHeight;
+          tAttachment.top = 'top';
+        }
+      }
+
+      if (changeAttachY === 'together') {
+        if (tAttachment.top === 'top') {
+          if (eAttachment.top === 'bottom' && top < bounds[1]) {
+            top += targetHeight;
+            tAttachment.top = 'bottom';
+
+            top += height;
+            eAttachment.top = 'top';
+          } else if (eAttachment.top === 'top' && top + height > bounds[3] && top - (height - targetHeight) >= bounds[1]) {
+            top -= height - targetHeight;
+            tAttachment.top = 'bottom';
+
+            eAttachment.top = 'bottom';
+          }
+        }
+
+        if (tAttachment.top === 'bottom') {
+          if (eAttachment.top === 'top' && top + height > bounds[3]) {
+            top -= targetHeight;
+            tAttachment.top = 'top';
+
+            top -= height;
+            eAttachment.top = 'bottom';
+          } else if (eAttachment.top === 'bottom' && top < bounds[1] && top + (height * 2 - targetHeight) <= bounds[3]) {
+            top += height - targetHeight;
+            tAttachment.top = 'top';
+
+            eAttachment.top = 'top';
+          }
+        }
+
+        if (tAttachment.top === 'middle') {
+          if (top + height > bounds[3] && eAttachment.top === 'top') {
+            top -= height;
+            eAttachment.top = 'bottom';
+          } else if (top < bounds[1] && eAttachment.top === 'bottom') {
+            top += height;
+            eAttachment.top = 'top';
+          }
+        }
+      }
+
+      if (changeAttachX === 'target' || changeAttachX === 'both') {
+        if (left < bounds[0] && tAttachment.left === 'left') {
+          left += targetWidth;
+          tAttachment.left = 'right';
+        }
+
+        if (left + width > bounds[2] && tAttachment.left === 'right') {
+          left -= targetWidth;
+          tAttachment.left = 'left';
+        }
+      }
+
+      if (changeAttachX === 'together') {
+        if (left < bounds[0] && tAttachment.left === 'left') {
+          if (eAttachment.left === 'right') {
+            left += targetWidth;
+            tAttachment.left = 'right';
+
+            left += width;
+            eAttachment.left = 'left';
+          } else if (eAttachment.left === 'left') {
+            left += targetWidth;
+            tAttachment.left = 'right';
+
+            left -= width;
+            eAttachment.left = 'right';
+          }
+        } else if (left + width > bounds[2] && tAttachment.left === 'right') {
+          if (eAttachment.left === 'left') {
+            left -= targetWidth;
+            tAttachment.left = 'left';
+
+            left -= width;
+            eAttachment.left = 'right';
+          } else if (eAttachment.left === 'right') {
+            left -= targetWidth;
+            tAttachment.left = 'left';
+
+            left += width;
+            eAttachment.left = 'left';
+          }
+        } else if (tAttachment.left === 'center') {
+          if (left + width > bounds[2] && eAttachment.left === 'left') {
+            left -= width;
+            eAttachment.left = 'right';
+          } else if (left < bounds[0] && eAttachment.left === 'right') {
+            left += width;
+            eAttachment.left = 'left';
+          }
+        }
+      }
+
+      if (changeAttachY === 'element' || changeAttachY === 'both') {
+        if (top < bounds[1] && eAttachment.top === 'bottom') {
+          top += height;
+          eAttachment.top = 'top';
+        }
+
+        if (top + height > bounds[3] && eAttachment.top === 'top') {
+          top -= height;
+          eAttachment.top = 'bottom';
+        }
+      }
+
+      if (changeAttachX === 'element' || changeAttachX === 'both') {
+        if (left < bounds[0]) {
+          if (eAttachment.left === 'right') {
+            left += width;
+            eAttachment.left = 'left';
+          } else if (eAttachment.left === 'center') {
+            left += width / 2;
+            eAttachment.left = 'left';
+          }
+        }
+
+        if (left + width > bounds[2]) {
+          if (eAttachment.left === 'left') {
+            left -= width;
+            eAttachment.left = 'right';
+          } else if (eAttachment.left === 'center') {
+            left -= width / 2;
+            eAttachment.left = 'right';
+          }
+        }
+      }
+
+      if (typeof pin === 'string') {
+        pin = pin.split(',').map(function (p) {
+          return p.trim();
+        });
+      } else if (pin === true) {
+        pin = ['top', 'left', 'right', 'bottom'];
+      }
+
+      pin = pin || [];
+
+      var pinned = [];
+      var oob = [];
+
+      if (top < bounds[1]) {
+        if (pin.indexOf('top') >= 0) {
+          top = bounds[1];
+          pinned.push('top');
+        } else {
+          oob.push('top');
+        }
+      }
+
+      if (top + height > bounds[3]) {
+        if (pin.indexOf('bottom') >= 0) {
+          top = bounds[3] - height;
+          pinned.push('bottom');
+        } else {
+          oob.push('bottom');
+        }
+      }
+
+      if (left < bounds[0]) {
+        if (pin.indexOf('left') >= 0) {
+          left = bounds[0];
+          pinned.push('left');
+        } else {
+          oob.push('left');
+        }
+      }
+
+      if (left + width > bounds[2]) {
+        if (pin.indexOf('right') >= 0) {
+          left = bounds[2] - width;
+          pinned.push('right');
+        } else {
+          oob.push('right');
+        }
+      }
+
+      if (pinned.length) {
+        (function () {
+          var pinnedClass = undefined;
+          if (typeof _this.options.pinnedClass !== 'undefined') {
+            pinnedClass = _this.options.pinnedClass;
+          } else {
+            pinnedClass = _this.getClass('pinned');
+          }
+
+          addClasses.push(pinnedClass);
+          pinned.forEach(function (side) {
+            addClasses.push(pinnedClass + '-' + side);
+          });
+        })();
+      }
+
+      if (oob.length) {
+        (function () {
+          var oobClass = undefined;
+          if (typeof _this.options.outOfBoundsClass !== 'undefined') {
+            oobClass = _this.options.outOfBoundsClass;
+          } else {
+            oobClass = _this.getClass('out-of-bounds');
+          }
+
+          addClasses.push(oobClass);
+          oob.forEach(function (side) {
+            addClasses.push(oobClass + '-' + side);
+          });
+        })();
+      }
+
+      if (pinned.indexOf('left') >= 0 || pinned.indexOf('right') >= 0) {
+        eAttachment.left = tAttachment.left = false;
+      }
+      if (pinned.indexOf('top') >= 0 || pinned.indexOf('bottom') >= 0) {
+        eAttachment.top = tAttachment.top = false;
+      }
+
+      if (tAttachment.top !== targetAttachment.top || tAttachment.left !== targetAttachment.left || eAttachment.top !== _this.attachment.top || eAttachment.left !== _this.attachment.left) {
+        _this.updateAttachClasses(eAttachment, tAttachment);
+        _this.trigger('update', {
+          attachment: eAttachment,
+          targetAttachment: tAttachment
+        });
+      }
+    });
+
+    defer(function () {
+      if (!(_this.options.addTargetClasses === false)) {
+        updateClasses(_this.target, addClasses, allClasses);
+      }
+      updateClasses(_this.element, addClasses, allClasses);
+    });
+
+    return { top: top, left: left };
+  }
+});
+
+},{"./utils":5}],3:[function(require,module,exports){
+'use strict';
+
+var _slicedToArray = (function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i['return']) _i['return'](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError('Invalid attempt to destructure non-iterable instance'); } }; })();
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+var _utils = require('./utils');
+
+var _utils2 = _interopRequireDefault(_utils);
+
+_utils2['default'].modules.push({
+  position: function position(_ref) {
+    var top = _ref.top;
+    var left = _ref.left;
+
+    if (!this.options.shift) {
+      return;
+    }
+
+    var shift = this.options.shift;
+    if (typeof this.options.shift === 'function') {
+      shift = this.options.shift.call(this, { top: top, left: left });
+    }
+
+    var shiftTop = undefined,
+        shiftLeft = undefined;
+    if (typeof shift === 'string') {
+      shift = shift.split(' ');
+      shift[1] = shift[1] || shift[0];
+
+      var _shift = shift;
+
+      var _shift2 = _slicedToArray(_shift, 2);
+
+      shiftTop = _shift2[0];
+      shiftLeft = _shift2[1];
+
+      shiftTop = parseFloat(shiftTop, 10);
+      shiftLeft = parseFloat(shiftLeft, 10);
+    } else {
+      shiftTop = shift.top;
+      shiftLeft = shift.left;
+    }
+
+    top += shiftTop;
+    left += shiftLeft;
+
+    return { top: top, left: left };
+  }
+});
+
+},{"./utils":5}],4:[function(require,module,exports){
+/* globals performance */
+
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+
+var _slicedToArray = (function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i['return']) _i['return'](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError('Invalid attempt to destructure non-iterable instance'); } }; })();
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x6, _x7, _x8) { var _again = true; _function: while (_again) { var object = _x6, property = _x7, receiver = _x8; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x6 = parent; _x7 = property; _x8 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _utils = require('./utils');
+
+var _utils2 = _interopRequireDefault(_utils);
+
+require('./constraint');
+
+require('./abutment');
+
+require('./shift');
+
+var _TetherBase$Utils = _utils2['default'].Utils;
+var getScrollParents = _TetherBase$Utils.getScrollParents;
+var getBounds = _TetherBase$Utils.getBounds;
+var getOffsetParent = _TetherBase$Utils.getOffsetParent;
+var extend = _TetherBase$Utils.extend;
+var addClass = _TetherBase$Utils.addClass;
+var removeClass = _TetherBase$Utils.removeClass;
+var updateClasses = _TetherBase$Utils.updateClasses;
+var defer = _TetherBase$Utils.defer;
+var flush = _TetherBase$Utils.flush;
+var getScrollBarSize = _TetherBase$Utils.getScrollBarSize;
+var removeUtilElements = _TetherBase$Utils.removeUtilElements;
+var Evented = _TetherBase$Utils.Evented;
+
+function within(a, b) {
+  var diff = arguments.length <= 2 || arguments[2] === undefined ? 1 : arguments[2];
+
+  return a + diff >= b && b >= a - diff;
+}
+
+var transformKey = (function () {
+  if (typeof document === 'undefined') {
+    return '';
+  }
+  var el = document.createElement('div');
+
+  var transforms = ['transform', 'WebkitTransform', 'OTransform', 'MozTransform', 'msTransform'];
+  for (var i = 0; i < transforms.length; ++i) {
+    var key = transforms[i];
+    if (el.style[key] !== undefined) {
+      return key;
+    }
+  }
+})();
+
+var tethers = [];
+
+var position = function position() {
+  tethers.forEach(function (tether) {
+    tether.position(false);
+  });
+  flush();
+};
+
+function now() {
+  if (typeof performance !== 'undefined' && typeof performance.now !== 'undefined') {
+    return performance.now();
+  }
+  return +new Date();
+}
+
+(function () {
+  var lastCall = null;
+  var lastDuration = null;
+  var pendingTimeout = null;
+
+  var tick = function tick() {
+    if (typeof lastDuration !== 'undefined' && lastDuration > 16) {
+      // We voluntarily throttle ourselves if we can't manage 60fps
+      lastDuration = Math.min(lastDuration - 16, 250);
+
+      // Just in case this is the last event, remember to position just once more
+      pendingTimeout = setTimeout(tick, 250);
+      return;
+    }
+
+    if (typeof lastCall !== 'undefined' && now() - lastCall < 10) {
+      // Some browsers call events a little too frequently, refuse to run more than is reasonable
+      return;
+    }
+
+    if (pendingTimeout != null) {
+      clearTimeout(pendingTimeout);
+      pendingTimeout = null;
+    }
+
+    lastCall = now();
+    position();
+    lastDuration = now() - lastCall;
+  };
+
+  if (typeof window !== 'undefined' && typeof window.addEventListener !== 'undefined') {
+    ['resize', 'scroll', 'touchmove'].forEach(function (event) {
+      window.addEventListener(event, tick);
+    });
+  }
+})();
+
+var MIRROR_LR = {
+  center: 'center',
+  left: 'right',
+  right: 'left'
+};
+
+var MIRROR_TB = {
+  middle: 'middle',
+  top: 'bottom',
+  bottom: 'top'
+};
+
+var OFFSET_MAP = {
+  top: 0,
+  left: 0,
+  middle: '50%',
+  center: '50%',
+  bottom: '100%',
+  right: '100%'
+};
+
+var autoToFixedAttachment = function autoToFixedAttachment(attachment, relativeToAttachment) {
+  var left = attachment.left;
+  var top = attachment.top;
+
+  if (left === 'auto') {
+    left = MIRROR_LR[relativeToAttachment.left];
+  }
+
+  if (top === 'auto') {
+    top = MIRROR_TB[relativeToAttachment.top];
+  }
+
+  return { left: left, top: top };
+};
+
+var attachmentToOffset = function attachmentToOffset(attachment) {
+  var left = attachment.left;
+  var top = attachment.top;
+
+  if (typeof OFFSET_MAP[attachment.left] !== 'undefined') {
+    left = OFFSET_MAP[attachment.left];
+  }
+
+  if (typeof OFFSET_MAP[attachment.top] !== 'undefined') {
+    top = OFFSET_MAP[attachment.top];
+  }
+
+  return { left: left, top: top };
+};
+
+function addOffset() {
+  var out = { top: 0, left: 0 };
+
+  for (var _len = arguments.length, offsets = Array(_len), _key = 0; _key < _len; _key++) {
+    offsets[_key] = arguments[_key];
+  }
+
+  offsets.forEach(function (_ref) {
+    var top = _ref.top;
+    var left = _ref.left;
+
+    if (typeof top === 'string') {
+      top = parseFloat(top, 10);
+    }
+    if (typeof left === 'string') {
+      left = parseFloat(left, 10);
+    }
+
+    out.top += top;
+    out.left += left;
+  });
+
+  return out;
+}
+
+function offsetToPx(offset, size) {
+  if (typeof offset.left === 'string' && offset.left.indexOf('%') !== -1) {
+    offset.left = parseFloat(offset.left, 10) / 100 * size.width;
+  }
+  if (typeof offset.top === 'string' && offset.top.indexOf('%') !== -1) {
+    offset.top = parseFloat(offset.top, 10) / 100 * size.height;
+  }
+
+  return offset;
+}
+
+var parseOffset = function parseOffset(value) {
+  var _value$split = value.split(' ');
+
+  var _value$split2 = _slicedToArray(_value$split, 2);
+
+  var top = _value$split2[0];
+  var left = _value$split2[1];
+
+  return { top: top, left: left };
+};
+var parseAttachment = parseOffset;
+
+var TetherClass = (function (_Evented) {
+  _inherits(TetherClass, _Evented);
+
+  function TetherClass(options) {
+    var _this = this;
+
+    _classCallCheck(this, TetherClass);
+
+    _get(Object.getPrototypeOf(TetherClass.prototype), 'constructor', this).call(this);
+    this.position = this.position.bind(this);
+
+    tethers.push(this);
+
+    this.history = [];
+
+    this.setOptions(options, false);
+
+    _utils2['default'].modules.forEach(function (module) {
+      if (typeof module.initialize !== 'undefined') {
+        module.initialize.call(_this);
+      }
+    });
+
+    this.position();
+  }
+
+  _createClass(TetherClass, [{
+    key: 'getClass',
+    value: function getClass() {
+      var key = arguments.length <= 0 || arguments[0] === undefined ? '' : arguments[0];
+      var classes = this.options.classes;
+
+      if (typeof classes !== 'undefined' && classes[key]) {
+        return this.options.classes[key];
+      } else if (this.options.classPrefix) {
+        return this.options.classPrefix + '-' + key;
+      } else {
+        return key;
+      }
+    }
+  }, {
+    key: 'setOptions',
+    value: function setOptions(options) {
+      var _this2 = this;
+
+      var pos = arguments.length <= 1 || arguments[1] === undefined ? true : arguments[1];
+
+      var defaults = {
+        offset: '0 0',
+        targetOffset: '0 0',
+        targetAttachment: 'auto auto',
+        classPrefix: 'tether'
+      };
+
+      this.options = extend(defaults, options);
+
+      var _options = this.options;
+      var element = _options.element;
+      var target = _options.target;
+      var targetModifier = _options.targetModifier;
+
+      this.element = element;
+      this.target = target;
+      this.targetModifier = targetModifier;
+
+      if (this.target === 'viewport') {
+        this.target = document.body;
+        this.targetModifier = 'visible';
+      } else if (this.target === 'scroll-handle') {
+        this.target = document.body;
+        this.targetModifier = 'scroll-handle';
+      }
+
+      ['element', 'target'].forEach(function (key) {
+        if (typeof _this2[key] === 'undefined') {
+          throw new Error('Tether Error: Both element and target must be defined');
+        }
+
+        if (typeof _this2[key].jquery !== 'undefined') {
+          _this2[key] = _this2[key][0];
+        } else if (typeof _this2[key] === 'string') {
+          _this2[key] = document.querySelector(_this2[key]);
+        }
+      });
+
+      addClass(this.element, this.getClass('element'));
+      if (!(this.options.addTargetClasses === false)) {
+        addClass(this.target, this.getClass('target'));
+      }
+
+      if (!this.options.attachment) {
+        throw new Error('Tether Error: You must provide an attachment');
+      }
+
+      this.targetAttachment = parseAttachment(this.options.targetAttachment);
+      this.attachment = parseAttachment(this.options.attachment);
+      this.offset = parseOffset(this.options.offset);
+      this.targetOffset = parseOffset(this.options.targetOffset);
+
+      if (typeof this.scrollParents !== 'undefined') {
+        this.disable();
+      }
+
+      if (this.targetModifier === 'scroll-handle') {
+        this.scrollParents = [this.target];
+      } else {
+        this.scrollParents = getScrollParents(this.target);
+      }
+
+      if (!(this.options.enabled === false)) {
+        this.enable(pos);
+      }
+    }
+  }, {
+    key: 'getTargetBounds',
+    value: function getTargetBounds() {
+      if (typeof this.targetModifier !== 'undefined') {
+        if (this.targetModifier === 'visible') {
+          if (this.target === document.body) {
+            return { top: pageYOffset, left: pageXOffset, height: innerHeight, width: innerWidth };
+          } else {
+            var bounds = getBounds(this.target);
+
+            var out = {
+              height: bounds.height,
+              width: bounds.width,
+              top: bounds.top,
+              left: bounds.left
+            };
+
+            out.height = Math.min(out.height, bounds.height - (pageYOffset - bounds.top));
+            out.height = Math.min(out.height, bounds.height - (bounds.top + bounds.height - (pageYOffset + innerHeight)));
+            out.height = Math.min(innerHeight, out.height);
+            out.height -= 2;
+
+            out.width = Math.min(out.width, bounds.width - (pageXOffset - bounds.left));
+            out.width = Math.min(out.width, bounds.width - (bounds.left + bounds.width - (pageXOffset + innerWidth)));
+            out.width = Math.min(innerWidth, out.width);
+            out.width -= 2;
+
+            if (out.top < pageYOffset) {
+              out.top = pageYOffset;
+            }
+            if (out.left < pageXOffset) {
+              out.left = pageXOffset;
+            }
+
+            return out;
+          }
+        } else if (this.targetModifier === 'scroll-handle') {
+          var bounds = undefined;
+          var target = this.target;
+          if (target === document.body) {
+            target = document.documentElement;
+
+            bounds = {
+              left: pageXOffset,
+              top: pageYOffset,
+              height: innerHeight,
+              width: innerWidth
+            };
+          } else {
+            bounds = getBounds(target);
+          }
+
+          var style = getComputedStyle(target);
+
+          var hasBottomScroll = target.scrollWidth > target.clientWidth || [style.overflow, style.overflowX].indexOf('scroll') >= 0 || this.target !== document.body;
+
+          var scrollBottom = 0;
+          if (hasBottomScroll) {
+            scrollBottom = 15;
+          }
+
+          var height = bounds.height - parseFloat(style.borderTopWidth) - parseFloat(style.borderBottomWidth) - scrollBottom;
+
+          var out = {
+            width: 15,
+            height: height * 0.975 * (height / target.scrollHeight),
+            left: bounds.left + bounds.width - parseFloat(style.borderLeftWidth) - 15
+          };
+
+          var fitAdj = 0;
+          if (height < 408 && this.target === document.body) {
+            fitAdj = -0.00011 * Math.pow(height, 2) - 0.00727 * height + 22.58;
+          }
+
+          if (this.target !== document.body) {
+            out.height = Math.max(out.height, 24);
+          }
+
+          var scrollPercentage = this.target.scrollTop / (target.scrollHeight - height);
+          out.top = scrollPercentage * (height - out.height - fitAdj) + bounds.top + parseFloat(style.borderTopWidth);
+
+          if (this.target === document.body) {
+            out.height = Math.max(out.height, 24);
+          }
+
+          return out;
+        }
+      } else {
+        return getBounds(this.target);
+      }
+    }
+  }, {
+    key: 'clearCache',
+    value: function clearCache() {
+      this._cache = {};
+    }
+  }, {
+    key: 'cache',
+    value: function cache(k, getter) {
+      // More than one module will often need the same DOM info, so
+      // we keep a cache which is cleared on each position call
+      if (typeof this._cache === 'undefined') {
+        this._cache = {};
+      }
+
+      if (typeof this._cache[k] === 'undefined') {
+        this._cache[k] = getter.call(this);
+      }
+
+      return this._cache[k];
+    }
+  }, {
+    key: 'enable',
+    value: function enable() {
+      var _this3 = this;
+
+      var pos = arguments.length <= 0 || arguments[0] === undefined ? true : arguments[0];
+
+      if (!(this.options.addTargetClasses === false)) {
+        addClass(this.target, this.getClass('enabled'));
+      }
+      addClass(this.element, this.getClass('enabled'));
+      this.enabled = true;
+
+      this.scrollParents.forEach(function (parent) {
+        if (parent !== _this3.target.ownerDocument) {
+          parent.addEventListener('scroll', _this3.position);
+        }
+      });
+
+      if (pos) {
+        this.position();
+      }
+    }
+  }, {
+    key: 'disable',
+    value: function disable() {
+      var _this4 = this;
+
+      removeClass(this.target, this.getClass('enabled'));
+      removeClass(this.element, this.getClass('enabled'));
+      this.enabled = false;
+
+      if (typeof this.scrollParents !== 'undefined') {
+        this.scrollParents.forEach(function (parent) {
+          parent.removeEventListener('scroll', _this4.position);
+        });
+      }
+    }
+  }, {
+    key: 'destroy',
+    value: function destroy() {
+      var _this5 = this;
+
+      this.disable();
+
+      tethers.forEach(function (tether, i) {
+        if (tether === _this5) {
+          tethers.splice(i, 1);
+        }
+      });
+
+      // Remove any elements we were using for convenience from the DOM
+      if (tethers.length === 0) {
+        removeUtilElements();
+      }
+    }
+  }, {
+    key: 'updateAttachClasses',
+    value: function updateAttachClasses(elementAttach, targetAttach) {
+      var _this6 = this;
+
+      elementAttach = elementAttach || this.attachment;
+      targetAttach = targetAttach || this.targetAttachment;
+      var sides = ['left', 'top', 'bottom', 'right', 'middle', 'center'];
+
+      if (typeof this._addAttachClasses !== 'undefined' && this._addAttachClasses.length) {
+        // updateAttachClasses can be called more than once in a position call, so
+        // we need to clean up after ourselves such that when the last defer gets
+        // ran it doesn't add any extra classes from previous calls.
+        this._addAttachClasses.splice(0, this._addAttachClasses.length);
+      }
+
+      if (typeof this._addAttachClasses === 'undefined') {
+        this._addAttachClasses = [];
+      }
+      var add = this._addAttachClasses;
+
+      if (elementAttach.top) {
+        add.push(this.getClass('element-attached') + '-' + elementAttach.top);
+      }
+      if (elementAttach.left) {
+        add.push(this.getClass('element-attached') + '-' + elementAttach.left);
+      }
+      if (targetAttach.top) {
+        add.push(this.getClass('target-attached') + '-' + targetAttach.top);
+      }
+      if (targetAttach.left) {
+        add.push(this.getClass('target-attached') + '-' + targetAttach.left);
+      }
+
+      var all = [];
+      sides.forEach(function (side) {
+        all.push(_this6.getClass('element-attached') + '-' + side);
+        all.push(_this6.getClass('target-attached') + '-' + side);
+      });
+
+      defer(function () {
+        if (!(typeof _this6._addAttachClasses !== 'undefined')) {
+          return;
+        }
+
+        updateClasses(_this6.element, _this6._addAttachClasses, all);
+        if (!(_this6.options.addTargetClasses === false)) {
+          updateClasses(_this6.target, _this6._addAttachClasses, all);
+        }
+
+        delete _this6._addAttachClasses;
+      });
+    }
+  }, {
+    key: 'position',
+    value: function position() {
+      var _this7 = this;
+
+      var flushChanges = arguments.length <= 0 || arguments[0] === undefined ? true : arguments[0];
+
+      // flushChanges commits the changes immediately, leave true unless you are positioning multiple
+      // tethers (in which case call Tether.Utils.flush yourself when you're done)
+
+      if (!this.enabled) {
+        return;
+      }
+
+      this.clearCache();
+
+      // Turn 'auto' attachments into the appropriate corner or edge
+      var targetAttachment = autoToFixedAttachment(this.targetAttachment, this.attachment);
+
+      this.updateAttachClasses(this.attachment, targetAttachment);
+
+      var elementPos = this.cache('element-bounds', function () {
+        return getBounds(_this7.element);
+      });
+
+      var width = elementPos.width;
+      var height = elementPos.height;
+
+      if (width === 0 && height === 0 && typeof this.lastSize !== 'undefined') {
+        var _lastSize = this.lastSize;
+
+        // We cache the height and width to make it possible to position elements that are
+        // getting hidden.
+        width = _lastSize.width;
+        height = _lastSize.height;
+      } else {
+        this.lastSize = { width: width, height: height };
+      }
+
+      var targetPos = this.cache('target-bounds', function () {
+        return _this7.getTargetBounds();
+      });
+      var targetSize = targetPos;
+
+      // Get an actual px offset from the attachment
+      var offset = offsetToPx(attachmentToOffset(this.attachment), { width: width, height: height });
+      var targetOffset = offsetToPx(attachmentToOffset(targetAttachment), targetSize);
+
+      var manualOffset = offsetToPx(this.offset, { width: width, height: height });
+      var manualTargetOffset = offsetToPx(this.targetOffset, targetSize);
+
+      // Add the manually provided offset
+      offset = addOffset(offset, manualOffset);
+      targetOffset = addOffset(targetOffset, manualTargetOffset);
+
+      // It's now our goal to make (element position + offset) == (target position + target offset)
+      var left = targetPos.left + targetOffset.left - offset.left;
+      var top = targetPos.top + targetOffset.top - offset.top;
+
+      for (var i = 0; i < _utils2['default'].modules.length; ++i) {
+        var _module2 = _utils2['default'].modules[i];
+        var ret = _module2.position.call(this, {
+          left: left,
+          top: top,
+          targetAttachment: targetAttachment,
+          targetPos: targetPos,
+          elementPos: elementPos,
+          offset: offset,
+          targetOffset: targetOffset,
+          manualOffset: manualOffset,
+          manualTargetOffset: manualTargetOffset,
+          scrollbarSize: scrollbarSize,
+          attachment: this.attachment
+        });
+
+        if (ret === false) {
+          return false;
+        } else if (typeof ret === 'undefined' || typeof ret !== 'object') {
+          continue;
+        } else {
+          top = ret.top;
+          left = ret.left;
+        }
+      }
+
+      // We describe the position three different ways to give the optimizer
+      // a chance to decide the best possible way to position the element
+      // with the fewest repaints.
+      var next = {
+        // It's position relative to the page (absolute positioning when
+        // the element is a child of the body)
+        page: {
+          top: top,
+          left: left
+        },
+
+        // It's position relative to the viewport (fixed positioning)
+        viewport: {
+          top: top - pageYOffset,
+          bottom: pageYOffset - top - height + innerHeight,
+          left: left - pageXOffset,
+          right: pageXOffset - left - width + innerWidth
+        }
+      };
+
+      var doc = this.target.ownerDocument;
+      var win = doc.defaultView;
+
+      var scrollbarSize = undefined;
+      if (doc.body.scrollWidth > win.innerWidth) {
+        scrollbarSize = this.cache('scrollbar-size', getScrollBarSize);
+        next.viewport.bottom -= scrollbarSize.height;
+      }
+
+      if (doc.body.scrollHeight > win.innerHeight) {
+        scrollbarSize = this.cache('scrollbar-size', getScrollBarSize);
+        next.viewport.right -= scrollbarSize.width;
+      }
+
+      if (['', 'static'].indexOf(doc.body.style.position) === -1 || ['', 'static'].indexOf(doc.body.parentElement.style.position) === -1) {
+        // Absolute positioning in the body will be relative to the page, not the 'initial containing block'
+        next.page.bottom = doc.body.scrollHeight - top - height;
+        next.page.right = doc.body.scrollWidth - left - width;
+      }
+
+      if (typeof this.options.optimizations !== 'undefined' && this.options.optimizations.moveElement !== false && !(typeof this.targetModifier !== 'undefined')) {
+        (function () {
+          var offsetParent = _this7.cache('target-offsetparent', function () {
+            return getOffsetParent(_this7.target);
+          });
+          var offsetPosition = _this7.cache('target-offsetparent-bounds', function () {
+            return getBounds(offsetParent);
+          });
+          var offsetParentStyle = getComputedStyle(offsetParent);
+          var offsetParentSize = offsetPosition;
+
+          var offsetBorder = {};
+          ['Top', 'Left', 'Bottom', 'Right'].forEach(function (side) {
+            offsetBorder[side.toLowerCase()] = parseFloat(offsetParentStyle['border' + side + 'Width']);
+          });
+
+          offsetPosition.right = doc.body.scrollWidth - offsetPosition.left - offsetParentSize.width + offsetBorder.right;
+          offsetPosition.bottom = doc.body.scrollHeight - offsetPosition.top - offsetParentSize.height + offsetBorder.bottom;
+
+          if (next.page.top >= offsetPosition.top + offsetBorder.top && next.page.bottom >= offsetPosition.bottom) {
+            if (next.page.left >= offsetPosition.left + offsetBorder.left && next.page.right >= offsetPosition.right) {
+              // We're within the visible part of the target's scroll parent
+              var scrollTop = offsetParent.scrollTop;
+              var scrollLeft = offsetParent.scrollLeft;
+
+              // It's position relative to the target's offset parent (absolute positioning when
+              // the element is moved to be a child of the target's offset parent).
+              next.offset = {
+                top: next.page.top - offsetPosition.top + scrollTop - offsetBorder.top,
+                left: next.page.left - offsetPosition.left + scrollLeft - offsetBorder.left
+              };
+            }
+          }
+        })();
+      }
+
+      // We could also travel up the DOM and try each containing context, rather than only
+      // looking at the body, but we're gonna get diminishing returns.
+
+      this.move(next);
+
+      this.history.unshift(next);
+
+      if (this.history.length > 3) {
+        this.history.pop();
+      }
+
+      if (flushChanges) {
+        flush();
+      }
+
+      return true;
+    }
+
+    // THE ISSUE
+  }, {
+    key: 'move',
+    value: function move(pos) {
+      var _this8 = this;
+
+      if (!(typeof this.element.parentNode !== 'undefined')) {
+        return;
+      }
+
+      var same = {};
+
+      for (var type in pos) {
+        same[type] = {};
+
+        for (var key in pos[type]) {
+          var found = false;
+
+          for (var i = 0; i < this.history.length; ++i) {
+            var point = this.history[i];
+            if (typeof point[type] !== 'undefined' && !within(point[type][key], pos[type][key])) {
+              found = true;
+              break;
+            }
+          }
+
+          if (!found) {
+            same[type][key] = true;
+          }
+        }
+      }
+
+      var css = { top: '', left: '', right: '', bottom: '' };
+
+      var transcribe = function transcribe(_same, _pos) {
+        var hasOptimizations = typeof _this8.options.optimizations !== 'undefined';
+        var gpu = hasOptimizations ? _this8.options.optimizations.gpu : null;
+        if (gpu !== false) {
+          var yPos = undefined,
+              xPos = undefined;
+          if (_same.top) {
+            css.top = 0;
+            yPos = _pos.top;
+          } else {
+            css.bottom = 0;
+            yPos = -_pos.bottom;
+          }
+
+          if (_same.left) {
+            css.left = 0;
+            xPos = _pos.left;
+          } else {
+            css.right = 0;
+            xPos = -_pos.right;
+          }
+
+          css[transformKey] = 'translateX(' + Math.round(xPos) + 'px) translateY(' + Math.round(yPos) + 'px)';
+
+          if (transformKey !== 'msTransform') {
+            // The Z transform will keep this in the GPU (faster, and prevents artifacts),
+            // but IE9 doesn't support 3d transforms and will choke.
+            css[transformKey] += " translateZ(0)";
+          }
+        } else {
+          if (_same.top) {
+            css.top = _pos.top + 'px';
+          } else {
+            css.bottom = _pos.bottom + 'px';
+          }
+
+          if (_same.left) {
+            css.left = _pos.left + 'px';
+          } else {
+            css.right = _pos.right + 'px';
+          }
+        }
+      };
+
+      var moved = false;
+      if ((same.page.top || same.page.bottom) && (same.page.left || same.page.right)) {
+        css.position = 'absolute';
+        transcribe(same.page, pos.page);
+      } else if ((same.viewport.top || same.viewport.bottom) && (same.viewport.left || same.viewport.right)) {
+        css.position = 'fixed';
+        transcribe(same.viewport, pos.viewport);
+      } else if (typeof same.offset !== 'undefined' && same.offset.top && same.offset.left) {
+        (function () {
+          css.position = 'absolute';
+          var offsetParent = _this8.cache('target-offsetparent', function () {
+            return getOffsetParent(_this8.target);
+          });
+
+          if (getOffsetParent(_this8.element) !== offsetParent) {
+            defer(function () {
+              _this8.element.parentNode.removeChild(_this8.element);
+              offsetParent.appendChild(_this8.element);
+            });
+          }
+
+          transcribe(same.offset, pos.offset);
+          moved = true;
+        })();
+      } else {
+        css.position = 'absolute';
+        transcribe({ top: true, left: true }, pos.page);
+      }
+
+      if (!moved) {
+        var offsetParentIsBody = true;
+        var currentNode = this.element.parentNode;
+        while (currentNode && currentNode.nodeType === 1 && currentNode.tagName !== 'BODY') {
+          if (getComputedStyle(currentNode).position !== 'static') {
+            offsetParentIsBody = false;
+            break;
+          }
+
+          currentNode = currentNode.parentNode;
+        }
+
+        if (!offsetParentIsBody) {
+          this.element.parentNode.removeChild(this.element);
+          this.element.ownerDocument.body.appendChild(this.element);
+        }
+      }
+
+      // Any css change will trigger a repaint, so let's avoid one if nothing changed
+      var writeCSS = {};
+      var write = false;
+      for (var key in css) {
+        var val = css[key];
+        var elVal = this.element.style[key];
+
+        if (elVal !== val) {
+          write = true;
+          writeCSS[key] = val;
+        }
+      }
+
+      if (write) {
+        defer(function () {
+          extend(_this8.element.style, writeCSS);
+          _this8.trigger('repositioned');
+        });
+      }
+    }
+  }]);
+
+  return TetherClass;
+})(Evented);
+
+TetherClass.modules = [];
+
+_utils2['default'].position = position;
+
+var Tether = extend(TetherClass, _utils2['default']);
+
+exports['default'] = Tether;
+module.exports = exports['default'];
+
+},{"./abutment":1,"./constraint":2,"./shift":3,"./utils":5}],5:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+var TetherBase = { modules: [] };
+
+var zeroElement = null;
+
+// Same as native getBoundingClientRect, except it takes into account parent <frame> offsets
+// if the element lies within a nested document (<frame> or <iframe>-like).
+function getActualBoundingClientRect(node) {
+  var boundingRect = node.getBoundingClientRect();
+
+  // The original object returned by getBoundingClientRect is immutable, so we clone it
+  // We can't use extend because the properties are not considered part of the object by hasOwnProperty in IE9
+  var rect = {};
+  for (var k in boundingRect) {
+    rect[k] = boundingRect[k];
+  }
+
+  if (node.ownerDocument !== document) {
+    var _frameElement = node.ownerDocument.defaultView.frameElement;
+    if (_frameElement) {
+      var frameRect = getActualBoundingClientRect(_frameElement);
+      rect.top += frameRect.top;
+      rect.bottom += frameRect.top;
+      rect.left += frameRect.left;
+      rect.right += frameRect.left;
+    }
+  }
+
+  return rect;
+}
+
+function getScrollParents(el) {
+  // In firefox if the el is inside an iframe with display: none; window.getComputedStyle() will return null;
+  // https://bugzilla.mozilla.org/show_bug.cgi?id=548397
+  var computedStyle = getComputedStyle(el) || {};
+  var position = computedStyle.position;
+  var parents = [];
+
+  if (position === 'fixed') {
+    return [el];
+  }
+
+  var parent = el;
+  while ((parent = parent.parentNode) && parent && parent.nodeType === 1) {
+    var style = undefined;
+    try {
+      style = getComputedStyle(parent);
+    } catch (err) {}
+
+    if (typeof style === 'undefined' || style === null) {
+      parents.push(parent);
+      return parents;
+    }
+
+    var _style = style;
+    var overflow = _style.overflow;
+    var overflowX = _style.overflowX;
+    var overflowY = _style.overflowY;
+
+    if (/(auto|scroll)/.test(overflow + overflowY + overflowX)) {
+      if (position !== 'absolute' || ['relative', 'absolute', 'fixed'].indexOf(style.position) >= 0) {
+        parents.push(parent);
+      }
+    }
+  }
+
+  parents.push(el.ownerDocument.body);
+
+  // If the node is within a frame, account for the parent window scroll
+  if (el.ownerDocument !== document) {
+    parents.push(el.ownerDocument.defaultView);
+  }
+
+  return parents;
+}
+
+var uniqueId = (function () {
+  var id = 0;
+  return function () {
+    return ++id;
+  };
+})();
+
+var zeroPosCache = {};
+var getOrigin = function getOrigin() {
+  // getBoundingClientRect is unfortunately too accurate.  It introduces a pixel or two of
+  // jitter as the user scrolls that messes with our ability to detect if two positions
+  // are equivilant or not.  We place an element at the top left of the page that will
+  // get the same jitter, so we can cancel the two out.
+  var node = zeroElement;
+  if (!node) {
+    node = document.createElement('div');
+    node.setAttribute('data-tether-id', uniqueId());
+    extend(node.style, {
+      top: 0,
+      left: 0,
+      position: 'absolute'
+    });
+
+    document.body.appendChild(node);
+
+    zeroElement = node;
+  }
+
+  var id = node.getAttribute('data-tether-id');
+  if (typeof zeroPosCache[id] === 'undefined') {
+    zeroPosCache[id] = getActualBoundingClientRect(node);
+
+    // Clear the cache when this position call is done
+    defer(function () {
+      delete zeroPosCache[id];
+    });
+  }
+
+  return zeroPosCache[id];
+};
+
+function removeUtilElements() {
+  if (zeroElement) {
+    document.body.removeChild(zeroElement);
+  }
+  zeroElement = null;
+};
+
+function getBounds(el) {
+  var doc = undefined;
+  if (el === document) {
+    doc = document;
+    el = document.documentElement;
+  } else {
+    doc = el.ownerDocument;
+  }
+
+  var docEl = doc.documentElement;
+
+  var box = getActualBoundingClientRect(el);
+
+  var origin = getOrigin();
+
+  box.top -= origin.top;
+  box.left -= origin.left;
+
+  if (typeof box.width === 'undefined') {
+    box.width = document.body.scrollWidth - box.left - box.right;
+  }
+  if (typeof box.height === 'undefined') {
+    box.height = document.body.scrollHeight - box.top - box.bottom;
+  }
+
+  box.top = box.top - docEl.clientTop;
+  box.left = box.left - docEl.clientLeft;
+  box.right = doc.body.clientWidth - box.width - box.left;
+  box.bottom = doc.body.clientHeight - box.height - box.top;
+
+  return box;
+}
+
+function getOffsetParent(el) {
+  return el.offsetParent || document.documentElement;
+}
+
+function getScrollBarSize() {
+  var inner = document.createElement('div');
+  inner.style.width = '100%';
+  inner.style.height = '200px';
+
+  var outer = document.createElement('div');
+  extend(outer.style, {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    pointerEvents: 'none',
+    visibility: 'hidden',
+    width: '200px',
+    height: '150px',
+    overflow: 'hidden'
+  });
+
+  outer.appendChild(inner);
+
+  document.body.appendChild(outer);
+
+  var widthContained = inner.offsetWidth;
+  outer.style.overflow = 'scroll';
+  var widthScroll = inner.offsetWidth;
+
+  if (widthContained === widthScroll) {
+    widthScroll = outer.clientWidth;
+  }
+
+  document.body.removeChild(outer);
+
+  var width = widthContained - widthScroll;
+
+  return { width: width, height: width };
+}
+
+function extend() {
+  var out = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+
+  var args = [];
+
+  Array.prototype.push.apply(args, arguments);
+
+  args.slice(1).forEach(function (obj) {
+    if (obj) {
+      for (var key in obj) {
+        if (({}).hasOwnProperty.call(obj, key)) {
+          out[key] = obj[key];
+        }
+      }
+    }
+  });
+
+  return out;
+}
+
+function removeClass(el, name) {
+  if (typeof el.classList !== 'undefined') {
+    name.split(' ').forEach(function (cls) {
+      if (cls.trim()) {
+        el.classList.remove(cls);
+      }
+    });
+  } else {
+    var regex = new RegExp('(^| )' + name.split(' ').join('|') + '( |$)', 'gi');
+    var className = getClassName(el).replace(regex, ' ');
+    setClassName(el, className);
+  }
+}
+
+function addClass(el, name) {
+  if (typeof el.classList !== 'undefined') {
+    name.split(' ').forEach(function (cls) {
+      if (cls.trim()) {
+        el.classList.add(cls);
+      }
+    });
+  } else {
+    removeClass(el, name);
+    var cls = getClassName(el) + (' ' + name);
+    setClassName(el, cls);
+  }
+}
+
+function hasClass(el, name) {
+  if (typeof el.classList !== 'undefined') {
+    return el.classList.contains(name);
+  }
+  var className = getClassName(el);
+  return new RegExp('(^| )' + name + '( |$)', 'gi').test(className);
+}
+
+function getClassName(el) {
+  // Can't use just SVGAnimatedString here since nodes within a Frame in IE have
+  // completely separately SVGAnimatedString base classes
+  if (el.className instanceof el.ownerDocument.defaultView.SVGAnimatedString) {
+    return el.className.baseVal;
+  }
+  return el.className;
+}
+
+function setClassName(el, className) {
+  el.setAttribute('class', className);
+}
+
+function updateClasses(el, add, all) {
+  // Of the set of 'all' classes, we need the 'add' classes, and only the
+  // 'add' classes to be set.
+  all.forEach(function (cls) {
+    if (add.indexOf(cls) === -1 && hasClass(el, cls)) {
+      removeClass(el, cls);
+    }
+  });
+
+  add.forEach(function (cls) {
+    if (!hasClass(el, cls)) {
+      addClass(el, cls);
+    }
+  });
+}
+
+var deferred = [];
+
+var defer = function defer(fn) {
+  deferred.push(fn);
+};
+
+var flush = function flush() {
+  var fn = undefined;
+  while (fn = deferred.pop()) {
+    fn();
+  }
+};
+
+var Evented = (function () {
+  function Evented() {
+    _classCallCheck(this, Evented);
+  }
+
+  _createClass(Evented, [{
+    key: 'on',
+    value: function on(event, handler, ctx) {
+      var once = arguments.length <= 3 || arguments[3] === undefined ? false : arguments[3];
+
+      if (typeof this.bindings === 'undefined') {
+        this.bindings = {};
+      }
+      if (typeof this.bindings[event] === 'undefined') {
+        this.bindings[event] = [];
+      }
+      this.bindings[event].push({ handler: handler, ctx: ctx, once: once });
+    }
+  }, {
+    key: 'once',
+    value: function once(event, handler, ctx) {
+      this.on(event, handler, ctx, true);
+    }
+  }, {
+    key: 'off',
+    value: function off(event, handler) {
+      if (typeof this.bindings === 'undefined' || typeof this.bindings[event] === 'undefined') {
+        return;
+      }
+
+      if (typeof handler === 'undefined') {
+        delete this.bindings[event];
+      } else {
+        var i = 0;
+        while (i < this.bindings[event].length) {
+          if (this.bindings[event][i].handler === handler) {
+            this.bindings[event].splice(i, 1);
+          } else {
+            ++i;
+          }
+        }
+      }
+    }
+  }, {
+    key: 'trigger',
+    value: function trigger(event) {
+      if (typeof this.bindings !== 'undefined' && this.bindings[event]) {
+        var i = 0;
+
+        for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+          args[_key - 1] = arguments[_key];
+        }
+
+        while (i < this.bindings[event].length) {
+          var _bindings$event$i = this.bindings[event][i];
+          var handler = _bindings$event$i.handler;
+          var ctx = _bindings$event$i.ctx;
+          var once = _bindings$event$i.once;
+
+          var context = ctx;
+          if (typeof context === 'undefined') {
+            context = this;
+          }
+
+          handler.apply(context, args);
+
+          if (once) {
+            this.bindings[event].splice(i, 1);
+          } else {
+            ++i;
+          }
+        }
+      }
+    }
+  }]);
+
+  return Evented;
+})();
+
+TetherBase.Utils = {
+  getActualBoundingClientRect: getActualBoundingClientRect,
+  getScrollParents: getScrollParents,
+  getBounds: getBounds,
+  getOffsetParent: getOffsetParent,
+  extend: extend,
+  addClass: addClass,
+  removeClass: removeClass,
+  hasClass: hasClass,
+  updateClasses: updateClasses,
+  defer: defer,
+  flush: flush,
+  uniqueId: uniqueId,
+  Evented: Evented,
+  getScrollBarSize: getScrollBarSize,
+  removeUtilElements: removeUtilElements
+};
+
+exports['default'] = TetherBase;
+module.exports = exports['default'];
+
+},{}]},{},[4])(4)
+});
+
+/***/ }),
+
+/***/ "./node_modules/reactstrap/dist/reactstrap.es.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export Alert */
+/* unused harmony export Container */
+/* unused harmony export Row */
+/* unused harmony export Col */
+/* unused harmony export Navbar */
+/* unused harmony export NavbarBrand */
+/* unused harmony export NavbarToggler */
+/* unused harmony export Nav */
+/* unused harmony export NavItem */
+/* unused harmony export NavDropdown */
+/* unused harmony export NavLink */
+/* unused harmony export Breadcrumb */
+/* unused harmony export BreadcrumbItem */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Button; });
+/* unused harmony export ButtonDropdown */
+/* unused harmony export ButtonGroup */
+/* unused harmony export ButtonToolbar */
+/* unused harmony export Dropdown */
+/* unused harmony export DropdownItem */
+/* unused harmony export DropdownMenu */
+/* unused harmony export DropdownToggle */
+/* unused harmony export Fade */
+/* unused harmony export Badge */
+/* unused harmony export Card */
+/* unused harmony export CardLink */
+/* unused harmony export CardGroup */
+/* unused harmony export CardDeck */
+/* unused harmony export CardColumns */
+/* unused harmony export CardBlock */
+/* unused harmony export CardFooter */
+/* unused harmony export CardHeader */
+/* unused harmony export CardImg */
+/* unused harmony export CardImgOverlay */
+/* unused harmony export CardSubtitle */
+/* unused harmony export CardText */
+/* unused harmony export CardTitle */
+/* unused harmony export Popover */
+/* unused harmony export PopoverContent */
+/* unused harmony export PopoverTitle */
+/* unused harmony export Progress */
+/* unused harmony export Modal */
+/* unused harmony export ModalHeader */
+/* unused harmony export ModalBody */
+/* unused harmony export ModalFooter */
+/* unused harmony export TetherContent */
+/* unused harmony export Tooltip */
+/* unused harmony export Table */
+/* unused harmony export ListGroup */
+/* unused harmony export Form */
+/* unused harmony export FormFeedback */
+/* unused harmony export FormGroup */
+/* unused harmony export FormText */
+/* unused harmony export Input */
+/* unused harmony export InputGroup */
+/* unused harmony export InputGroupAddon */
+/* unused harmony export InputGroupButton */
+/* unused harmony export Label */
+/* unused harmony export Media */
+/* unused harmony export Pagination */
+/* unused harmony export PaginationItem */
+/* unused harmony export PaginationLink */
+/* unused harmony export TabContent */
+/* unused harmony export TabPane */
+/* unused harmony export Jumbotron */
+/* unused harmony export Collapse */
+/* unused harmony export ListGroupItem */
+/* unused harmony export ListGroupItemText */
+/* unused harmony export ListGroupItemHeading */
+/* unused harmony export UncontrolledAlert */
+/* unused harmony export UncontrolledButtonDropdown */
+/* unused harmony export UncontrolledDropdown */
+/* unused harmony export UncontrolledNavDropdown */
+/* unused harmony export UncontrolledTooltip */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("./node_modules/react/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__("./node_modules/prop-types/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_classnames__ = __webpack_require__("./node_modules/classnames/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_classnames__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_lodash_isobject__ = __webpack_require__("./node_modules/lodash.isobject/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_lodash_isobject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_lodash_isobject__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_react_dom__ = __webpack_require__("./node_modules/react-dom/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_react_dom__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_lodash_isfunction__ = __webpack_require__("./node_modules/lodash.isfunction/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_lodash_isfunction___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_lodash_isfunction__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_reactstrap_tether__ = __webpack_require__("./node_modules/reactstrap-tether/dist/js/tether.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_reactstrap_tether___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_reactstrap_tether__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_lodash_tonumber__ = __webpack_require__("./node_modules/lodash.tonumber/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_lodash_tonumber___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_lodash_tonumber__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_react_transition_group__ = __webpack_require__("./node_modules/react-transition-group/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_react_transition_group___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_react_transition_group__);
+
+
+
+
+
+
+
+
+
+
+function getTetherAttachments(placement) {
+  var attachments = {};
+  switch (placement) {
+    case 'top':
+    case 'top center':
+      attachments = {
+        attachment: 'bottom center',
+        targetAttachment: 'top center'
+      };
+      break;
+    case 'bottom':
+    case 'bottom center':
+      attachments = {
+        attachment: 'top center',
+        targetAttachment: 'bottom center'
+      };
+      break;
+    case 'left':
+    case 'left center':
+      attachments = {
+        attachment: 'middle right',
+        targetAttachment: 'middle left'
+      };
+      break;
+    case 'right':
+    case 'right center':
+      attachments = {
+        attachment: 'middle left',
+        targetAttachment: 'middle right'
+      };
+      break;
+    case 'top left':
+      attachments = {
+        attachment: 'bottom left',
+        targetAttachment: 'top left'
+      };
+      break;
+    case 'top right':
+      attachments = {
+        attachment: 'bottom right',
+        targetAttachment: 'top right'
+      };
+      break;
+    case 'bottom left':
+      attachments = {
+        attachment: 'top left',
+        targetAttachment: 'bottom left'
+      };
+      break;
+    case 'bottom right':
+      attachments = {
+        attachment: 'top right',
+        targetAttachment: 'bottom right'
+      };
+      break;
+    case 'right top':
+      attachments = {
+        attachment: 'top left',
+        targetAttachment: 'top right'
+      };
+      break;
+    case 'right bottom':
+      attachments = {
+        attachment: 'bottom left',
+        targetAttachment: 'bottom right'
+      };
+      break;
+    case 'left top':
+      attachments = {
+        attachment: 'top right',
+        targetAttachment: 'top left'
+      };
+      break;
+    case 'left bottom':
+      attachments = {
+        attachment: 'bottom right',
+        targetAttachment: 'bottom left'
+      };
+      break;
+    default:
+      attachments = {
+        attachment: 'top center',
+        targetAttachment: 'bottom center'
+      };
+  }
+
+  return attachments;
+}
+
+var tetherAttachements = ['top', 'bottom', 'left', 'right', 'top left', 'top center', 'top right', 'right top', 'right middle', 'right bottom', 'bottom right', 'bottom center', 'bottom left', 'left top', 'left middle', 'left bottom'];
+
+// https://github.com/twbs/bootstrap/blob/v4.0.0-alpha.4/js/src/modal.js#L436-L443
+function getScrollbarWidth() {
+  var scrollDiv = document.createElement('div');
+  // .modal-scrollbar-measure styles // https://github.com/twbs/bootstrap/blob/v4.0.0-alpha.4/scss/_modal.scss#L106-L113
+  scrollDiv.style.position = 'absolute';
+  scrollDiv.style.top = '-9999px';
+  scrollDiv.style.width = '50px';
+  scrollDiv.style.height = '50px';
+  scrollDiv.style.overflow = 'scroll';
+  document.body.appendChild(scrollDiv);
+  var scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth;
+  document.body.removeChild(scrollDiv);
+  return scrollbarWidth;
+}
+
+function setScrollbarWidth(padding) {
+  document.body.style.paddingRight = padding > 0 ? padding + 'px' : null;
+}
+
+function isBodyOverflowing() {
+  return document.body.clientWidth < window.innerWidth;
+}
+
+function getOriginalBodyPadding() {
+  return parseInt(window.getComputedStyle(document.body, null).getPropertyValue('padding-right') || 0, 10);
+}
+
+function conditionallyUpdateScrollbar() {
+  var scrollbarWidth = getScrollbarWidth();
+  // https://github.com/twbs/bootstrap/blob/v4.0.0-alpha.4/js/src/modal.js#L420
+  var fixedContent = document.querySelectorAll('.navbar-fixed-top, .navbar-fixed-bottom, .is-fixed')[0];
+  var bodyPadding = fixedContent ? parseInt(fixedContent.style.paddingRight || 0, 10) : 0;
+
+  if (isBodyOverflowing()) {
+    setScrollbarWidth(bodyPadding + scrollbarWidth);
+  }
+}
+
+function mapToCssModules(className, cssModule) {
+  if (!cssModule) return className;
+  return className.split(' ').map(function (c) {
+    return cssModule[c] || c;
+  }).join(' ');
+}
+
+/**
+ * Returns a new object with the key/value pairs from `obj` that are not in the array `omitKeys`.
+ */
+function omit(obj, omitKeys) {
+  var result = {};
+  Object.keys(obj).forEach(function (key) {
+    if (omitKeys.indexOf(key) === -1) {
+      result[key] = obj[key];
+    }
+  });
+  return result;
+}
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {
+  return typeof obj;
+} : function (obj) {
+  return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+};
+
+
+
+
+
+
+
+
+
+
+
+var classCallCheck = function (instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+};
+
+var createClass = function () {
+  function defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+
+  return function (Constructor, protoProps, staticProps) {
+    if (protoProps) defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) defineProperties(Constructor, staticProps);
+    return Constructor;
+  };
+}();
+
+
+
+
+
+var defineProperty = function (obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+};
+
+var _extends = Object.assign || function (target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i];
+
+    for (var key in source) {
+      if (Object.prototype.hasOwnProperty.call(source, key)) {
+        target[key] = source[key];
+      }
+    }
+  }
+
+  return target;
+};
+
+
+
+var inherits = function (subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      enumerable: false,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+};
+
+
+
+
+
+
+
+
+
+var objectWithoutProperties = function (obj, keys) {
+  var target = {};
+
+  for (var i in obj) {
+    if (keys.indexOf(i) >= 0) continue;
+    if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;
+    target[i] = obj[i];
+  }
+
+  return target;
+};
+
+var possibleConstructorReturn = function (self, call) {
+  if (!self) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return call && (typeof call === "object" || typeof call === "function") ? call : self;
+};
+
+var propTypes = {
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  fluid: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object
+};
+
+var defaultProps = {
+  tag: 'div'
+};
+
+var Container = function Container(props) {
+  var className = props.className,
+      cssModule = props.cssModule,
+      fluid = props.fluid,
+      Tag = props.tag,
+      attributes = objectWithoutProperties(props, ['className', 'cssModule', 'fluid', 'tag']);
+
+
+  var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, fluid ? 'container-fluid' : 'container'), cssModule);
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { className: classes }));
+};
+
+Container.propTypes = propTypes;
+Container.defaultProps = defaultProps;
+
+var propTypes$1 = {
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  noGutters: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object
+};
+
+var defaultProps$1 = {
+  tag: 'div'
+};
+
+var Row = function Row(props) {
+  var className = props.className,
+      cssModule = props.cssModule,
+      noGutters = props.noGutters,
+      Tag = props.tag,
+      attributes = objectWithoutProperties(props, ['className', 'cssModule', 'noGutters', 'tag']);
+
+
+  var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, noGutters ? 'no-gutters' : null, 'row'), cssModule);
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { className: classes }));
+};
+
+Row.propTypes = propTypes$1;
+Row.defaultProps = defaultProps$1;
+
+var colWidths = ['xs', 'sm', 'md', 'lg', 'xl'];
+var stringOrNumberProp = __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.number, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]);
+
+var columnProps = __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.number, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.shape({
+  size: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.number, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  push: stringOrNumberProp,
+  pull: stringOrNumberProp,
+  offset: stringOrNumberProp
+})]);
+
+var propTypes$2 = {
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  xs: columnProps,
+  sm: columnProps,
+  md: columnProps,
+  lg: columnProps,
+  xl: columnProps,
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object,
+  widths: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.array
+};
+
+var defaultProps$2 = {
+  tag: 'div',
+  widths: colWidths
+};
+
+var getColumnSizeClass = function getColumnSizeClass(isXs, colWidth, colSize) {
+  if (colSize === true || colSize === '') {
+    return isXs ? 'col' : 'col-' + colWidth;
+  } else if (colSize === 'auto') {
+    return isXs ? 'col-auto' : 'col-' + colWidth + '-auto';
+  }
+
+  return isXs ? 'col-' + colSize : 'col-' + colWidth + '-' + colSize;
+};
+
+var Col = function Col(props) {
+  var className = props.className,
+      cssModule = props.cssModule,
+      widths = props.widths,
+      Tag = props.tag,
+      attributes = objectWithoutProperties(props, ['className', 'cssModule', 'widths', 'tag']);
+
+  var colClasses = [];
+
+  widths.forEach(function (colWidth, i) {
+    var columnProp = props[colWidth];
+
+    if (!i && columnProp === undefined) {
+      columnProp = true;
+    }
+
+    delete attributes[colWidth];
+
+    if (!columnProp) {
+      return;
+    }
+
+    var isXs = !i;
+    var colClass = void 0;
+
+    if (__WEBPACK_IMPORTED_MODULE_3_lodash_isobject___default()(columnProp)) {
+      var _classNames;
+
+      var colSizeInterfix = isXs ? '-' : '-' + colWidth + '-';
+      colClass = getColumnSizeClass(isXs, colWidth, columnProp.size);
+
+      colClasses.push(mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()((_classNames = {}, defineProperty(_classNames, colClass, columnProp.size || columnProp.size === ''), defineProperty(_classNames, 'push' + colSizeInterfix + columnProp.push, columnProp.push || columnProp.push === 0), defineProperty(_classNames, 'pull' + colSizeInterfix + columnProp.pull, columnProp.pull || columnProp.pull === 0), defineProperty(_classNames, 'offset' + colSizeInterfix + columnProp.offset, columnProp.offset || columnProp.offset === 0), _classNames))), cssModule);
+    } else {
+      colClass = getColumnSizeClass(isXs, colWidth, columnProp);
+      colClasses.push(colClass);
+    }
+  });
+
+  var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, colClasses), cssModule);
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { className: classes }));
+};
+
+Col.propTypes = propTypes$2;
+Col.defaultProps = defaultProps$2;
+
+var propTypes$3 = {
+  light: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  inverse: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  full: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  fixed: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  sticky: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  color: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  role: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object,
+  toggleable: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string])
+};
+
+var defaultProps$3 = {
+  tag: 'nav',
+  toggleable: false
+};
+
+var getToggleableClass = function getToggleableClass(toggleable) {
+  if (toggleable === false) {
+    return false;
+  } else if (toggleable === true || toggleable === 'xs') {
+    return 'navbar-toggleable';
+  }
+
+  return 'navbar-toggleable-' + toggleable;
+};
+
+var Navbar = function Navbar(props) {
+  var _classNames;
+
+  var toggleable = props.toggleable,
+      className = props.className,
+      cssModule = props.cssModule,
+      light = props.light,
+      inverse = props.inverse,
+      full = props.full,
+      fixed = props.fixed,
+      sticky = props.sticky,
+      color = props.color,
+      Tag = props.tag,
+      attributes = objectWithoutProperties(props, ['toggleable', 'className', 'cssModule', 'light', 'inverse', 'full', 'fixed', 'sticky', 'color', 'tag']);
+
+
+  var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, 'navbar', getToggleableClass(toggleable), (_classNames = {
+    'navbar-light': light,
+    'navbar-inverse': inverse
+  }, defineProperty(_classNames, 'bg-' + color, color), defineProperty(_classNames, 'navbar-full', full), defineProperty(_classNames, 'fixed-' + fixed, fixed), defineProperty(_classNames, 'sticky-' + sticky, sticky), _classNames)), cssModule);
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { className: classes }));
+};
+
+Navbar.propTypes = propTypes$3;
+Navbar.defaultProps = defaultProps$3;
+
+var propTypes$4 = {
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object
+};
+
+var defaultProps$4 = {
+  tag: 'a'
+};
+
+var NavbarBrand = function NavbarBrand(props) {
+  var className = props.className,
+      cssModule = props.cssModule,
+      Tag = props.tag,
+      attributes = objectWithoutProperties(props, ['className', 'cssModule', 'tag']);
+
+
+  var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, 'navbar-brand'), cssModule);
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { className: classes }));
+};
+
+NavbarBrand.propTypes = propTypes$4;
+NavbarBrand.defaultProps = defaultProps$4;
+
+var propTypes$5 = {
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  type: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object,
+  children: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.node,
+  right: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  left: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool
+};
+
+var defaultProps$5 = {
+  tag: 'button',
+  type: 'button'
+};
+
+var navbarToggleIcon = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'navbar-toggler-icon' });
+
+var NavbarToggler = function NavbarToggler(props) {
+  var className = props.className,
+      cssModule = props.cssModule,
+      children = props.children,
+      right = props.right,
+      left = props.left,
+      Tag = props.tag,
+      attributes = objectWithoutProperties(props, ['className', 'cssModule', 'children', 'right', 'left', 'tag']);
+
+
+  var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, 'navbar-toggler', right && 'navbar-toggler-right', left && 'navbar-toggler-left'), cssModule);
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+    Tag,
+    _extends({}, attributes, { className: classes }),
+    children || navbarToggleIcon
+  );
+};
+
+NavbarToggler.propTypes = propTypes$5;
+NavbarToggler.defaultProps = defaultProps$5;
+
+var propTypes$6 = {
+  tabs: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  pills: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  vertical: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  navbar: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object
+};
+
+var defaultProps$6 = {
+  tag: 'ul'
+};
+
+var Nav = function Nav(props) {
+  var className = props.className,
+      cssModule = props.cssModule,
+      tabs = props.tabs,
+      pills = props.pills,
+      vertical = props.vertical,
+      navbar = props.navbar,
+      Tag = props.tag,
+      attributes = objectWithoutProperties(props, ['className', 'cssModule', 'tabs', 'pills', 'vertical', 'navbar', 'tag']);
+
+
+  var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, navbar ? 'navbar-nav' : 'nav', {
+    'nav-tabs': tabs,
+    'nav-pills': pills,
+    'flex-column': vertical
+  }), cssModule);
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { className: classes }));
+};
+
+Nav.propTypes = propTypes$6;
+Nav.defaultProps = defaultProps$6;
+
+var propTypes$7 = {
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object
+};
+
+var defaultProps$7 = {
+  tag: 'li'
+};
+
+var NavItem = function NavItem(props) {
+  var className = props.className,
+      cssModule = props.cssModule,
+      Tag = props.tag,
+      attributes = objectWithoutProperties(props, ['className', 'cssModule', 'tag']);
+
+
+  var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, 'nav-item'), cssModule);
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { className: classes }));
+};
+
+NavItem.propTypes = propTypes$7;
+NavItem.defaultProps = defaultProps$7;
+
+var propTypes$10 = {
+  children: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.node.isRequired,
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  arrow: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  disabled: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  isOpen: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool.isRequired,
+  toggle: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func.isRequired,
+  tether: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object.isRequired,
+  tetherRef: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func,
+  style: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.node,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object
+};
+
+var defaultProps$10 = {
+  isOpen: false,
+  tetherRef: function tetherRef() {}
+};
+
+var TetherContent = function (_React$Component) {
+  inherits(TetherContent, _React$Component);
+
+  function TetherContent(props) {
+    classCallCheck(this, TetherContent);
+
+    var _this = possibleConstructorReturn(this, (TetherContent.__proto__ || Object.getPrototypeOf(TetherContent)).call(this, props));
+
+    _this.handleDocumentClick = _this.handleDocumentClick.bind(_this);
+    _this.toggle = _this.toggle.bind(_this);
+    return _this;
+  }
+
+  createClass(TetherContent, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.handleProps();
+    }
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate(prevProps) {
+      if (this.props.isOpen !== prevProps.isOpen) {
+        this.handleProps();
+      } else if (this._element) {
+        // rerender
+        this.renderIntoSubtree();
+      }
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      this.hide();
+    }
+  }, {
+    key: 'getTarget',
+    value: function getTarget() {
+      var target = this.props.tether.target;
+
+      if (__WEBPACK_IMPORTED_MODULE_5_lodash_isfunction___default()(target)) {
+        return target();
+      }
+
+      return target;
+    }
+  }, {
+    key: 'getTetherConfig',
+    value: function getTetherConfig() {
+      var config = _extends({}, this.props.tether);
+
+      config.element = this._element;
+      config.target = this.getTarget();
+      return config;
+    }
+  }, {
+    key: 'handleDocumentClick',
+    value: function handleDocumentClick(e) {
+      var container = this._element;
+      if (e.target === container || !container.contains(e.target)) {
+        this.toggle();
+      }
+    }
+  }, {
+    key: 'handleProps',
+    value: function handleProps() {
+      if (this.props.isOpen) {
+        this.show();
+      } else {
+        this.hide();
+      }
+    }
+  }, {
+    key: 'hide',
+    value: function hide() {
+      document.removeEventListener('click', this.handleDocumentClick, true);
+
+      if (this._element) {
+        document.body.removeChild(this._element);
+        __WEBPACK_IMPORTED_MODULE_4_react_dom___default.a.unmountComponentAtNode(this._element);
+        this._element = null;
+      }
+
+      if (this._tether) {
+        this._tether.destroy();
+        this._tether = null;
+        this.props.tetherRef(this._tether);
+      }
+    }
+  }, {
+    key: 'show',
+    value: function show() {
+      document.addEventListener('click', this.handleDocumentClick, true);
+
+      this._element = document.createElement('div');
+      this._element.className = this.props.className;
+      document.body.appendChild(this._element);
+      this.renderIntoSubtree();
+      this._tether = new __WEBPACK_IMPORTED_MODULE_6_reactstrap_tether___default.a(this.getTetherConfig());
+      this.props.tetherRef(this._tether);
+      this._tether.position();
+      this._element.childNodes[0].focus();
+    }
+  }, {
+    key: 'toggle',
+    value: function toggle(e) {
+      if (this.props.disabled) {
+        return e && e.preventDefault();
+      }
+
+      return this.props.toggle();
+    }
+  }, {
+    key: 'renderIntoSubtree',
+    value: function renderIntoSubtree() {
+      __WEBPACK_IMPORTED_MODULE_4_react_dom___default.a.unstable_renderSubtreeIntoContainer(this, this.renderChildren(), this._element);
+    }
+  }, {
+    key: 'renderChildren',
+    value: function renderChildren() {
+      var _props = this.props,
+          children = _props.children,
+          style = _props.style;
+
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.cloneElement(children, { style: style });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return null;
+    }
+  }]);
+  return TetherContent;
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
+
+TetherContent.propTypes = propTypes$10;
+TetherContent.defaultProps = defaultProps$10;
+
+var propTypes$11 = {
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  children: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.node.isRequired,
+  right: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object
+};
+
+var defaultProps$11 = {
+  tag: 'div'
+};
+
+var contextTypes = {
+  isOpen: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool.isRequired
+};
+
+var DropdownMenu = function DropdownMenu(props, context) {
+  var className = props.className,
+      cssModule = props.cssModule,
+      right = props.right,
+      Tag = props.tag,
+      attributes = objectWithoutProperties(props, ['className', 'cssModule', 'right', 'tag']);
+
+  var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, 'dropdown-menu', { 'dropdown-menu-right': right }), cssModule);
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { tabIndex: '-1', 'aria-hidden': !context.isOpen, role: 'menu', className: classes }));
+};
+
+DropdownMenu.propTypes = propTypes$11;
+DropdownMenu.defaultProps = defaultProps$11;
+DropdownMenu.contextTypes = contextTypes;
+
+/* eslint react/no-find-dom-node: 0 */
+// https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-find-dom-node.md
+
+var propTypes$9 = {
+  disabled: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  dropup: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  group: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  isOpen: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  size: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  tether: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool]),
+  toggle: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func,
+  children: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.node,
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object
+};
+
+var defaultProps$9 = {
+  isOpen: false,
+  tag: 'div'
+};
+
+var childContextTypes = {
+  toggle: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func.isRequired,
+  isOpen: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool.isRequired
+};
+
+var defaultTetherConfig = {
+  classPrefix: 'bs-tether',
+  classes: { element: 'dropdown', enabled: 'show' },
+  constraints: [{ to: 'scrollParent', attachment: 'together none' }, { to: 'window', attachment: 'together none' }]
+};
+
+var Dropdown = function (_React$Component) {
+  inherits(Dropdown, _React$Component);
+
+  function Dropdown(props) {
+    classCallCheck(this, Dropdown);
+
+    var _this = possibleConstructorReturn(this, (Dropdown.__proto__ || Object.getPrototypeOf(Dropdown)).call(this, props));
+
+    _this.addEvents = _this.addEvents.bind(_this);
+    _this.getTetherConfig = _this.getTetherConfig.bind(_this);
+    _this.handleDocumentClick = _this.handleDocumentClick.bind(_this);
+    _this.removeEvents = _this.removeEvents.bind(_this);
+    _this.toggle = _this.toggle.bind(_this);
+    return _this;
+  }
+
+  createClass(Dropdown, [{
+    key: 'getChildContext',
+    value: function getChildContext() {
+      return {
+        toggle: this.props.toggle,
+        isOpen: this.props.isOpen
+      };
+    }
+  }, {
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.handleProps();
+    }
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate(prevProps) {
+      if (this.props.isOpen !== prevProps.isOpen) {
+        this.handleProps();
+      }
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      this.removeEvents();
+    }
+  }, {
+    key: 'getTetherTarget',
+    value: function getTetherTarget() {
+      var container = __WEBPACK_IMPORTED_MODULE_4_react_dom___default.a.findDOMNode(this);
+
+      return container.querySelector('[data-toggle="dropdown"]');
+    }
+  }, {
+    key: 'getTetherConfig',
+    value: function getTetherConfig(childProps) {
+      var _this2 = this;
+
+      var target = function target() {
+        return _this2.getTetherTarget();
+      };
+      var vElementAttach = 'top';
+      var hElementAttach = 'left';
+      var vTargetAttach = 'bottom';
+      var hTargetAttach = 'left';
+
+      if (childProps.right) {
+        hElementAttach = 'right';
+        hTargetAttach = 'right';
+      }
+
+      if (this.props.dropup) {
+        vElementAttach = 'bottom';
+        vTargetAttach = 'top';
+      }
+
+      return _extends({}, defaultTetherConfig, {
+        attachment: vElementAttach + ' ' + hElementAttach,
+        targetAttachment: vTargetAttach + ' ' + hTargetAttach,
+        target: target
+      }, this.props.tether);
+    }
+  }, {
+    key: 'addEvents',
+    value: function addEvents() {
+      document.addEventListener('click', this.handleDocumentClick, true);
+    }
+  }, {
+    key: 'removeEvents',
+    value: function removeEvents() {
+      document.removeEventListener('click', this.handleDocumentClick, true);
+    }
+  }, {
+    key: 'handleDocumentClick',
+    value: function handleDocumentClick(e) {
+      var container = __WEBPACK_IMPORTED_MODULE_4_react_dom___default.a.findDOMNode(this);
+
+      if (container.contains(e.target) && container !== e.target) {
+        return;
+      }
+
+      this.toggle();
+    }
+  }, {
+    key: 'handleProps',
+    value: function handleProps() {
+      if (this.props.tether) {
+        return;
+      }
+
+      if (this.props.isOpen) {
+        this.addEvents();
+      } else {
+        this.removeEvents();
+      }
+    }
+  }, {
+    key: 'toggle',
+    value: function toggle(e) {
+      if (this.props.disabled) {
+        return e && e.preventDefault();
+      }
+
+      return this.props.toggle();
+    }
+  }, {
+    key: 'renderChildren',
+    value: function renderChildren() {
+      var _this3 = this;
+
+      var _props = this.props,
+          tether = _props.tether,
+          children = _props.children,
+          attrs = objectWithoutProperties(_props, ['tether', 'children']);
+
+      attrs.toggle = this.toggle;
+
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.Children.map(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Children.toArray(children), function (child) {
+        if (tether && child.type === DropdownMenu) {
+          var tetherConfig = _this3.getTetherConfig(child.props);
+          return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            TetherContent,
+            _extends({}, attrs, { tether: tetherConfig }),
+            child
+          );
+        }
+
+        return child;
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _classNames;
+
+      var _omit = omit(this.props, ['toggle', 'tether']),
+          className = _omit.className,
+          cssModule = _omit.cssModule,
+          dropup = _omit.dropup,
+          group = _omit.group,
+          size = _omit.size,
+          Tag = _omit.tag,
+          isOpen = _omit.isOpen,
+          attributes = objectWithoutProperties(_omit, ['className', 'cssModule', 'dropup', 'group', 'size', 'tag', 'isOpen']);
+
+      var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, (_classNames = {
+        'btn-group': group
+      }, defineProperty(_classNames, 'btn-group-' + size, !!size), defineProperty(_classNames, 'dropdown', !group), defineProperty(_classNames, 'show', isOpen), defineProperty(_classNames, 'dropup', dropup), _classNames)), cssModule);
+
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        Tag,
+        _extends({}, attributes, {
+          className: classes
+        }),
+        this.renderChildren()
+      );
+    }
+  }]);
+  return Dropdown;
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
+
+Dropdown.propTypes = propTypes$9;
+Dropdown.defaultProps = defaultProps$9;
+Dropdown.childContextTypes = childContextTypes;
+
+var propTypes$8 = {
+  children: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.node,
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object
+};
+
+var defaultProps$8 = {
+  tag: 'li'
+};
+
+var NavDropdown = function NavDropdown(props) {
+  var className = props.className,
+      cssModule = props.cssModule,
+      Tag = props.tag,
+      attributes = objectWithoutProperties(props, ['className', 'cssModule', 'tag']);
+
+
+  var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, 'nav-item'), cssModule);
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Dropdown, _extends({}, attributes, { tag: Tag, className: classes }));
+};
+
+NavDropdown.propTypes = propTypes$8;
+NavDropdown.defaultProps = defaultProps$8;
+
+var propTypes$12 = {
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  getRef: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  disabled: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  active: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object,
+  onClick: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func,
+  href: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.any
+};
+
+var defaultProps$12 = {
+  tag: 'a'
+};
+
+var NavLink = function (_React$Component) {
+  inherits(NavLink, _React$Component);
+
+  function NavLink(props) {
+    classCallCheck(this, NavLink);
+
+    var _this = possibleConstructorReturn(this, (NavLink.__proto__ || Object.getPrototypeOf(NavLink)).call(this, props));
+
+    _this.onClick = _this.onClick.bind(_this);
+    return _this;
+  }
+
+  createClass(NavLink, [{
+    key: 'onClick',
+    value: function onClick(e) {
+      if (this.props.disabled) {
+        e.preventDefault();
+        return;
+      }
+
+      if (this.props.href === '#') {
+        e.preventDefault();
+      }
+
+      if (this.props.onClick) {
+        this.props.onClick(e);
+      }
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          className = _props.className,
+          cssModule = _props.cssModule,
+          active = _props.active,
+          Tag = _props.tag,
+          getRef = _props.getRef,
+          attributes = objectWithoutProperties(_props, ['className', 'cssModule', 'active', 'tag', 'getRef']);
+
+
+      var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, 'nav-link', {
+        disabled: attributes.disabled,
+        active: active
+      }), cssModule);
+
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { ref: getRef, onClick: this.onClick, className: classes }));
+    }
+  }]);
+  return NavLink;
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
+
+NavLink.propTypes = propTypes$12;
+NavLink.defaultProps = defaultProps$12;
+
+var propTypes$13 = {
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object
+};
+
+var defaultProps$13 = {
+  tag: 'ol'
+};
+
+var Breadcrumb = function Breadcrumb(props) {
+  var className = props.className,
+      cssModule = props.cssModule,
+      Tag = props.tag,
+      attributes = objectWithoutProperties(props, ['className', 'cssModule', 'tag']);
+
+  var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, 'breadcrumb'), cssModule);
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { className: classes }));
+};
+
+Breadcrumb.propTypes = propTypes$13;
+Breadcrumb.defaultProps = defaultProps$13;
+
+var propTypes$14 = {
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  active: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object
+};
+
+var defaultProps$14 = {
+  tag: 'li'
+};
+
+var BreadcrumbItem = function BreadcrumbItem(props) {
+  var className = props.className,
+      cssModule = props.cssModule,
+      active = props.active,
+      Tag = props.tag,
+      attributes = objectWithoutProperties(props, ['className', 'cssModule', 'active', 'tag']);
+
+  var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, active ? 'active' : false, 'breadcrumb-item'), cssModule);
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { className: classes }));
+};
+
+BreadcrumbItem.propTypes = propTypes$14;
+BreadcrumbItem.defaultProps = defaultProps$14;
+
+var propTypes$15 = {
+  active: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  block: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  color: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  disabled: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  outline: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  getRef: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  onClick: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func,
+  size: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  children: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.node,
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object
+};
+
+var defaultProps$15 = {
+  color: 'secondary',
+  tag: 'button'
+};
+
+var Button = function (_React$Component) {
+  inherits(Button, _React$Component);
+
+  function Button(props) {
+    classCallCheck(this, Button);
+
+    var _this = possibleConstructorReturn(this, (Button.__proto__ || Object.getPrototypeOf(Button)).call(this, props));
+
+    _this.onClick = _this.onClick.bind(_this);
+    return _this;
+  }
+
+  createClass(Button, [{
+    key: 'onClick',
+    value: function onClick(e) {
+      if (this.props.disabled) {
+        e.preventDefault();
+        return;
+      }
+
+      if (this.props.onClick) {
+        this.props.onClick(e);
+      }
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          active = _props.active,
+          block = _props.block,
+          className = _props.className,
+          cssModule = _props.cssModule,
+          color = _props.color,
+          outline = _props.outline,
+          size = _props.size,
+          Tag = _props.tag,
+          getRef = _props.getRef,
+          attributes = objectWithoutProperties(_props, ['active', 'block', 'className', 'cssModule', 'color', 'outline', 'size', 'tag', 'getRef']);
+
+
+      var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, 'btn', 'btn' + (outline ? '-outline' : '') + '-' + color, size ? 'btn-' + size : false, block ? 'btn-block' : false, { active: active, disabled: this.props.disabled }), cssModule);
+
+      if (attributes.href && Tag === 'button') {
+        Tag = 'a';
+      }
+
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({
+        type: Tag === 'button' && attributes.onClick ? 'button' : undefined
+      }, attributes, {
+        className: classes,
+        ref: getRef,
+        onClick: this.onClick
+      }));
+    }
+  }]);
+  return Button;
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
+
+Button.propTypes = propTypes$15;
+Button.defaultProps = defaultProps$15;
+
+var propTypes$16 = {
+  children: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.node
+};
+
+var ButtonDropdown = function ButtonDropdown(props) {
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Dropdown, _extends({ group: true }, props));
+};
+
+ButtonDropdown.propTypes = propTypes$16;
+
+var propTypes$17 = {
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  'aria-label': __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object,
+  role: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  size: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  vertical: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool
+};
+
+var defaultProps$16 = {
+  tag: 'div',
+  role: 'group'
+};
+
+var ButtonGroup = function ButtonGroup(props) {
+  var className = props.className,
+      cssModule = props.cssModule,
+      size = props.size,
+      vertical = props.vertical,
+      Tag = props.tag,
+      attributes = objectWithoutProperties(props, ['className', 'cssModule', 'size', 'vertical', 'tag']);
+
+
+  var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, size ? 'btn-group-' + size : false, vertical ? 'btn-group-vertical' : 'btn-group'), cssModule);
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { className: classes }));
+};
+
+ButtonGroup.propTypes = propTypes$17;
+ButtonGroup.defaultProps = defaultProps$16;
+
+var propTypes$18 = {
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  'aria-label': __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object,
+  role: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string
+};
+
+var defaultProps$17 = {
+  tag: 'div',
+  role: 'toolbar'
+};
+
+var ButtonToolbar = function ButtonToolbar(props) {
+  var className = props.className,
+      cssModule = props.cssModule,
+      Tag = props.tag,
+      attributes = objectWithoutProperties(props, ['className', 'cssModule', 'tag']);
+
+
+  var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, 'btn-toolbar'), cssModule);
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { className: classes }));
+};
+
+ButtonToolbar.propTypes = propTypes$18;
+ButtonToolbar.defaultProps = defaultProps$17;
+
+var propTypes$19 = {
+  children: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.node,
+  active: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  disabled: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  divider: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  header: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  onClick: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func,
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object,
+  toggle: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool
+};
+
+var contextTypes$1 = {
+  toggle: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func
+};
+
+var defaultProps$18 = {
+  tag: 'button',
+  toggle: true
+};
+
+var DropdownItem = function (_React$Component) {
+  inherits(DropdownItem, _React$Component);
+
+  function DropdownItem(props) {
+    classCallCheck(this, DropdownItem);
+
+    var _this = possibleConstructorReturn(this, (DropdownItem.__proto__ || Object.getPrototypeOf(DropdownItem)).call(this, props));
+
+    _this.onClick = _this.onClick.bind(_this);
+    _this.getTabIndex = _this.getTabIndex.bind(_this);
+    return _this;
+  }
+
+  createClass(DropdownItem, [{
+    key: 'onClick',
+    value: function onClick(e) {
+      if (this.props.disabled || this.props.header || this.props.divider) {
+        e.preventDefault();
+        return;
+      }
+
+      if (this.props.onClick) {
+        this.props.onClick(e);
+      }
+
+      if (this.props.toggle) {
+        this.context.toggle();
+      }
+    }
+  }, {
+    key: 'getTabIndex',
+    value: function getTabIndex() {
+      if (this.props.disabled || this.props.header || this.props.divider) {
+        return '-1';
+      }
+
+      return '0';
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var tabIndex = this.getTabIndex();
+
+      var _omit = omit(this.props, ['toggle']),
+          className = _omit.className,
+          cssModule = _omit.cssModule,
+          divider = _omit.divider,
+          Tag = _omit.tag,
+          header = _omit.header,
+          active = _omit.active,
+          props = objectWithoutProperties(_omit, ['className', 'cssModule', 'divider', 'tag', 'header', 'active']);
+
+      var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, {
+        disabled: props.disabled,
+        'dropdown-item': !divider && !header,
+        active: active,
+        'dropdown-header': header,
+        'dropdown-divider': divider
+      }), cssModule);
+
+      if (Tag === 'button') {
+        if (header) {
+          Tag = 'h6';
+        } else if (divider) {
+          Tag = 'div';
+        } else if (props.href) {
+          Tag = 'a';
+        }
+      }
+
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({
+        type: Tag === 'button' && (props.onClick || this.props.toggle) ? 'button' : undefined
+      }, props, {
+        tabIndex: tabIndex,
+        className: classes,
+        onClick: this.onClick
+      }));
+    }
+  }]);
+  return DropdownItem;
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
+
+DropdownItem.propTypes = propTypes$19;
+DropdownItem.defaultProps = defaultProps$18;
+DropdownItem.contextTypes = contextTypes$1;
+
+var propTypes$20 = {
+  caret: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  color: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  children: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.node,
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object,
+  disabled: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  onClick: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func,
+  'data-toggle': __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  'aria-haspopup': __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  split: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  nav: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool
+};
+
+var defaultProps$19 = {
+  'data-toggle': 'dropdown',
+  'aria-haspopup': true,
+  color: 'secondary'
+};
+
+var contextTypes$2 = {
+  isOpen: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool.isRequired,
+  toggle: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func.isRequired
+};
+
+var DropdownToggle = function (_React$Component) {
+  inherits(DropdownToggle, _React$Component);
+
+  function DropdownToggle(props) {
+    classCallCheck(this, DropdownToggle);
+
+    var _this = possibleConstructorReturn(this, (DropdownToggle.__proto__ || Object.getPrototypeOf(DropdownToggle)).call(this, props));
+
+    _this.onClick = _this.onClick.bind(_this);
+    return _this;
+  }
+
+  createClass(DropdownToggle, [{
+    key: 'onClick',
+    value: function onClick(e) {
+      if (this.props.disabled) {
+        e.preventDefault();
+        return;
+      }
+
+      if (this.props.nav && !this.props.tag) {
+        e.preventDefault();
+      }
+
+      if (this.props.onClick) {
+        this.props.onClick(e);
+      }
+
+      this.context.toggle();
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          className = _props.className,
+          color = _props.color,
+          cssModule = _props.cssModule,
+          caret = _props.caret,
+          split = _props.split,
+          nav = _props.nav,
+          tag = _props.tag,
+          props = objectWithoutProperties(_props, ['className', 'color', 'cssModule', 'caret', 'split', 'nav', 'tag']);
+
+      var ariaLabel = props['aria-label'] || 'Toggle Dropdown';
+      var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, {
+        'dropdown-toggle': caret || split,
+        'dropdown-toggle-split': split,
+        active: this.context.isOpen,
+        'nav-link': nav
+      }), cssModule);
+      var children = props.children || __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'span',
+        { className: 'sr-only' },
+        ariaLabel
+      );
+
+      var Tag = void 0;
+
+      if (nav && !tag) {
+        Tag = 'a';
+        props.href = '#';
+      } else if (!tag) {
+        Tag = Button;
+        props.color = color;
+      } else {
+        Tag = tag;
+      }
+
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, props, {
+        className: classes,
+        onClick: this.onClick,
+        'aria-haspopup': 'true',
+        'aria-expanded': this.context.isOpen,
+        children: children
+      }));
+    }
+  }]);
+  return DropdownToggle;
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
+
+DropdownToggle.propTypes = propTypes$20;
+DropdownToggle.defaultProps = defaultProps$19;
+DropdownToggle.contextTypes = contextTypes$2;
+
+var propTypes$21 = {
+  baseClass: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  baseClassIn: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object,
+  transitionAppearTimeout: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.number,
+  transitionEnterTimeout: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.number,
+  transitionLeaveTimeout: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.number,
+  transitionAppear: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  transitionEnter: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  transitionLeave: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  onLeave: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func,
+  onEnter: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func
+};
+
+var defaultProps$20 = {
+  tag: 'div',
+  baseClass: 'fade',
+  baseClassIn: 'show',
+  transitionAppearTimeout: 0,
+  transitionEnterTimeout: 0,
+  transitionLeaveTimeout: 0,
+  transitionAppear: true,
+  transitionEnter: true,
+  transitionLeave: true
+};
+
+var Fade = function (_React$Component) {
+  inherits(Fade, _React$Component);
+
+  function Fade(props) {
+    classCallCheck(this, Fade);
+
+    var _this = possibleConstructorReturn(this, (Fade.__proto__ || Object.getPrototypeOf(Fade)).call(this, props));
+
+    _this.state = {
+      mounted: !props.transitionAppear
+    };
+
+    _this.onLeave = _this.onLeave.bind(_this);
+    _this.onEnter = _this.onEnter.bind(_this);
+    _this.timers = [];
+    return _this;
+  }
+
+  createClass(Fade, [{
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      this.timers.forEach(function (timer) {
+        return clearTimeout(timer);
+      });
+    }
+  }, {
+    key: 'onEnter',
+    value: function onEnter(cb) {
+      var _this2 = this;
+
+      return function () {
+        cb();
+        if (_this2.props.onEnter) {
+          _this2.props.onEnter();
+        }
+      };
+    }
+  }, {
+    key: 'onLeave',
+    value: function onLeave(cb) {
+      var _this3 = this;
+
+      return function () {
+        cb();
+        if (_this3.props.onLeave) {
+          _this3.props.onLeave();
+        }
+      };
+    }
+  }, {
+    key: 'componentWillAppear',
+    value: function componentWillAppear(cb) {
+      if (!this.props.transitionAppear) {
+        this.onEnter(cb)();
+      }
+
+      this.timers.push(setTimeout(this.onEnter(cb), this.props.transitionAppearTimeout));
+    }
+  }, {
+    key: 'componentDidAppear',
+    value: function componentDidAppear() {
+      this.setState({
+        mounted: true
+      });
+    }
+  }, {
+    key: 'componentWillEnter',
+    value: function componentWillEnter(cb) {
+      if (!this.props.transitionEnter) {
+        this.onEnter(cb)();
+      }
+
+      this.timers.push(setTimeout(this.onEnter(cb), this.props.transitionEnterTimeout));
+    }
+  }, {
+    key: 'componentDidEnter',
+    value: function componentDidEnter() {
+      this.setState({
+        mounted: true
+      });
+    }
+  }, {
+    key: 'componentWillLeave',
+    value: function componentWillLeave(cb) {
+      this.setState({
+        mounted: false
+      });
+
+      if (!this.props.transitionLeave) {
+        this.onLeave(cb)();
+      }
+
+      this.timers.push(setTimeout(this.onLeave(cb), this.props.transitionLeaveTimeout));
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          baseClass = _props.baseClass,
+          baseClassIn = _props.baseClassIn,
+          className = _props.className,
+          cssModule = _props.cssModule,
+          Tag = _props.tag;
+
+      var attributes = omit(this.props, Object.keys(propTypes$21));
+
+      var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, baseClass, this.state.mounted ? baseClassIn : false), cssModule);
+
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { className: classes }));
+    }
+  }]);
+  return Fade;
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
+
+Fade.propTypes = propTypes$21;
+Fade.defaultProps = defaultProps$20;
+
+var propTypes$22 = {
+  color: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  pill: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  children: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.node,
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object
+};
+
+var defaultProps$21 = {
+  color: 'default',
+  pill: false,
+  tag: 'span'
+};
+
+var Badge = function Badge(props) {
+  var className = props.className,
+      cssModule = props.cssModule,
+      color = props.color,
+      pill = props.pill,
+      Tag = props.tag,
+      attributes = objectWithoutProperties(props, ['className', 'cssModule', 'color', 'pill', 'tag']);
+
+
+  var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, 'badge', 'badge-' + color, pill ? 'badge-pill' : false), cssModule);
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { className: classes }));
+};
+
+Badge.propTypes = propTypes$22;
+Badge.defaultProps = defaultProps$21;
+
+var propTypes$23 = {
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  inverse: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  color: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  block: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  outline: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object
+};
+
+var defaultProps$22 = {
+  tag: 'div'
+};
+
+var Card = function Card(props) {
+  var className = props.className,
+      cssModule = props.cssModule,
+      color = props.color,
+      block = props.block,
+      inverse = props.inverse,
+      outline = props.outline,
+      Tag = props.tag,
+      attributes = objectWithoutProperties(props, ['className', 'cssModule', 'color', 'block', 'inverse', 'outline', 'tag']);
+
+  var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, 'card', inverse ? 'card-inverse' : false, block ? 'card-block' : false, color ? 'card' + (outline ? '-outline' : '') + '-' + color : false), cssModule);
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { className: classes }));
+};
+
+Card.propTypes = propTypes$23;
+Card.defaultProps = defaultProps$22;
+
+var propTypes$24 = {
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object
+};
+
+var defaultProps$23 = {
+  tag: 'div'
+};
+
+var CardGroup = function CardGroup(props) {
+  var className = props.className,
+      cssModule = props.cssModule,
+      Tag = props.tag,
+      attributes = objectWithoutProperties(props, ['className', 'cssModule', 'tag']);
+
+  var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, 'card-group'), cssModule);
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { className: classes }));
+};
+
+CardGroup.propTypes = propTypes$24;
+CardGroup.defaultProps = defaultProps$23;
+
+var propTypes$25 = {
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object
+};
+
+var defaultProps$24 = {
+  tag: 'div'
+};
+
+var CardDeck = function CardDeck(props) {
+  var className = props.className,
+      cssModule = props.cssModule,
+      Tag = props.tag,
+      attributes = objectWithoutProperties(props, ['className', 'cssModule', 'tag']);
+
+  var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, 'card-deck'), cssModule);
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { className: classes }));
+};
+
+CardDeck.propTypes = propTypes$25;
+CardDeck.defaultProps = defaultProps$24;
+
+var propTypes$26 = {
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object
+};
+
+var defaultProps$25 = {
+  tag: 'div'
+};
+
+var CardColumns = function CardColumns(props) {
+  var className = props.className,
+      cssModule = props.cssModule,
+      Tag = props.tag,
+      attributes = objectWithoutProperties(props, ['className', 'cssModule', 'tag']);
+
+  var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, 'card-columns'), cssModule);
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { className: classes }));
+};
+
+CardColumns.propTypes = propTypes$26;
+CardColumns.defaultProps = defaultProps$25;
+
+var propTypes$27 = {
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object
+};
+
+var defaultProps$26 = {
+  tag: 'div'
+};
+
+var CardBlock = function CardBlock(props) {
+  var className = props.className,
+      cssModule = props.cssModule,
+      Tag = props.tag,
+      attributes = objectWithoutProperties(props, ['className', 'cssModule', 'tag']);
+
+  var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, 'card-block'), cssModule);
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { className: classes }));
+};
+
+CardBlock.propTypes = propTypes$27;
+CardBlock.defaultProps = defaultProps$26;
+
+var propTypes$28 = {
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  getRef: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object
+};
+
+var defaultProps$27 = {
+  tag: 'a'
+};
+
+var CardLink = function CardLink(props) {
+  var className = props.className,
+      cssModule = props.cssModule,
+      Tag = props.tag,
+      getRef = props.getRef,
+      attributes = objectWithoutProperties(props, ['className', 'cssModule', 'tag', 'getRef']);
+
+  var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, 'card-link'), cssModule);
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { ref: getRef, className: classes }));
+};
+
+CardLink.propTypes = propTypes$28;
+CardLink.defaultProps = defaultProps$27;
+
+var propTypes$29 = {
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object
+};
+
+var defaultProps$28 = {
+  tag: 'div'
+};
+
+var CardFooter = function CardFooter(props) {
+  var className = props.className,
+      cssModule = props.cssModule,
+      Tag = props.tag,
+      attributes = objectWithoutProperties(props, ['className', 'cssModule', 'tag']);
+
+  var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, 'card-footer'), cssModule);
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { className: classes }));
+};
+
+CardFooter.propTypes = propTypes$29;
+CardFooter.defaultProps = defaultProps$28;
+
+var propTypes$30 = {
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object
+};
+
+var defaultProps$29 = {
+  tag: 'div'
+};
+
+var CardHeader = function CardHeader(props) {
+  var className = props.className,
+      cssModule = props.cssModule,
+      Tag = props.tag,
+      attributes = objectWithoutProperties(props, ['className', 'cssModule', 'tag']);
+
+  var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, 'card-header'), cssModule);
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { className: classes }));
+};
+
+CardHeader.propTypes = propTypes$30;
+CardHeader.defaultProps = defaultProps$29;
+
+var propTypes$31 = {
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  top: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  bottom: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object
+};
+
+var defaultProps$30 = {
+  tag: 'img'
+};
+
+var CardImg = function CardImg(props) {
+  var className = props.className,
+      cssModule = props.cssModule,
+      top = props.top,
+      bottom = props.bottom,
+      Tag = props.tag,
+      attributes = objectWithoutProperties(props, ['className', 'cssModule', 'top', 'bottom', 'tag']);
+
+
+  var cardImgClassName = 'card-img';
+  if (top) {
+    cardImgClassName = 'card-img-top';
+  }
+  if (bottom) {
+    cardImgClassName = 'card-img-bottom';
+  }
+
+  var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, cardImgClassName), cssModule);
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { className: classes }));
+};
+
+CardImg.propTypes = propTypes$31;
+CardImg.defaultProps = defaultProps$30;
+
+var propTypes$32 = {
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object
+};
+
+var defaultProps$31 = {
+  tag: 'div'
+};
+
+var CardImgOverlay = function CardImgOverlay(props) {
+  var className = props.className,
+      cssModule = props.cssModule,
+      Tag = props.tag,
+      attributes = objectWithoutProperties(props, ['className', 'cssModule', 'tag']);
+
+  var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, 'card-img-overlay'), cssModule);
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { className: classes }));
+};
+
+CardImgOverlay.propTypes = propTypes$32;
+CardImgOverlay.defaultProps = defaultProps$31;
+
+var propTypes$33 = {
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object
+};
+
+var defaultProps$32 = {
+  tag: 'h6'
+};
+
+var CardSubtitle = function CardSubtitle(props) {
+  var className = props.className,
+      cssModule = props.cssModule,
+      Tag = props.tag,
+      attributes = objectWithoutProperties(props, ['className', 'cssModule', 'tag']);
+
+  var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, 'card-subtitle'), cssModule);
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { className: classes }));
+};
+
+CardSubtitle.propTypes = propTypes$33;
+CardSubtitle.defaultProps = defaultProps$32;
+
+var propTypes$34 = {
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object
+};
+
+var defaultProps$33 = {
+  tag: 'p'
+};
+
+var CardText = function CardText(props) {
+  var className = props.className,
+      cssModule = props.cssModule,
+      Tag = props.tag,
+      attributes = objectWithoutProperties(props, ['className', 'cssModule', 'tag']);
+
+  var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, 'card-text'), cssModule);
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { className: classes }));
+};
+
+CardText.propTypes = propTypes$34;
+CardText.defaultProps = defaultProps$33;
+
+var propTypes$35 = {
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object
+};
+
+var defaultProps$34 = {
+  tag: 'h4'
+};
+
+var CardTitle = function CardTitle(props) {
+  var className = props.className,
+      cssModule = props.cssModule,
+      Tag = props.tag,
+      attributes = objectWithoutProperties(props, ['className', 'cssModule', 'tag']);
+
+  var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, 'card-title'), cssModule);
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { className: classes }));
+};
+
+CardTitle.propTypes = propTypes$35;
+CardTitle.defaultProps = defaultProps$34;
+
+var propTypes$36 = {
+  placement: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOf(tetherAttachements),
+  target: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string.isRequired,
+  isOpen: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  tether: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object,
+  tetherRef: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func,
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object,
+  toggle: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func
+};
+
+var defaultProps$35 = {
+  isOpen: false,
+  placement: 'bottom',
+  toggle: function toggle() {}
+};
+
+var defaultTetherConfig$1 = {
+  classPrefix: 'bs-tether',
+  classes: {
+    element: false,
+    enabled: 'show'
+  },
+  constraints: [{ to: 'scrollParent', attachment: 'together none' }, { to: 'window', attachment: 'together none' }]
+};
+
+var Popover = function (_React$Component) {
+  inherits(Popover, _React$Component);
+
+  function Popover(props) {
+    classCallCheck(this, Popover);
+
+    var _this = possibleConstructorReturn(this, (Popover.__proto__ || Object.getPrototypeOf(Popover)).call(this, props));
+
+    _this.getTetherConfig = _this.getTetherConfig.bind(_this);
+    return _this;
+  }
+
+  createClass(Popover, [{
+    key: 'getTetherConfig',
+    value: function getTetherConfig() {
+      var attachments = getTetherAttachments(this.props.placement);
+      return _extends({}, defaultTetherConfig$1, attachments, {
+        target: '#' + this.props.target
+      }, this.props.tether);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      if (!this.props.isOpen) {
+        return null;
+      }
+
+      var tetherConfig = this.getTetherConfig();
+
+      var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()('popover-inner', this.props.className), this.props.cssModule);
+
+      var attributes = omit(this.props, Object.keys(propTypes$36));
+
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        TetherContent,
+        {
+          className: mapToCssModules('popover', this.props.cssModule),
+          tether: tetherConfig,
+          tetherRef: this.props.tetherRef,
+          isOpen: this.props.isOpen,
+          toggle: this.props.toggle
+        },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', _extends({}, attributes, { className: classes }))
+      );
+    }
+  }]);
+  return Popover;
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
+
+Popover.propTypes = propTypes$36;
+Popover.defaultProps = defaultProps$35;
+
+var propTypes$37 = {
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object
+};
+
+var defaultProps$36 = {
+  tag: 'h3'
+};
+
+var PopoverTitle = function PopoverTitle(props) {
+  var className = props.className,
+      cssModule = props.cssModule,
+      Tag = props.tag,
+      attributes = objectWithoutProperties(props, ['className', 'cssModule', 'tag']);
+
+
+  var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, 'popover-title'), cssModule);
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { className: classes }));
+};
+
+PopoverTitle.propTypes = propTypes$37;
+PopoverTitle.defaultProps = defaultProps$36;
+
+var propTypes$38 = {
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object
+};
+
+var defaultProps$37 = {
+  tag: 'div'
+};
+
+var PopoverContent = function PopoverContent(props) {
+  var className = props.className,
+      cssModule = props.cssModule,
+      Tag = props.tag,
+      attributes = objectWithoutProperties(props, ['className', 'cssModule', 'tag']);
+
+
+  var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, 'popover-content'), cssModule);
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { className: classes }));
+};
+
+PopoverContent.propTypes = propTypes$38;
+PopoverContent.defaultProps = defaultProps$37;
+
+var propTypes$39 = {
+  children: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.node,
+  bar: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  multi: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  value: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.number]),
+  max: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.number]),
+  animated: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  striped: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  color: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  barClassName: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object
+};
+
+var defaultProps$38 = {
+  tag: 'div',
+  value: 0,
+  max: 100
+};
+
+var Progress = function Progress(props) {
+  var children = props.children,
+      className = props.className,
+      barClassName = props.barClassName,
+      cssModule = props.cssModule,
+      value = props.value,
+      max = props.max,
+      animated = props.animated,
+      striped = props.striped,
+      color = props.color,
+      bar = props.bar,
+      multi = props.multi,
+      Tag = props.tag,
+      attributes = objectWithoutProperties(props, ['children', 'className', 'barClassName', 'cssModule', 'value', 'max', 'animated', 'striped', 'color', 'bar', 'multi', 'tag']);
+
+
+  var percent = __WEBPACK_IMPORTED_MODULE_7_lodash_tonumber___default()(value) / __WEBPACK_IMPORTED_MODULE_7_lodash_tonumber___default()(max) * 100;
+
+  var progressClasses = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, 'progress'), cssModule);
+
+  var progressBarClasses = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()('progress-bar', bar ? className || barClassName : barClassName, animated ? 'progress-bar-animated' : null, color ? 'bg-' + color : null, striped || animated ? 'progress-bar-striped' : null), cssModule);
+
+  var ProgressBar = multi ? children : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', {
+    className: progressBarClasses,
+    style: { width: percent + '%' },
+    role: 'progressbar',
+    'aria-valuenow': value,
+    'aria-valuemin': '0',
+    'aria-valuemax': max,
+    children: children
+  });
+
+  if (bar) {
+    return ProgressBar;
+  }
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { className: progressClasses, children: ProgressBar }));
+};
+
+Progress.propTypes = propTypes$39;
+Progress.defaultProps = defaultProps$38;
+
+var propTypes$40 = {
+  isOpen: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  autoFocus: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  size: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  toggle: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func,
+  keyboard: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  backdrop: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOf(['static'])]),
+  onEnter: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func,
+  onExit: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func,
+  children: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.node,
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  wrapClassName: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  modalClassName: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  backdropClassName: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  contentClassName: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  fade: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object,
+  zIndex: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.number, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  backdropTransitionTimeout: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.number,
+  backdropTransitionAppearTimeout: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.number,
+  backdropTransitionEnterTimeout: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.number,
+  backdropTransitionLeaveTimeout: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.number,
+  modalTransitionTimeout: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.number,
+  modalTransitionAppearTimeout: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.number,
+  modalTransitionEnterTimeout: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.number,
+  modalTransitionLeaveTimeout: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.number
+};
+
+var propsToOmit = Object.keys(propTypes$40);
+
+var defaultProps$39 = {
+  isOpen: false,
+  autoFocus: true,
+  backdrop: true,
+  keyboard: true,
+  zIndex: 1050,
+  fade: true,
+  modalTransitionTimeout: 300,
+  backdropTransitionTimeout: 150
+};
+
+var Modal = function (_React$Component) {
+  inherits(Modal, _React$Component);
+
+  function Modal(props) {
+    classCallCheck(this, Modal);
+
+    var _this = possibleConstructorReturn(this, (Modal.__proto__ || Object.getPrototypeOf(Modal)).call(this, props));
+
+    _this.originalBodyPadding = null;
+    _this.isBodyOverflowing = false;
+    _this.togglePortal = _this.togglePortal.bind(_this);
+    _this.handleBackdropClick = _this.handleBackdropClick.bind(_this);
+    _this.handleEscape = _this.handleEscape.bind(_this);
+    _this.destroy = _this.destroy.bind(_this);
+    _this.onEnter = _this.onEnter.bind(_this);
+    _this.onExit = _this.onExit.bind(_this);
+    return _this;
+  }
+
+  createClass(Modal, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      if (this.props.isOpen) {
+        this.togglePortal();
+      }
+    }
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate(prevProps) {
+      if (this.props.isOpen !== prevProps.isOpen) {
+        // handle portal events/dom updates
+        this.togglePortal();
+      } else if (this._element) {
+        // rerender portal
+        this.renderIntoSubtree();
+      }
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      this.onExit();
+    }
+  }, {
+    key: 'onEnter',
+    value: function onEnter() {
+      if (this.props.onEnter) {
+        this.props.onEnter();
+      }
+    }
+  }, {
+    key: 'onExit',
+    value: function onExit() {
+      this.destroy();
+      if (this.props.onExit) {
+        this.props.onExit();
+      }
+    }
+  }, {
+    key: 'handleEscape',
+    value: function handleEscape(e) {
+      if (this.props.keyboard && e.keyCode === 27 && this.props.toggle) {
+        this.props.toggle();
+      }
+    }
+  }, {
+    key: 'handleBackdropClick',
+    value: function handleBackdropClick(e) {
+      if (this.props.backdrop !== true) return;
+
+      var container = this._dialog;
+
+      if (e.target && !container.contains(e.target) && this.props.toggle) {
+        this.props.toggle();
+      }
+    }
+  }, {
+    key: 'hasTransition',
+    value: function hasTransition() {
+      if (this.props.fade === false) {
+        return false;
+      }
+
+      return this.props.modalTransitionTimeout > 0;
+    }
+  }, {
+    key: 'togglePortal',
+    value: function togglePortal() {
+      if (this.props.isOpen) {
+        if (this.props.autoFocus) {
+          this._focus = true;
+        }
+        this.show();
+        if (!this.hasTransition()) {
+          this.onEnter();
+        }
+      } else {
+        this.hide();
+        if (!this.hasTransition()) {
+          this.onExit();
+        }
+      }
+    }
+  }, {
+    key: 'destroy',
+    value: function destroy() {
+      if (this._element) {
+        __WEBPACK_IMPORTED_MODULE_4_react_dom___default.a.unmountComponentAtNode(this._element);
+        document.body.removeChild(this._element);
+        this._element = null;
+      }
+
+      // Use regex to prevent matching `modal-open` as part of a different class, e.g. `my-modal-opened`
+      var classes = document.body.className.replace(/(^| )modal-open( |$)/, ' ');
+      document.body.className = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(classes).trim(), this.props.cssModule);
+      setScrollbarWidth(this.originalBodyPadding);
+    }
+  }, {
+    key: 'hide',
+    value: function hide() {
+      this.renderIntoSubtree();
+    }
+  }, {
+    key: 'show',
+    value: function show() {
+      var classes = document.body.className;
+      this._element = document.createElement('div');
+      this._element.setAttribute('tabindex', '-1');
+      this._element.style.position = 'relative';
+      this._element.style.zIndex = this.props.zIndex;
+      this.originalBodyPadding = getOriginalBodyPadding();
+
+      conditionallyUpdateScrollbar();
+
+      document.body.appendChild(this._element);
+
+      document.body.className = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(classes, 'modal-open'), this.props.cssModule);
+
+      this.renderIntoSubtree();
+    }
+  }, {
+    key: 'renderModalDialog',
+    value: function renderModalDialog() {
+      var _this2 = this;
+
+      var attributes = omit(this.props, propsToOmit);
+
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        _extends({
+          className: mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()('modal-dialog', this.props.className, defineProperty({}, 'modal-' + this.props.size, this.props.size)), this.props.cssModule),
+          role: 'document',
+          ref: function ref(c) {
+            return _this2._dialog = c;
+          }
+        }, attributes),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          {
+            className: mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()('modal-content', this.props.contentClassName), this.props.cssModule)
+          },
+          this.props.children
+        )
+      );
+    }
+  }, {
+    key: 'renderIntoSubtree',
+    value: function renderIntoSubtree() {
+      __WEBPACK_IMPORTED_MODULE_4_react_dom___default.a.unstable_renderSubtreeIntoContainer(this, this.renderChildren(), this._element);
+
+      // check if modal should receive focus
+      if (this._focus) {
+        this._dialog.parentNode.focus();
+        this._focus = false;
+      }
+    }
+  }, {
+    key: 'renderChildren',
+    value: function renderChildren() {
+      var _props = this.props,
+          wrapClassName = _props.wrapClassName,
+          modalClassName = _props.modalClassName,
+          backdropClassName = _props.backdropClassName,
+          cssModule = _props.cssModule,
+          isOpen = _props.isOpen,
+          backdrop = _props.backdrop,
+          modalTransitionTimeout = _props.modalTransitionTimeout,
+          backdropTransitionTimeout = _props.backdropTransitionTimeout;
+
+
+      var modalAttributes = {
+        onClickCapture: this.handleBackdropClick,
+        onKeyUp: this.handleEscape,
+        style: { display: 'block' },
+        tabIndex: '-1'
+      };
+
+      if (this.hasTransition()) {
+        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          __WEBPACK_IMPORTED_MODULE_8_react_transition_group__["TransitionGroup"],
+          { component: 'div', className: mapToCssModules(wrapClassName) },
+          isOpen && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            Fade,
+            _extends({
+              key: 'modal-dialog',
+              onEnter: this.onEnter,
+              onLeave: this.onExit,
+              transitionAppearTimeout: typeof this.props.modalTransitionAppearTimeout === 'number' ? this.props.modalTransitionAppearTimeout : modalTransitionTimeout,
+              transitionEnterTimeout: typeof this.props.modalTransitionEnterTimeout === 'number' ? this.props.modalTransitionEnterTimeout : modalTransitionTimeout,
+              transitionLeaveTimeout: typeof this.props.modalTransitionLeaveTimeout === 'number' ? this.props.modalTransitionLeaveTimeout : modalTransitionTimeout,
+              cssModule: cssModule,
+              className: mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()('modal', modalClassName), cssModule)
+            }, modalAttributes),
+            this.renderModalDialog()
+          ),
+          isOpen && backdrop && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Fade, {
+            key: 'modal-backdrop',
+            transitionAppearTimeout: typeof this.props.backdropTransitionAppearTimeout === 'number' ? this.props.backdropTransitionAppearTimeout : backdropTransitionTimeout,
+            transitionEnterTimeout: typeof this.props.backdropTransitionEnterTimeout === 'number' ? this.props.backdropTransitionEnterTimeout : backdropTransitionTimeout,
+            transitionLeaveTimeout: typeof this.props.backdropTransitionLeaveTimeout === 'number' ? this.props.backdropTransitionLeaveTimeout : backdropTransitionTimeout,
+            cssModule: cssModule,
+            className: mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()('modal-backdrop', backdropClassName), cssModule)
+          })
+        );
+      }
+
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        { className: mapToCssModules(wrapClassName) },
+        isOpen && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          _extends({
+            className: mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()('modal', 'show', modalClassName), cssModule)
+          }, modalAttributes),
+          this.renderModalDialog()
+        ),
+        isOpen && backdrop && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', {
+          className: mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()('modal-backdrop', 'show', backdropClassName), cssModule)
+        })
+      );
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return null;
+    }
+  }]);
+  return Modal;
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
+
+Modal.propTypes = propTypes$40;
+Modal.defaultProps = defaultProps$39;
+
+var propTypes$41 = {
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  wrapTag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  toggle: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func,
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object,
+  children: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.node
+};
+
+var defaultProps$40 = {
+  tag: 'h4',
+  wrapTag: 'div'
+};
+
+var ModalHeader = function ModalHeader(props) {
+  var closeButton = void 0;
+  var className = props.className,
+      cssModule = props.cssModule,
+      children = props.children,
+      toggle = props.toggle,
+      Tag = props.tag,
+      WrapTag = props.wrapTag,
+      attributes = objectWithoutProperties(props, ['className', 'cssModule', 'children', 'toggle', 'tag', 'wrapTag']);
+
+
+  var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, 'modal-header'), cssModule);
+
+  if (toggle) {
+    closeButton = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      'button',
+      { type: 'button', onClick: toggle, className: 'close', 'aria-label': 'Close' },
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'span',
+        { 'aria-hidden': 'true' },
+        String.fromCharCode(215)
+      )
+    );
+  }
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+    WrapTag,
+    _extends({}, attributes, { className: classes }),
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      Tag,
+      { className: mapToCssModules('modal-title', cssModule) },
+      children
+    ),
+    closeButton
+  );
+};
+
+ModalHeader.propTypes = propTypes$41;
+ModalHeader.defaultProps = defaultProps$40;
+
+var propTypes$42 = {
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object
+};
+
+var defaultProps$41 = {
+  tag: 'div'
+};
+
+var ModalBody = function ModalBody(props) {
+  var className = props.className,
+      cssModule = props.cssModule,
+      Tag = props.tag,
+      attributes = objectWithoutProperties(props, ['className', 'cssModule', 'tag']);
+
+  var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, 'modal-body'), cssModule);
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { className: classes }));
+};
+
+ModalBody.propTypes = propTypes$42;
+ModalBody.defaultProps = defaultProps$41;
+
+var propTypes$43 = {
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object
+};
+
+var defaultProps$42 = {
+  tag: 'div'
+};
+
+var ModalFooter = function ModalFooter(props) {
+  var className = props.className,
+      cssModule = props.cssModule,
+      Tag = props.tag,
+      attributes = objectWithoutProperties(props, ['className', 'cssModule', 'tag']);
+
+  var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, 'modal-footer'), cssModule);
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { className: classes }));
+};
+
+ModalFooter.propTypes = propTypes$43;
+ModalFooter.defaultProps = defaultProps$42;
+
+var propTypes$44 = {
+  placement: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOf(tetherAttachements),
+  target: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object]).isRequired,
+  isOpen: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  disabled: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  tether: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object,
+  tetherRef: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func,
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object,
+  toggle: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func,
+  autohide: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  delay: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.shape({ show: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.number, hide: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.number }), __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.number])
+};
+
+var DEFAULT_DELAYS = {
+  show: 0,
+  hide: 250
+};
+
+var defaultProps$43 = {
+  isOpen: false,
+  placement: 'bottom',
+  delay: DEFAULT_DELAYS,
+  autohide: true,
+  toggle: function toggle() {}
+};
+
+var defaultTetherConfig$2 = {
+  classPrefix: 'bs-tether',
+  classes: {
+    element: false,
+    enabled: 'show'
+  },
+  constraints: [{ to: 'scrollParent', attachment: 'together none' }, { to: 'window', attachment: 'together none' }]
+};
+
+var Tooltip = function (_React$Component) {
+  inherits(Tooltip, _React$Component);
+
+  function Tooltip(props) {
+    classCallCheck(this, Tooltip);
+
+    var _this = possibleConstructorReturn(this, (Tooltip.__proto__ || Object.getPrototypeOf(Tooltip)).call(this, props));
+
+    _this.addTargetEvents = _this.addTargetEvents.bind(_this);
+    _this.getTarget = _this.getTarget.bind(_this);
+    _this.getTetherConfig = _this.getTetherConfig.bind(_this);
+    _this.handleDocumentClick = _this.handleDocumentClick.bind(_this);
+    _this.removeTargetEvents = _this.removeTargetEvents.bind(_this);
+    _this.toggle = _this.toggle.bind(_this);
+    _this.onMouseOverTooltip = _this.onMouseOverTooltip.bind(_this);
+    _this.onMouseLeaveTooltip = _this.onMouseLeaveTooltip.bind(_this);
+    _this.onMouseOverTooltipContent = _this.onMouseOverTooltipContent.bind(_this);
+    _this.onMouseLeaveTooltipContent = _this.onMouseLeaveTooltipContent.bind(_this);
+    _this.show = _this.show.bind(_this);
+    _this.hide = _this.hide.bind(_this);
+    return _this;
+  }
+
+  createClass(Tooltip, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this._target = this.getTarget();
+      this.addTargetEvents();
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      this.removeTargetEvents();
+    }
+  }, {
+    key: 'onMouseOverTooltip',
+    value: function onMouseOverTooltip() {
+      if (this._hideTimeout) {
+        this.clearHideTimeout();
+      }
+      this._showTimeout = setTimeout(this.show, this.getDelay('show'));
+    }
+  }, {
+    key: 'onMouseLeaveTooltip',
+    value: function onMouseLeaveTooltip() {
+      if (this._showTimeout) {
+        this.clearShowTimeout();
+      }
+      this._hideTimeout = setTimeout(this.hide, this.getDelay('hide'));
+    }
+  }, {
+    key: 'onMouseOverTooltipContent',
+    value: function onMouseOverTooltipContent() {
+      if (this.props.autohide) {
+        return;
+      }
+      if (this._hideTimeout) {
+        this.clearHideTimeout();
+      }
+    }
+  }, {
+    key: 'onMouseLeaveTooltipContent',
+    value: function onMouseLeaveTooltipContent() {
+      if (this.props.autohide) {
+        return;
+      }
+      if (this._showTimeout) {
+        this.clearShowTimeout();
+      }
+      this._hideTimeout = setTimeout(this.hide, this.getDelay('hide'));
+    }
+  }, {
+    key: 'getDelay',
+    value: function getDelay(key) {
+      var delay = this.props.delay;
+
+      if ((typeof delay === 'undefined' ? 'undefined' : _typeof(delay)) === 'object') {
+        return isNaN(delay[key]) ? DEFAULT_DELAYS[key] : delay[key];
+      }
+      return delay;
+    }
+  }, {
+    key: 'getTarget',
+    value: function getTarget() {
+      var target = this.props.target;
+
+      if ((typeof target === 'undefined' ? 'undefined' : _typeof(target)) === 'object') {
+        return target;
+      }
+      return document.getElementById(target);
+    }
+  }, {
+    key: 'getTetherConfig',
+    value: function getTetherConfig() {
+      var attachments = getTetherAttachments(this.props.placement);
+      return _extends({}, defaultTetherConfig$2, attachments, {
+        target: this.getTarget
+      }, this.props.tether);
+    }
+  }, {
+    key: 'show',
+    value: function show() {
+      if (!this.props.isOpen) {
+        this.clearShowTimeout();
+        this.toggle();
+      }
+    }
+  }, {
+    key: 'hide',
+    value: function hide() {
+      if (this.props.isOpen) {
+        this.clearHideTimeout();
+        this.toggle();
+      }
+    }
+  }, {
+    key: 'clearShowTimeout',
+    value: function clearShowTimeout() {
+      clearTimeout(this._showTimeout);
+      this._showTimeout = undefined;
+    }
+  }, {
+    key: 'clearHideTimeout',
+    value: function clearHideTimeout() {
+      clearTimeout(this._hideTimeout);
+      this._hideTimeout = undefined;
+    }
+  }, {
+    key: 'handleDocumentClick',
+    value: function handleDocumentClick(e) {
+      if (e.target === this._target || this._target.contains(e.target)) {
+        if (this._hideTimeout) {
+          this.clearHideTimeout();
+        }
+
+        if (!this.props.isOpen) {
+          this.toggle();
+        }
+      }
+    }
+  }, {
+    key: 'addTargetEvents',
+    value: function addTargetEvents() {
+      this._target.addEventListener('mouseover', this.onMouseOverTooltip, true);
+      this._target.addEventListener('mouseout', this.onMouseLeaveTooltip, true);
+      document.addEventListener('click', this.handleDocumentClick, true);
+    }
+  }, {
+    key: 'removeTargetEvents',
+    value: function removeTargetEvents() {
+      this._target.removeEventListener('mouseover', this.onMouseOverTooltip, true);
+      this._target.removeEventListener('mouseout', this.onMouseLeaveTooltip, true);
+      document.removeEventListener('click', this.handleDocumentClick, true);
+    }
+  }, {
+    key: 'toggle',
+    value: function toggle(e) {
+      if (this.props.disabled) {
+        return e && e.preventDefault();
+      }
+
+      return this.props.toggle();
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      if (!this.props.isOpen) {
+        return null;
+      }
+
+      var attributes = omit(this.props, Object.keys(propTypes$44));
+      var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()('tooltip-inner', this.props.className), this.props.cssModule);
+
+      var tetherConfig = this.getTetherConfig();
+
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        TetherContent,
+        {
+          className: 'tooltip',
+          tether: tetherConfig,
+          tetherRef: this.props.tetherRef,
+          isOpen: this.props.isOpen,
+          toggle: this.toggle
+        },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', _extends({}, attributes, {
+          className: classes,
+          onMouseOver: this.onMouseOverTooltipContent,
+          onMouseLeave: this.onMouseLeaveTooltipContent
+        }))
+      );
+    }
+  }]);
+  return Tooltip;
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
+
+Tooltip.propTypes = propTypes$44;
+Tooltip.defaultProps = defaultProps$43;
+
+var propTypes$45 = {
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object,
+  size: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  bordered: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  striped: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  inverse: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  hover: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  reflow: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  responsive: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  responsiveTag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string])
+};
+
+var defaultProps$44 = {
+  tag: 'table',
+  responsiveTag: 'div'
+};
+
+var Table = function Table(props) {
+  var className = props.className,
+      cssModule = props.cssModule,
+      size = props.size,
+      bordered = props.bordered,
+      striped = props.striped,
+      inverse = props.inverse,
+      hover = props.hover,
+      reflow = props.reflow,
+      responsive = props.responsive,
+      Tag = props.tag,
+      ResponsiveTag = props.responsiveTag,
+      attributes = objectWithoutProperties(props, ['className', 'cssModule', 'size', 'bordered', 'striped', 'inverse', 'hover', 'reflow', 'responsive', 'tag', 'responsiveTag']);
+
+
+  var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, 'table', size ? 'table-' + size : false, bordered ? 'table-bordered' : false, striped ? 'table-striped' : false, inverse ? 'table-inverse' : false, hover ? 'table-hover' : false, reflow ? 'table-reflow' : false), cssModule);
+
+  var table = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { className: classes }));
+
+  if (responsive) {
+    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      ResponsiveTag,
+      { className: 'table-responsive' },
+      table
+    );
+  }
+
+  return table;
+};
+
+Table.propTypes = propTypes$45;
+Table.defaultProps = defaultProps$44;
+
+var propTypes$46 = {
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  flush: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object
+};
+
+var defaultProps$45 = {
+  tag: 'ul'
+};
+
+var ListGroup = function ListGroup(props) {
+  var className = props.className,
+      cssModule = props.cssModule,
+      Tag = props.tag,
+      flush = props.flush,
+      attributes = objectWithoutProperties(props, ['className', 'cssModule', 'tag', 'flush']);
+
+  var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, 'list-group', flush ? 'list-group-flush' : false), cssModule);
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { className: classes }));
+};
+
+ListGroup.propTypes = propTypes$46;
+ListGroup.defaultProps = defaultProps$45;
+
+var propTypes$47 = {
+  children: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.node,
+  inline: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  getRef: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object
+};
+
+var defaultProps$46 = {
+  tag: 'form'
+};
+
+var Form = function Form(props) {
+  var className = props.className,
+      cssModule = props.cssModule,
+      inline = props.inline,
+      Tag = props.tag,
+      getRef = props.getRef,
+      attributes = objectWithoutProperties(props, ['className', 'cssModule', 'inline', 'tag', 'getRef']);
+
+
+  var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, inline ? 'form-inline' : false), cssModule);
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { ref: getRef, className: classes }));
+};
+
+Form.propTypes = propTypes$47;
+Form.defaultProps = defaultProps$46;
+
+var propTypes$48 = {
+  children: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.node,
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object
+};
+
+var defaultProps$47 = {
+  tag: 'div'
+};
+
+var FormFeedback = function FormFeedback(props) {
+  var className = props.className,
+      cssModule = props.cssModule,
+      Tag = props.tag,
+      attributes = objectWithoutProperties(props, ['className', 'cssModule', 'tag']);
+
+
+  var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, 'form-control-feedback'), cssModule);
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { className: classes }));
+};
+
+FormFeedback.propTypes = propTypes$48;
+FormFeedback.defaultProps = defaultProps$47;
+
+var propTypes$49 = {
+  children: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.node,
+  row: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  check: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  disabled: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  color: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object
+};
+
+var defaultProps$48 = {
+  tag: 'div'
+};
+
+var FormGroup = function FormGroup(props) {
+  var className = props.className,
+      cssModule = props.cssModule,
+      row = props.row,
+      disabled = props.disabled,
+      color = props.color,
+      check = props.check,
+      Tag = props.tag,
+      attributes = objectWithoutProperties(props, ['className', 'cssModule', 'row', 'disabled', 'color', 'check', 'tag']);
+
+
+  var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, color ? 'has-' + color : false, row ? 'row' : false, check ? 'form-check' : 'form-group', check && disabled ? 'disabled' : false), cssModule);
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { className: classes }));
+};
+
+FormGroup.propTypes = propTypes$49;
+FormGroup.defaultProps = defaultProps$48;
+
+var propTypes$50 = {
+  children: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.node,
+  inline: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  color: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object
+};
+
+var defaultProps$49 = {
+  tag: 'small'
+};
+
+var FormText = function FormText(props) {
+  var className = props.className,
+      cssModule = props.cssModule,
+      inline = props.inline,
+      color = props.color,
+      Tag = props.tag,
+      attributes = objectWithoutProperties(props, ['className', 'cssModule', 'inline', 'color', 'tag']);
+
+
+  var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, !inline ? 'form-text' : false, color ? 'text-' + color : false), cssModule);
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { className: classes }));
+};
+
+FormText.propTypes = propTypes$50;
+FormText.defaultProps = defaultProps$49;
+
+/* eslint react/prefer-stateless-function: 0 */
+
+var propTypes$51 = {
+  children: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.node,
+  type: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  size: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  state: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  getRef: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  static: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  addon: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object
+};
+
+var defaultProps$50 = {
+  tag: 'p',
+  type: 'text'
+};
+
+var Input = function (_React$Component) {
+  inherits(Input, _React$Component);
+
+  function Input() {
+    classCallCheck(this, Input);
+    return possibleConstructorReturn(this, (Input.__proto__ || Object.getPrototypeOf(Input)).apply(this, arguments));
+  }
+
+  createClass(Input, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          className = _props.className,
+          cssModule = _props.cssModule,
+          type = _props.type,
+          size = _props.size,
+          state = _props.state,
+          tag = _props.tag,
+          addon = _props.addon,
+          staticInput = _props.static,
+          getRef = _props.getRef,
+          attributes = objectWithoutProperties(_props, ['className', 'cssModule', 'type', 'size', 'state', 'tag', 'addon', 'static', 'getRef']);
+
+
+      var checkInput = ['radio', 'checkbox'].indexOf(type) > -1;
+
+      var fileInput = type === 'file';
+      var textareaInput = type === 'textarea';
+      var selectInput = type === 'select';
+      var Tag = selectInput || textareaInput ? type : 'input';
+
+      var formControlClass = 'form-control';
+
+      if (staticInput) {
+        formControlClass = formControlClass + '-static';
+        Tag = tag;
+      } else if (fileInput) {
+        formControlClass = formControlClass + '-file';
+      } else if (checkInput) {
+        if (addon) {
+          formControlClass = null;
+        } else {
+          formControlClass = 'form-check-input';
+        }
+      }
+
+      var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, state ? 'form-control-' + state : false, size ? 'form-control-' + size : false, formControlClass), cssModule);
+
+      if (Tag === 'input') {
+        attributes.type = type;
+      }
+
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { ref: getRef, className: classes }));
+    }
+  }]);
+  return Input;
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
+
+Input.propTypes = propTypes$51;
+Input.defaultProps = defaultProps$50;
+
+var propTypes$52 = {
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  size: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object
+};
+
+var defaultProps$51 = {
+  tag: 'div'
+};
+
+var InputGroup = function InputGroup(props) {
+  var className = props.className,
+      cssModule = props.cssModule,
+      Tag = props.tag,
+      size = props.size,
+      attributes = objectWithoutProperties(props, ['className', 'cssModule', 'tag', 'size']);
+
+  var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, 'input-group', size ? 'input-group-' + size : null), cssModule);
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { className: classes }));
+};
+
+InputGroup.propTypes = propTypes$52;
+InputGroup.defaultProps = defaultProps$51;
+
+var propTypes$53 = {
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object
+};
+
+var defaultProps$52 = {
+  tag: 'div'
+};
+
+var InputGroupAddon = function InputGroupAddon(props) {
+  var className = props.className,
+      cssModule = props.cssModule,
+      Tag = props.tag,
+      attributes = objectWithoutProperties(props, ['className', 'cssModule', 'tag']);
+
+  var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, 'input-group-addon'), cssModule);
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { className: classes }));
+};
+
+InputGroupAddon.propTypes = propTypes$53;
+InputGroupAddon.defaultProps = defaultProps$52;
+
+var propTypes$54 = {
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  children: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.node,
+  groupClassName: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  groupAttributes: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object,
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object
+};
+
+var defaultProps$53 = {
+  tag: 'div'
+};
+
+var InputGroupButton = function InputGroupButton(props) {
+  var className = props.className,
+      cssModule = props.cssModule,
+      Tag = props.tag,
+      children = props.children,
+      groupClassName = props.groupClassName,
+      groupAttributes = props.groupAttributes,
+      attributes = objectWithoutProperties(props, ['className', 'cssModule', 'tag', 'children', 'groupClassName', 'groupAttributes']);
+
+
+  if (typeof children === 'string') {
+    var groupClasses = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(groupClassName, 'input-group-btn'), cssModule);
+
+    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      Tag,
+      _extends({}, groupAttributes, { className: groupClasses }),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Button, _extends({}, attributes, { className: className, children: children }))
+    );
+  }
+
+  var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, 'input-group-btn'), cssModule);
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { className: classes, children: children }));
+};
+
+InputGroupButton.propTypes = propTypes$54;
+InputGroupButton.defaultProps = defaultProps$53;
+
+var colSizes = ['xs', 'sm', 'md', 'lg', 'xl'];
+
+var stringOrNumberProp$1 = __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.number, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]);
+
+var columnProps$1 = __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.number, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.shape({
+  size: stringOrNumberProp$1,
+  push: stringOrNumberProp$1,
+  pull: stringOrNumberProp$1,
+  offset: stringOrNumberProp$1
+})]);
+
+var propTypes$55 = {
+  children: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.node,
+  hidden: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  check: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  inline: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  disabled: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  size: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  for: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object,
+  xs: columnProps$1,
+  sm: columnProps$1,
+  md: columnProps$1,
+  lg: columnProps$1,
+  xl: columnProps$1
+};
+
+var defaultProps$54 = {
+  tag: 'label'
+};
+
+var Label = function Label(props) {
+  var className = props.className,
+      cssModule = props.cssModule,
+      hidden = props.hidden,
+      Tag = props.tag,
+      check = props.check,
+      inline = props.inline,
+      disabled = props.disabled,
+      size = props.size,
+      htmlFor = props.for,
+      attributes = objectWithoutProperties(props, ['className', 'cssModule', 'hidden', 'tag', 'check', 'inline', 'disabled', 'size', 'for']);
+
+
+  var colClasses = [];
+
+  colSizes.forEach(function (colSize) {
+    var columnProp = props[colSize];
+    delete attributes[colSize];
+
+    if (columnProp && columnProp.size) {
+      var _classNames;
+
+      colClasses.push(mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()((_classNames = {}, defineProperty(_classNames, 'col-' + colSize + '-' + columnProp.size, columnProp.size), defineProperty(_classNames, 'push-' + colSize + '-' + columnProp.push, columnProp.push), defineProperty(_classNames, 'pull-' + colSize + '-' + columnProp.pull, columnProp.pull), defineProperty(_classNames, 'offset-' + colSize + '-' + columnProp.offset, columnProp.offset), _classNames))), cssModule);
+    } else if (columnProp) {
+      colClasses.push('col-' + colSize + '-' + columnProp);
+    }
+  });
+
+  var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, hidden ? 'sr-only' : false, check ? 'form-check-' + (inline ? 'inline' : 'label') : false, check && inline && disabled ? 'disabled' : false, size ? 'col-form-label-' + size : false, colClasses, colClasses.length ? 'col-form-label' : false, !check && !colClasses.length ? 'form-control-label' : false), cssModule);
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({ htmlFor: htmlFor }, attributes, { className: classes }));
+};
+
+Label.propTypes = propTypes$55;
+Label.defaultProps = defaultProps$54;
+
+var propTypes$56 = {
+  body: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  bottom: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  children: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.node,
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object,
+  heading: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  left: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  list: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  middle: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  object: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  right: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  top: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool
+};
+
+var Media = function Media(props) {
+  var body = props.body,
+      bottom = props.bottom,
+      className = props.className,
+      cssModule = props.cssModule,
+      heading = props.heading,
+      left = props.left,
+      list = props.list,
+      middle = props.middle,
+      object = props.object,
+      right = props.right,
+      tag = props.tag,
+      top = props.top,
+      attributes = objectWithoutProperties(props, ['body', 'bottom', 'className', 'cssModule', 'heading', 'left', 'list', 'middle', 'object', 'right', 'tag', 'top']);
+
+
+  var defaultTag = void 0;
+  if (heading) {
+    defaultTag = 'h4';
+  } else if (left || right) {
+    defaultTag = 'a';
+  } else if (object) {
+    defaultTag = 'img';
+  } else if (list) {
+    defaultTag = 'ul';
+  } else {
+    defaultTag = 'div';
+  }
+  var Tag = tag || defaultTag;
+
+  var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, {
+    'media-body': body,
+    'media-heading': heading,
+    'media-left': left,
+    'media-right': right,
+    'media-top': top,
+    'media-bottom': bottom,
+    'media-middle': middle,
+    'media-object': object,
+    'media-list': list,
+    media: !body && !heading && !left && !right && !top && !bottom && !middle && !object && !list
+  }), cssModule);
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { className: classes }));
+};
+
+Media.propTypes = propTypes$56;
+
+var propTypes$57 = {
+  children: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.node,
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object,
+  size: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string])
+};
+
+var defaultProps$55 = {
+  tag: 'ul'
+};
+
+var Pagination = function Pagination(props) {
+  var className = props.className,
+      cssModule = props.cssModule,
+      size = props.size,
+      Tag = props.tag,
+      attributes = objectWithoutProperties(props, ['className', 'cssModule', 'size', 'tag']);
+
+
+  var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, 'pagination', defineProperty({}, 'pagination-' + size, !!size)), cssModule);
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { className: classes }));
+};
+
+Pagination.propTypes = propTypes$57;
+Pagination.defaultProps = defaultProps$55;
+
+var propTypes$58 = {
+  active: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  children: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.node,
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object,
+  disabled: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string])
+};
+
+var defaultProps$56 = {
+  tag: 'li'
+};
+
+var PaginationItem = function PaginationItem(props) {
+  var active = props.active,
+      className = props.className,
+      cssModule = props.cssModule,
+      disabled = props.disabled,
+      Tag = props.tag,
+      attributes = objectWithoutProperties(props, ['active', 'className', 'cssModule', 'disabled', 'tag']);
+
+
+  var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, 'page-item', {
+    active: active,
+    disabled: disabled
+  }), cssModule);
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { className: classes }));
+};
+
+PaginationItem.propTypes = propTypes$58;
+PaginationItem.defaultProps = defaultProps$56;
+
+var propTypes$59 = {
+  'aria-label': __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  children: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.node,
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object,
+  next: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  previous: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string])
+};
+
+var defaultProps$57 = {
+  tag: 'a'
+};
+
+var PaginationLink = function PaginationLink(props) {
+  var className = props.className,
+      cssModule = props.cssModule,
+      next = props.next,
+      previous = props.previous,
+      Tag = props.tag,
+      attributes = objectWithoutProperties(props, ['className', 'cssModule', 'next', 'previous', 'tag']);
+
+
+  var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, 'page-link'), cssModule);
+
+  var defaultAriaLabel = void 0;
+  if (previous) {
+    defaultAriaLabel = 'Previous';
+  } else if (next) {
+    defaultAriaLabel = 'Next';
+  }
+  var ariaLabel = props['aria-label'] || defaultAriaLabel;
+
+  var defaultCaret = void 0;
+  if (previous) {
+    defaultCaret = '\xAB';
+  } else if (next) {
+    defaultCaret = '\xBB';
+  }
+
+  var children = props.children;
+  if (previous || next) {
+    children = [__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      'span',
+      {
+        'aria-hidden': 'true',
+        key: 'caret'
+      },
+      children || defaultCaret
+    ), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      'span',
+      {
+        className: 'sr-only',
+        key: 'sr'
+      },
+      ariaLabel
+    )];
+  }
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+    Tag,
+    _extends({}, attributes, {
+      className: classes,
+      'aria-label': ariaLabel
+    }),
+    children
+  );
+};
+
+PaginationLink.propTypes = propTypes$59;
+PaginationLink.defaultProps = defaultProps$57;
+
+var propTypes$60 = {
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  activeTab: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.any,
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object
+};
+
+var defaultProps$58 = {
+  tag: 'div'
+};
+
+var childContextTypes$1 = {
+  activeTabId: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.any
+};
+
+var TabContent = function (_Component) {
+  inherits(TabContent, _Component);
+
+  function TabContent(props) {
+    classCallCheck(this, TabContent);
+
+    var _this = possibleConstructorReturn(this, (TabContent.__proto__ || Object.getPrototypeOf(TabContent)).call(this, props));
+
+    _this.state = {
+      activeTab: _this.props.activeTab
+    };
+    return _this;
+  }
+
+  createClass(TabContent, [{
+    key: 'getChildContext',
+    value: function getChildContext() {
+      return {
+        activeTabId: this.state.activeTab
+      };
+    }
+  }, {
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      if (this.state.activeTab !== nextProps.activeTab) {
+        this.setState({
+          activeTab: nextProps.activeTab
+        });
+      }
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          className = _props.className,
+          cssModule = _props.cssModule,
+          Tag = _props.tag;
+
+
+      var attributes = omit(this.props, Object.keys(propTypes$60));
+
+      var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()('tab-content', className), cssModule);
+
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { className: classes }));
+    }
+  }]);
+  return TabContent;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+
+TabContent.propTypes = propTypes$60;
+TabContent.defaultProps = defaultProps$58;
+TabContent.childContextTypes = childContextTypes$1;
+
+var propTypes$61 = {
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object,
+  tabId: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.any
+};
+
+var defaultProps$59 = {
+  tag: 'div'
+};
+
+var contextTypes$3 = {
+  activeTabId: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.any
+};
+
+function TabPane(props, context) {
+  var className = props.className,
+      cssModule = props.cssModule,
+      tabId = props.tabId,
+      Tag = props.tag,
+      attributes = objectWithoutProperties(props, ['className', 'cssModule', 'tabId', 'tag']);
+
+  var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()('tab-pane', className, { active: tabId === context.activeTabId }), cssModule);
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { className: classes }));
+}
+TabPane.propTypes = propTypes$61;
+TabPane.defaultProps = defaultProps$59;
+TabPane.contextTypes = contextTypes$3;
+
+var propTypes$62 = {
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  fluid: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object
+};
+
+var defaultProps$60 = {
+  tag: 'div'
+};
+
+var Jumbotron = function Jumbotron(props) {
+  var className = props.className,
+      cssModule = props.cssModule,
+      Tag = props.tag,
+      fluid = props.fluid,
+      attributes = objectWithoutProperties(props, ['className', 'cssModule', 'tag', 'fluid']);
+
+
+  var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, 'jumbotron', fluid ? 'jumbotron-fluid' : false), cssModule);
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { className: classes }));
+};
+
+Jumbotron.propTypes = propTypes$62;
+Jumbotron.defaultProps = defaultProps$60;
+
+var FirstChild = function FirstChild(_ref) {
+  var children = _ref.children;
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.Children.toArray(children)[0] || null;
+};
+
+var propTypes$63 = {
+  children: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.node,
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  closeClassName: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object,
+  color: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  isOpen: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  toggle: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func,
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  transitionAppearTimeout: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.number,
+  transitionEnterTimeout: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.number,
+  transitionLeaveTimeout: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.number
+};
+
+var defaultProps$61 = {
+  color: 'success',
+  isOpen: true,
+  tag: 'div',
+  transitionAppearTimeout: 150,
+  transitionEnterTimeout: 150,
+  transitionLeaveTimeout: 150
+};
+
+var Alert = function Alert(props) {
+  var className = props.className,
+      closeClassName = props.closeClassName,
+      cssModule = props.cssModule,
+      Tag = props.tag,
+      color = props.color,
+      isOpen = props.isOpen,
+      toggle = props.toggle,
+      children = props.children,
+      transitionAppearTimeout = props.transitionAppearTimeout,
+      transitionEnterTimeout = props.transitionEnterTimeout,
+      transitionLeaveTimeout = props.transitionLeaveTimeout,
+      attributes = objectWithoutProperties(props, ['className', 'closeClassName', 'cssModule', 'tag', 'color', 'isOpen', 'toggle', 'children', 'transitionAppearTimeout', 'transitionEnterTimeout', 'transitionLeaveTimeout']);
+
+
+  var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, 'alert', 'alert-' + color, { 'alert-dismissible': toggle }), cssModule);
+
+  var closeClasses = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()('close', closeClassName), cssModule);
+
+  var alert = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+    Tag,
+    _extends({}, attributes, { className: classes, role: 'alert' }),
+    toggle ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      'button',
+      { type: 'button', className: closeClasses, 'aria-label': 'Close', onClick: toggle },
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'span',
+        { 'aria-hidden': 'true' },
+        '\xD7'
+      )
+    ) : null,
+    children
+  );
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+    __WEBPACK_IMPORTED_MODULE_8_react_transition_group__["CSSTransitionGroup"],
+    {
+      component: FirstChild,
+      transitionName: {
+        appear: 'fade',
+        appearActive: 'show',
+        enter: 'fade',
+        enterActive: 'show',
+        leave: 'fade',
+        leaveActive: 'out'
+      },
+      transitionAppear: transitionAppearTimeout > 0,
+      transitionAppearTimeout: transitionAppearTimeout,
+      transitionEnter: transitionEnterTimeout > 0,
+      transitionEnterTimeout: transitionEnterTimeout,
+      transitionLeave: transitionLeaveTimeout > 0,
+      transitionLeaveTimeout: transitionLeaveTimeout
+    },
+    isOpen ? alert : null
+  );
+};
+
+Alert.propTypes = propTypes$63;
+Alert.defaultProps = defaultProps$61;
+
+var SHOW = 'SHOW';
+var SHOWN = 'SHOWN';
+var HIDE = 'HIDE';
+var HIDDEN = 'HIDDEN';
+
+var propTypes$64 = {
+  isOpen: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.node,
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  cssModule: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object,
+  navbar: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  delay: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.shape({ show: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.number, hide: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.number }), __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.number]),
+  onOpened: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func,
+  onClosed: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func
+};
+
+var DEFAULT_DELAYS$1 = {
+  show: 350,
+  hide: 350
+};
+
+var defaultProps$62 = {
+  isOpen: false,
+  tag: 'div',
+  delay: DEFAULT_DELAYS$1,
+  onOpened: function onOpened() {},
+  onClosed: function onClosed() {}
+};
+
+var Collapse = function (_Component) {
+  inherits(Collapse, _Component);
+
+  function Collapse(props) {
+    classCallCheck(this, Collapse);
+
+    var _this = possibleConstructorReturn(this, (Collapse.__proto__ || Object.getPrototypeOf(Collapse)).call(this, props));
+
+    _this.state = {
+      collapse: props.isOpen ? SHOWN : HIDDEN,
+      height: null
+    };
+    _this.element = null;
+    return _this;
+  }
+
+  createClass(Collapse, [{
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      var _this2 = this;
+
+      var willOpen = nextProps.isOpen;
+      var collapse = this.state.collapse;
+
+      if (willOpen && collapse === HIDDEN) {
+        // will open
+        this.setState({ collapse: SHOW }, function () {
+          // the height transition will work after class "collapsing" applied
+          _this2.setState({ height: _this2.getHeight() });
+          _this2.transitionTag = setTimeout(function () {
+            _this2.setState({
+              collapse: SHOWN,
+              height: null
+            });
+          }, _this2.getDelay('show'));
+        });
+      } else if (!willOpen && collapse === SHOWN) {
+        // will hide
+        this.setState({ height: this.getHeight() }, function () {
+          _this2.setState({
+            collapse: HIDE,
+            height: _this2.getHeight()
+          }, function () {
+            _this2.setState({ height: 0 });
+          });
+        });
+
+        this.transitionTag = setTimeout(function () {
+          _this2.setState({
+            collapse: HIDDEN,
+            height: null
+          });
+        }, this.getDelay('hide'));
+      }
+      // else: do nothing.
+    }
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate(prevProps, prevState) {
+      if (this.state.collapse === SHOWN && prevState && prevState.collapse !== SHOWN) {
+        this.props.onOpened();
+      }
+
+      if (this.state.collapse === HIDDEN && prevState && prevState.collapse !== HIDDEN) {
+        this.props.onClosed();
+      }
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      clearTimeout(this.transitionTag);
+    }
+  }, {
+    key: 'getDelay',
+    value: function getDelay(key) {
+      var delay = this.props.delay;
+
+      if ((typeof delay === 'undefined' ? 'undefined' : _typeof(delay)) === 'object') {
+        return isNaN(delay[key]) ? DEFAULT_DELAYS$1[key] : delay[key];
+      }
+      return delay;
+    }
+  }, {
+    key: 'getHeight',
+    value: function getHeight() {
+      return this.element.scrollHeight;
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this3 = this;
+
+      var _omit = omit(this.props, ['isOpen', 'delay', 'onOpened', 'onClosed']),
+          navbar = _omit.navbar,
+          className = _omit.className,
+          cssModule = _omit.cssModule,
+          Tag = _omit.tag,
+          attributes = objectWithoutProperties(_omit, ['navbar', 'className', 'cssModule', 'tag']);
+
+      var _state = this.state,
+          collapse = _state.collapse,
+          height = _state.height;
+
+      var collapseClass = void 0;
+      switch (collapse) {
+        case SHOW:
+          collapseClass = 'collapsing';
+          break;
+        case SHOWN:
+          collapseClass = 'collapse show';
+          break;
+        case HIDE:
+          collapseClass = 'collapsing';
+          break;
+        case HIDDEN:
+          collapseClass = 'collapse';
+          break;
+        default:
+          // HIDDEN
+          collapseClass = 'collapse';
+      }
+
+      var classes = mapToCssModules(__WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, collapseClass, navbar && 'navbar-collapse'), cssModule);
+      var style = height === null ? null : { height: height };
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, {
+        style: _extends({}, attributes.style, style),
+        className: classes,
+        ref: function ref(c) {
+          _this3.element = c;
+        }
+      }));
+    }
+  }]);
+  return Collapse;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+
+Collapse.propTypes = propTypes$64;
+Collapse.defaultProps = defaultProps$62;
+
+var propTypes$65 = {
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  active: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  disabled: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  color: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
+  action: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.bool,
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.any
+};
+
+var defaultProps$63 = {
+  tag: 'li'
+};
+
+var handleDisabledOnClick = function handleDisabledOnClick(e) {
+  e.preventDefault();
+};
+
+var ListGroupItem = function ListGroupItem(props) {
+  var className = props.className,
+      Tag = props.tag,
+      active = props.active,
+      disabled = props.disabled,
+      action = props.action,
+      color = props.color,
+      attributes = objectWithoutProperties(props, ['className', 'tag', 'active', 'disabled', 'action', 'color']);
+
+  var classes = __WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, active ? 'active' : false, disabled ? 'disabled' : false, action ? 'list-group-item-action' : false, color ? 'list-group-item-' + color : false, 'list-group-item');
+
+  // Prevent click event when disabled.
+  if (disabled) {
+    attributes.onClick = handleDisabledOnClick;
+  }
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { className: classes }));
+};
+
+ListGroupItem.propTypes = propTypes$65;
+ListGroupItem.defaultProps = defaultProps$63;
+
+var propTypes$66 = {
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.any
+};
+
+var defaultProps$64 = {
+  tag: 'h5'
+};
+
+var ListGroupItemHeading = function ListGroupItemHeading(props) {
+  var className = props.className,
+      Tag = props.tag,
+      attributes = objectWithoutProperties(props, ['className', 'tag']);
+
+  var classes = __WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, 'list-group-item-heading');
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { className: classes }));
+};
+
+ListGroupItemHeading.propTypes = propTypes$66;
+ListGroupItemHeading.defaultProps = defaultProps$64;
+
+var propTypes$67 = {
+  tag: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string]),
+  className: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.any
+};
+
+var defaultProps$65 = {
+  tag: 'p'
+};
+
+var ListGroupItemText = function ListGroupItemText(props) {
+  var className = props.className,
+      Tag = props.tag,
+      attributes = objectWithoutProperties(props, ['className', 'tag']);
+
+  var classes = __WEBPACK_IMPORTED_MODULE_2_classnames___default()(className, 'list-group-item-text');
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({}, attributes, { className: classes }));
+};
+
+ListGroupItemText.propTypes = propTypes$67;
+ListGroupItemText.defaultProps = defaultProps$65;
+
+var Component$1 = __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component;
+
+var components = {
+  UncontrolledAlert: Alert,
+  UncontrolledButtonDropdown: ButtonDropdown,
+  UncontrolledDropdown: Dropdown,
+  UncontrolledNavDropdown: NavDropdown,
+  UncontrolledTooltip: Tooltip
+};
+
+Object.keys(components).forEach(function (key) {
+  var Tag = components[key];
+  var defaultValue = Tag === Alert;
+
+  var Uncontrolled = function (_Component) {
+    inherits(Uncontrolled, _Component);
+
+    function Uncontrolled(props) {
+      classCallCheck(this, Uncontrolled);
+
+      var _this = possibleConstructorReturn(this, (Uncontrolled.__proto__ || Object.getPrototypeOf(Uncontrolled)).call(this, props));
+
+      _this.state = { isOpen: defaultValue };
+
+      _this.toggle = _this.toggle.bind(_this);
+      return _this;
+    }
+
+    createClass(Uncontrolled, [{
+      key: 'toggle',
+      value: function toggle() {
+        this.setState({ isOpen: !this.state.isOpen });
+      }
+    }, {
+      key: 'render',
+      value: function render() {
+        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Tag, _extends({ isOpen: this.state.isOpen, toggle: this.toggle }, this.props));
+      }
+    }]);
+    return Uncontrolled;
+  }(Component$1);
+
+  Uncontrolled.displayName = key;
+
+  components[key] = Uncontrolled;
+});
+
+var UncontrolledAlert = components.UncontrolledAlert;
+var UncontrolledButtonDropdown = components.UncontrolledButtonDropdown;
+var UncontrolledDropdown = components.UncontrolledDropdown;
+var UncontrolledNavDropdown = components.UncontrolledNavDropdown;
+var UncontrolledTooltip = components.UncontrolledTooltip;
+
+
+//# sourceMappingURL=reactstrap.es.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/video-react/dist/index.es.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Player; });
+/* unused harmony export Video */
+/* unused harmony export BigPlayButton */
+/* unused harmony export LoadingSpinner */
+/* unused harmony export PosterImage */
+/* unused harmony export Bezel */
+/* unused harmony export Shortcut */
+/* unused harmony export ControlBar */
+/* unused harmony export PlayToggle */
+/* unused harmony export ForwardControl */
+/* unused harmony export ReplayControl */
+/* unused harmony export FullscreenToggle */
+/* unused harmony export ProgressControl */
+/* unused harmony export SeekBar */
+/* unused harmony export Slider */
+/* unused harmony export PlayProgressBar */
+/* unused harmony export LoadProgressBar */
+/* unused harmony export MouseTimeDisplay */
+/* unused harmony export RemainingTimeDisplay */
+/* unused harmony export CurrentTimeDisplay */
+/* unused harmony export DurationDisplay */
+/* unused harmony export TimeDivider */
+/* unused harmony export VolumeMenuButton */
+/* unused harmony export PlaybackRateMenuButton */
+/* unused harmony export PlaybackRate */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_prop_types__ = __webpack_require__("./node_modules/prop-types/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_prop_types__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__("./node_modules/react/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_redux__ = __webpack_require__("./node_modules/redux/es/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_dom__ = __webpack_require__("./node_modules/react-dom/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_react_dom__);
+
+
+
+
+
+function createCommonjsModule(fn, module) {
+	return module = { exports: {} }, fn(module, module.exports), module.exports;
+}
+
+var classnames = createCommonjsModule(function (module) {
+/*!
+  Copyright (c) 2016 Jed Watson.
+  Licensed under the MIT License (MIT), see
+  http://jedwatson.github.io/classnames
+*/
+/* global define */
+
+(function () {
+	'use strict';
+
+	var hasOwn = {}.hasOwnProperty;
+
+	function classNames () {
+		var classes = [];
+
+		for (var i = 0; i < arguments.length; i++) {
+			var arg = arguments[i];
+			if (!arg) continue;
+
+			var argType = typeof arg;
+
+			if (argType === 'string' || argType === 'number') {
+				classes.push(arg);
+			} else if (Array.isArray(arg)) {
+				classes.push(classNames.apply(null, arg));
+			} else if (argType === 'object') {
+				for (var key in arg) {
+					if (hasOwn.call(arg, key) && arg[key]) {
+						classes.push(key);
+					}
+				}
+			}
+		}
+
+		return classes.join(' ');
+	}
+
+	if ('object' !== 'undefined' && module.exports) {
+		module.exports = classNames;
+	} else if (false) {
+		// register as 'classnames', consistent with npm package name
+		undefined('classnames', [], function () {
+			return classNames;
+		});
+	} else {
+		window.classNames = classNames;
+	}
+}());
+});
+
+var LOAD_START = 'video-react/LOAD_START';
+var CAN_PLAY = 'video-react/CAN_PLAY';
+var WAITING = 'video-react/WAITING';
+var CAN_PLAY_THROUGH = 'video-react/CAN_PLAY_THROUGH';
+var PLAYING = 'video-react/PLAYING';
+var PLAY = 'video-react/PLAY';
+var PAUSE = 'video-react/PAUSE';
+var END = 'video-react/END';
+var SEEKING = 'video-react/SEEKING';
+var SEEKED = 'video-react/SEEKED';
+var SEEKING_TIME = 'video-react/SEEKING_TIME';
+var END_SEEKING = 'video-react/END_SEEKING';
+var DURATION_CHANGE = 'video-react/DURATION_CHANGE';
+var TIME_UPDATE = 'video-react/TIME_UPDATE';
+var VOLUME_CHANGE = 'video-react/VOLUME_CHANGE';
+var PROGRESS_CHANGE = 'video-react/PROGRESS_CHANGE';
+var RATE_CHANGE = 'video-react/RATE_CHANGE';
+var SUSPEND = 'video-react/SUSPEND';
+var ABORT = 'video-react/ABORT';
+var EMPTIED = 'video-react/EMPTIED';
+var STALLED = 'video-react/STALLED';
+var LOADED_META_DATA = 'video-react/LOADED_META_DATA';
+var LOADED_DATA = 'video-react/LOADED_DATA';
+var RESIZE = 'video-react/RESIZE';
+var ERROR = 'video-react/ERROR';
+
+function handleLoadStart(videoProps) {
+  return {
+    type: LOAD_START,
+    videoProps: videoProps
+  };
+}
+
+function handleCanPlay(videoProps) {
+  return {
+    type: CAN_PLAY,
+    videoProps: videoProps
+  };
+}
+
+function handleWaiting(videoProps) {
+  return {
+    type: WAITING,
+    videoProps: videoProps
+  };
+}
+
+function handleCanPlayThrough(videoProps) {
+  return {
+    type: CAN_PLAY_THROUGH,
+    videoProps: videoProps
+  };
+}
+
+function handlePlaying(videoProps) {
+  return {
+    type: PLAYING,
+    videoProps: videoProps
+  };
+}
+
+function handlePlay(videoProps) {
+  return {
+    type: PLAY,
+    videoProps: videoProps
+  };
+}
+
+function handlePause(videoProps) {
+  return {
+    type: PAUSE,
+    videoProps: videoProps
+  };
+}
+
+function handleEnd(videoProps) {
+  return {
+    type: END,
+    videoProps: videoProps
+  };
+}
+
+function handleSeeking(videoProps) {
+  return {
+    type: SEEKING,
+    videoProps: videoProps
+  };
+}
+
+function handleSeeked(videoProps) {
+  return {
+    type: SEEKED,
+    videoProps: videoProps
+  };
+}
+
+function handleDurationChange(videoProps) {
+  return {
+    type: DURATION_CHANGE,
+    videoProps: videoProps
+  };
+}
+
+function handleTimeUpdate(videoProps) {
+  return {
+    type: TIME_UPDATE,
+    videoProps: videoProps
+  };
+}
+
+function handleVolumeChange(videoProps) {
+  return {
+    type: VOLUME_CHANGE,
+    videoProps: videoProps
+  };
+}
+
+function handleProgressChange(videoProps) {
+  return {
+    type: PROGRESS_CHANGE,
+    videoProps: videoProps
+  };
+}
+
+function handleRateChange(videoProps) {
+  return {
+    type: RATE_CHANGE,
+    videoProps: videoProps
+  };
+}
+
+function handleSuspend(videoProps) {
+  return {
+    type: SUSPEND,
+    videoProps: videoProps
+  };
+}
+
+function handleAbort(videoProps) {
+  return {
+    type: ABORT,
+    videoProps: videoProps
+  };
+}
+
+function handleEmptied(videoProps) {
+  return {
+    type: EMPTIED,
+    videoProps: videoProps
+  };
+}
+
+function handleStalled(videoProps) {
+  return {
+    type: STALLED,
+    videoProps: videoProps
+  };
+}
+
+function handleLoadedMetaData(videoProps) {
+  return {
+    type: LOADED_META_DATA,
+    videoProps: videoProps
+  };
+}
+
+function handleLoadedData(videoProps) {
+  return {
+    type: LOADED_DATA,
+    videoProps: videoProps
+  };
+}
+
+function handleResize(videoProps) {
+  return {
+    type: RESIZE,
+    videoProps: videoProps
+  };
+}
+
+function handleError(videoProps) {
+  return {
+    type: ERROR,
+    videoProps: videoProps
+  };
+}
+
+function handleSeekingTime(time) {
+  return {
+    type: SEEKING_TIME,
+    time: time
+  };
+}
+
+function handleEndSeeking(time) {
+  return {
+    type: END_SEEKING,
+    time: time
+  };
+}
+
+var videoActions = Object.freeze({
+	LOAD_START: LOAD_START,
+	CAN_PLAY: CAN_PLAY,
+	WAITING: WAITING,
+	CAN_PLAY_THROUGH: CAN_PLAY_THROUGH,
+	PLAYING: PLAYING,
+	PLAY: PLAY,
+	PAUSE: PAUSE,
+	END: END,
+	SEEKING: SEEKING,
+	SEEKED: SEEKED,
+	SEEKING_TIME: SEEKING_TIME,
+	END_SEEKING: END_SEEKING,
+	DURATION_CHANGE: DURATION_CHANGE,
+	TIME_UPDATE: TIME_UPDATE,
+	VOLUME_CHANGE: VOLUME_CHANGE,
+	PROGRESS_CHANGE: PROGRESS_CHANGE,
+	RATE_CHANGE: RATE_CHANGE,
+	SUSPEND: SUSPEND,
+	ABORT: ABORT,
+	EMPTIED: EMPTIED,
+	STALLED: STALLED,
+	LOADED_META_DATA: LOADED_META_DATA,
+	LOADED_DATA: LOADED_DATA,
+	RESIZE: RESIZE,
+	ERROR: ERROR,
+	handleLoadStart: handleLoadStart,
+	handleCanPlay: handleCanPlay,
+	handleWaiting: handleWaiting,
+	handleCanPlayThrough: handleCanPlayThrough,
+	handlePlaying: handlePlaying,
+	handlePlay: handlePlay,
+	handlePause: handlePause,
+	handleEnd: handleEnd,
+	handleSeeking: handleSeeking,
+	handleSeeked: handleSeeked,
+	handleDurationChange: handleDurationChange,
+	handleTimeUpdate: handleTimeUpdate,
+	handleVolumeChange: handleVolumeChange,
+	handleProgressChange: handleProgressChange,
+	handleRateChange: handleRateChange,
+	handleSuspend: handleSuspend,
+	handleAbort: handleAbort,
+	handleEmptied: handleEmptied,
+	handleStalled: handleStalled,
+	handleLoadedMetaData: handleLoadedMetaData,
+	handleLoadedData: handleLoadedData,
+	handleResize: handleResize,
+	handleError: handleError,
+	handleSeekingTime: handleSeekingTime,
+	handleEndSeeking: handleEndSeeking
+});
+
+var asyncGenerator = function () {
+  function AwaitValue(value) {
+    this.value = value;
+  }
+
+  function AsyncGenerator(gen) {
+    var front, back;
+
+    function send(key, arg) {
+      return new Promise(function (resolve, reject) {
+        var request = {
+          key: key,
+          arg: arg,
+          resolve: resolve,
+          reject: reject,
+          next: null
+        };
+
+        if (back) {
+          back = back.next = request;
+        } else {
+          front = back = request;
+          resume(key, arg);
+        }
+      });
+    }
+
+    function resume(key, arg) {
+      try {
+        var result = gen[key](arg);
+        var value = result.value;
+
+        if (value instanceof AwaitValue) {
+          Promise.resolve(value.value).then(function (arg) {
+            resume("next", arg);
+          }, function (arg) {
+            resume("throw", arg);
+          });
+        } else {
+          settle(result.done ? "return" : "normal", result.value);
+        }
+      } catch (err) {
+        settle("throw", err);
+      }
+    }
+
+    function settle(type, value) {
+      switch (type) {
+        case "return":
+          front.resolve({
+            value: value,
+            done: true
+          });
+          break;
+
+        case "throw":
+          front.reject(value);
+          break;
+
+        default:
+          front.resolve({
+            value: value,
+            done: false
+          });
+          break;
+      }
+
+      front = front.next;
+
+      if (front) {
+        resume(front.key, front.arg);
+      } else {
+        back = null;
+      }
+    }
+
+    this._invoke = send;
+
+    if (typeof gen.return !== "function") {
+      this.return = undefined;
+    }
+  }
+
+  if (typeof Symbol === "function" && Symbol.asyncIterator) {
+    AsyncGenerator.prototype[Symbol.asyncIterator] = function () {
+      return this;
+    };
+  }
+
+  AsyncGenerator.prototype.next = function (arg) {
+    return this._invoke("next", arg);
+  };
+
+  AsyncGenerator.prototype.throw = function (arg) {
+    return this._invoke("throw", arg);
+  };
+
+  AsyncGenerator.prototype.return = function (arg) {
+    return this._invoke("return", arg);
+  };
+
+  return {
+    wrap: function (fn) {
+      return function () {
+        return new AsyncGenerator(fn.apply(this, arguments));
+      };
+    },
+    await: function (value) {
+      return new AwaitValue(value);
+    }
+  };
+}();
+
+
+
+
+
+var classCallCheck = function (instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+};
+
+var createClass = function () {
+  function defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+
+  return function (Constructor, protoProps, staticProps) {
+    if (protoProps) defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) defineProperties(Constructor, staticProps);
+    return Constructor;
+  };
+}();
+
+
+
+
+
+var defineProperty = function (obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+};
+
+var _extends = Object.assign || function (target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i];
+
+    for (var key in source) {
+      if (Object.prototype.hasOwnProperty.call(source, key)) {
+        target[key] = source[key];
+      }
+    }
+  }
+
+  return target;
+};
+
+
+
+var inherits = function (subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      enumerable: false,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+};
+
+
+
+
+
+
+
+
+
+
+
+var possibleConstructorReturn = function (self, call) {
+  if (!self) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return call && (typeof call === "object" || typeof call === "function") ? call : self;
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var toConsumableArray = function (arr) {
+  if (Array.isArray(arr)) {
+    for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) arr2[i] = arr[i];
+
+    return arr2;
+  } else {
+    return Array.from(arr);
+  }
+};
+
+var Fullscreen = function () {
+  function Fullscreen() {
+    classCallCheck(this, Fullscreen);
+  }
+
+  createClass(Fullscreen, [{
+    key: 'request',
+    value: function request(elm) {
+      if (elm.requestFullscreen) {
+        elm.requestFullscreen();
+      } else if (elm.webkitRequestFullscreen) {
+        elm.webkitRequestFullscreen();
+      } else if (elm.mozRequestFullScreen) {
+        elm.mozRequestFullScreen();
+      } else if (elm.msRequestFullscreen) {
+        elm.msRequestFullscreen();
+      }
+    }
+  }, {
+    key: 'exit',
+    value: function exit() {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+      } else if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
+      } else if (document.msExitFullscreen) {
+        document.msExitFullscreen();
+      }
+    }
+  }, {
+    key: 'addEventListener',
+    value: function addEventListener(handler) {
+      document.addEventListener('fullscreenchange', handler);
+      document.addEventListener('webkitfullscreenchange', handler);
+      document.addEventListener('mozfullscreenchange', handler);
+      document.addEventListener('MSFullscreenChange', handler);
+    }
+  }, {
+    key: 'removeEventListener',
+    value: function removeEventListener(handler) {
+      document.removeEventListener('fullscreenchange', handler);
+      document.removeEventListener('webkitfullscreenchange', handler);
+      document.removeEventListener('mozfullscreenchange', handler);
+      document.removeEventListener('MSFullscreenChange', handler);
+    }
+  }, {
+    key: 'isFullscreen',
+    get: function get$$1() {
+      return document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement;
+    }
+  }, {
+    key: 'enabled',
+    get: function get$$1() {
+      return document.fullscreenEnabled || document.webkitFullscreenEnabled || document.mozFullScreenEnabled || document.msFullscreenEnabled;
+    }
+  }]);
+  return Fullscreen;
+}();
+
+var fullscreen = new Fullscreen();
+
+var OPERATE = 'video-react/OPERATE';
+var FULLSCREEN_CHANGE = 'video-react/FULLSCREEN_CHANGE';
+var PLAYER_ACTIVATE = 'video-react/PLAYER_ACTIVATE';
+var USER_ACTIVATE = 'video-react/USER_ACTIVATE';
+
+function handleFullscreenChange(isFullscreen) {
+  return {
+    type: FULLSCREEN_CHANGE,
+    isFullscreen: isFullscreen
+  };
+}
+
+function activate(activity) {
+  return {
+    type: PLAYER_ACTIVATE,
+    activity: activity
+  };
+}
+
+function userActivate(activity) {
+  return {
+    type: USER_ACTIVATE,
+    activity: activity
+  };
+}
+
+function play() {
+  var operation = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
+    action: 'play',
+    source: ''
+  };
+
+  this.video.play();
+
+  return {
+    type: OPERATE,
+    operation: operation
+  };
+}
+
+function pause() {
+  var operation = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
+    action: 'pause',
+    source: ''
+  };
+
+  this.video.pause();
+
+  return {
+    type: OPERATE,
+    operation: operation
+  };
+}
+
+function togglePlay() {
+  var operation = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
+    action: 'toggle-play',
+    source: ''
+  };
+
+  this.video.togglePlay();
+
+  return {
+    type: OPERATE,
+    operation: operation
+  };
+}
+
+// seek video by time
+function seek(time) {
+  var operation = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {
+    action: 'seek',
+    source: ''
+  };
+
+  this.video.seek(time);
+
+  return {
+    type: OPERATE,
+    operation: operation
+  };
+}
+
+// jump forward x seconds
+function forward(seconds) {
+  var operation = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {
+    action: 'forward-' + seconds,
+    source: ''
+  };
+
+  this.video.forward(seconds);
+
+  return {
+    type: OPERATE,
+    operation: operation
+  };
+}
+
+// jump back x seconds
+function replay(seconds) {
+  var operation = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {
+    action: 'replay-' + seconds,
+    source: ''
+  };
+
+  this.video.replay(seconds);
+
+  return {
+    type: OPERATE,
+    operation: operation
+  };
+}
+
+function changeRate(rate) {
+  var operation = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {
+    action: 'change-rate',
+    source: ''
+  };
+
+  this.video.playbackRate = rate;
+
+  return {
+    type: OPERATE,
+    operation: operation
+  };
+}
+
+function changeVolume(volume) {
+  var operation = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {
+    action: 'change-volume',
+    source: ''
+  };
+
+  var v = volume;
+  if (volume < 0) {
+    v = 0;
+  }
+  if (volume > 1) {
+    v = 1;
+  }
+  this.video.volume = v;
+
+  return {
+    type: OPERATE,
+    operation: operation
+  };
+}
+
+function mute(muted) {
+  var operation = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {
+    action: muted ? 'muted' : 'unmuted',
+    source: ''
+  };
+
+  this.video.muted = muted;
+
+  return {
+    type: OPERATE,
+    operation: operation
+  };
+}
+
+function toggleFullscreen(player) {
+  if (fullscreen.enabled) {
+    if (fullscreen.isFullscreen) {
+      fullscreen.exit();
+    } else {
+      fullscreen.request(this.rootElement);
+    }
+    return {
+      type: OPERATE,
+      operation: {
+        action: 'toggle-fullscreen',
+        source: ''
+      }
+    };
+  }
+
+  return {
+    type: FULLSCREEN_CHANGE,
+    isFullscreen: !player.isFullscreen
+  };
+}
+
+var playerActions = Object.freeze({
+	OPERATE: OPERATE,
+	FULLSCREEN_CHANGE: FULLSCREEN_CHANGE,
+	PLAYER_ACTIVATE: PLAYER_ACTIVATE,
+	USER_ACTIVATE: USER_ACTIVATE,
+	handleFullscreenChange: handleFullscreenChange,
+	activate: activate,
+	userActivate: userActivate,
+	play: play,
+	pause: pause,
+	togglePlay: togglePlay,
+	seek: seek,
+	forward: forward,
+	replay: replay,
+	changeRate: changeRate,
+	changeVolume: changeVolume,
+	mute: mute,
+	toggleFullscreen: toggleFullscreen
+});
+
+var initialState = {
+  currentSrc: null,
+  duration: 0,
+  currentTime: 0,
+  seekingTime: 0,
+  buffered: null,
+  waiting: false,
+  seeking: false,
+  paused: true,
+  autoPaused: false,
+  ended: false,
+  playbackRate: 1,
+  muted: false,
+  volume: 1,
+  readyState: 0,
+  networkState: 0,
+  videoWidth: 0,
+  videoHeight: 0,
+  hasStarted: false,
+  userActivity: true,
+  isActive: false,
+  isFullscreen: false
+};
+
+function video() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
+  var action = arguments[1];
+
+  switch (action.type) {
+    case USER_ACTIVATE:
+      return _extends({}, state, {
+        userActivity: action.activity
+      });
+    case PLAYER_ACTIVATE:
+      return _extends({}, state, {
+        isActive: action.activity
+      });
+    case FULLSCREEN_CHANGE:
+      return _extends({}, state, {
+        isFullscreen: !!action.isFullscreen
+      });
+    case SEEKING_TIME:
+      return _extends({}, state, {
+        seekingTime: action.time
+      });
+    case END_SEEKING:
+      return _extends({}, state, {
+        seekingTime: 0
+      });
+    case LOAD_START:
+      return _extends({}, state, action.videoProps, {
+        hasStarted: false,
+        ended: false
+      });
+    case CAN_PLAY:
+      return _extends({}, state, action.videoProps, {
+        waiting: false
+      });
+    case WAITING:
+      return _extends({}, state, action.videoProps, {
+        waiting: true
+      });
+    case CAN_PLAY_THROUGH:
+    case PLAYING:
+      return _extends({}, state, action.videoProps, {
+        waiting: false
+      });
+    case PLAY:
+      return _extends({}, state, action.videoProps, {
+        ended: false,
+        paused: false,
+        autoPaused: false,
+        waiting: false,
+        hasStarted: true
+      });
+    case PAUSE:
+      return _extends({}, state, action.videoProps, {
+        paused: true
+      });
+    case END:
+      return _extends({}, state, action.videoProps, {
+        ended: true
+      });
+    case SEEKING:
+      return _extends({}, state, action.videoProps, {
+        seeking: true
+      });
+    case SEEKED:
+      return _extends({}, state, action.videoProps, {
+        seeking: false
+      });
+    case ERROR:
+      return _extends({}, state, action.videoProps, {
+        error: 'UNKNOWN ERROR',
+        ended: true
+      });
+    case DURATION_CHANGE:
+    case TIME_UPDATE:
+    case VOLUME_CHANGE:
+    case PROGRESS_CHANGE:
+    case RATE_CHANGE:
+    case SUSPEND:
+    case ABORT:
+    case EMPTIED:
+    case STALLED:
+    case LOADED_META_DATA:
+    case LOADED_DATA:
+    case RESIZE:
+      var newState = _extends({}, state, action.videoProps);
+      if (action.videoProps.paused === false) {
+        newState.hasStarted = true;
+        newState.waiting = false;
+      }
+      return newState;
+    default:
+      return state;
+  }
+}
+
+var initialState$1 = {
+  count: 0,
+  operation: {
+    action: '',
+    source: ''
+  }
+};
+
+function operation() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState$1;
+  var action = arguments[1];
+
+  switch (action.type) {
+    case OPERATE:
+      return _extends({}, state, {
+        count: state.count + 1,
+        operation: _extends({}, state.operation, action.operation)
+      });
+    default:
+      return state;
+  }
+}
+
+var reducer = function () {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments[1];
+
+  return {
+    player: video(state.player, action),
+    operation: operation(state.operation, action)
+  };
+};
+
+var Manager = function () {
+  function Manager() {
+    classCallCheck(this, Manager);
+
+    this.store = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2_redux__["createStore"])(reducer);
+
+    this.video = null;
+    this.rootElement = null;
+  }
+
+  createClass(Manager, [{
+    key: 'getActions',
+    value: function getActions() {
+      var manager = this;
+      var dispatch = this.store.dispatch;
+
+      var actions = _extends({}, playerActions, videoActions);
+
+      function bindActionCreator(actionCreator) {
+        return function () {
+          // eslint-disable-next-line prefer-rest-params
+          var action = actionCreator.apply(manager, arguments);
+          if (typeof action !== 'undefined') {
+            dispatch(action);
+          }
+        };
+      }
+
+      return Object.keys(actions).filter(function (key) {
+        return typeof actions[key] === 'function';
+      }).reduce(function (boundActions, key) {
+        boundActions[key] = bindActionCreator(actions[key]);
+        return boundActions;
+      }, {});
+    }
+  }, {
+    key: 'getState',
+    value: function getState() {
+      return this.store.getState();
+    }
+
+    // subscribe state change
+
+  }, {
+    key: 'subscribeToStateChange',
+    value: function subscribeToStateChange(listener, getState) {
+      if (!getState) {
+        getState = this.getState.bind(this);
+      }
+
+      var prevState = getState();
+
+      var handleChange = function handleChange() {
+        var state = getState();
+        if (state === prevState) {
+          return;
+        }
+        var prevStateCopy = prevState;
+        prevState = state;
+        listener(state, prevStateCopy);
+      };
+
+      return this.store.subscribe(handleChange);
+    }
+
+    // subscribe to operation state change
+
+  }, {
+    key: 'subscribeToOperationStateChange',
+    value: function subscribeToOperationStateChange(listener) {
+      var _this = this;
+
+      return this.subscribeToStateChange(listener, function () {
+        return _this.getState().operation;
+      });
+    }
+
+    // subscribe to player state change
+
+  }, {
+    key: 'subscribeToPlayerStateChange',
+    value: function subscribeToPlayerStateChange(listener) {
+      var _this2 = this;
+
+      return this.subscribeToStateChange(listener, function () {
+        return _this2.getState().player;
+      });
+    }
+  }]);
+  return Manager;
+}();
+
+var propTypes$1 = {
+  actions: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.object,
+  player: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.object,
+  position: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.string,
+  className: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.string
+};
+
+var defaultProps$1 = {
+  position: 'left'
+};
+
+var BigPlayButton = function (_Component) {
+  inherits(BigPlayButton, _Component);
+
+  function BigPlayButton(props, context) {
+    classCallCheck(this, BigPlayButton);
+
+    var _this = possibleConstructorReturn(this, (BigPlayButton.__proto__ || Object.getPrototypeOf(BigPlayButton)).call(this, props, context));
+
+    _this.handleClick = _this.handleClick.bind(_this);
+    return _this;
+  }
+
+  createClass(BigPlayButton, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {}
+  }, {
+    key: 'handleClick',
+    value: function handleClick() {
+      var actions = this.props.actions;
+
+      actions.play();
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          player = _props.player,
+          position = _props.position;
+
+      return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+        'button',
+        {
+          className: classnames('video-react-big-play-button', 'video-react-big-play-button-' + position, this.props.className, {
+            'big-play-button-hide': player.hasStarted || !player.currentSrc
+          }),
+          type: 'button',
+          'aria-live': 'polite',
+          tabIndex: '0',
+          onClick: this.handleClick
+        },
+        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+          'span',
+          { className: 'video-react-control-text' },
+          'Play Video'
+        )
+      );
+    }
+  }]);
+  return BigPlayButton;
+}(__WEBPACK_IMPORTED_MODULE_1_react__["Component"]);
+
+BigPlayButton.propTypes = propTypes$1;
+BigPlayButton.defaultProps = defaultProps$1;
+
+var propTypes$2 = {
+  player: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.object,
+  className: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.string
+};
+
+function LoadingSpinner(_ref) {
+  var player = _ref.player,
+      className = _ref.className;
+
+  if (player.error || !player.seeking && !player.waiting) {
+    return null;
+  }
+
+  return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('div', {
+    className: classnames('video-react-loading-spinner', className)
+  });
+}
+
+LoadingSpinner.propTypes = propTypes$2;
+
+var propTypes$3 = {
+  poster: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.string,
+  player: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.object,
+  actions: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.object,
+  className: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.string
+};
+
+function PosterImage(_ref) {
+  var poster = _ref.poster,
+      player = _ref.player,
+      actions = _ref.actions,
+      className = _ref.className;
+
+  if (!poster || player.hasStarted) {
+    return null;
+  }
+
+  return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('div', {
+    className: classnames('video-react-poster', className),
+    style: {
+      backgroundImage: 'url("' + poster + '")'
+    },
+    onClick: function onClick() {
+      if (player.paused) {
+        actions.play();
+      }
+    }
+  });
+}
+
+PosterImage.propTypes = propTypes$3;
+
+/**
+ * @file format-time.js
+ *
+ * Format seconds as a time string, H:MM:SS or M:SS
+ * Supplying a guide (in seconds) will force a number of leading zeros
+ * to cover the length of the guide
+ *
+ * @param  {Number} seconds Number of seconds to be turned into a string
+ * @param  {Number} guide   Number (in seconds) to model the string after
+ * @return {String}         Time formatted as H:MM:SS or M:SS
+ * @private
+ * @function formatTime
+ */
+function formatTime() {
+  var seconds = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+  var guide = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : seconds;
+
+  var s = Math.floor(seconds % 60);
+  var m = Math.floor(seconds / 60 % 60);
+  var h = Math.floor(seconds / 3600);
+  var gm = Math.floor(guide / 60 % 60);
+  var gh = Math.floor(guide / 3600);
+
+  // handle invalid times
+  if (isNaN(seconds) || seconds === Infinity) {
+    // '-' is false for all relational operators (e.g. <, >=) so this setting
+    // will add the minimum number of fields specified by the guide
+    h = m = s = '-';
+  }
+
+  // Check if we need to show hours
+  h = h > 0 || gh > 0 ? h + ':' : '';
+
+  // If hours are showing, we may need to add a leading zero.
+  // Always show at least one digit of minutes.
+  m = ((h || gm >= 10) && m < 10 ? '0' + m : m) + ':';
+
+  // Check if leading zero is need for seconds
+  s = s < 10 ? '0' + s : s;
+
+  return h + m + s;
+}
+
+// Check if the element belongs to a video element
+// only accept <source />, <track />,
+// <MyComponent isVideoChild />
+// elements
+function isVideoChild(c) {
+  if (c.props && c.props.isVideoChild) {
+    return true;
+  }
+  return c.type === 'source' || c.type === 'track';
+}
+
+var find = function find(elements, func) {
+  return elements.filter(func)[0];
+};
+
+// merge default children
+// sort them by `order` property
+// filter them by `disabled` property
+function mergeAndSortChildren(defaultChildren, _children, _parentProps) {
+  var defaultOrder = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 1;
+
+  var children = __WEBPACK_IMPORTED_MODULE_1_react___default.a.Children.toArray(_children);
+  var parentProps = _extends({}, _parentProps);
+  return children.filter(function (e) {
+    return !e.props.disabled;
+  }).concat(defaultChildren.filter(function (c) {
+    return !find(children, function (component) {
+      return component.type === c.type;
+    });
+  })).map(function (element) {
+    var defaultComponent = find(defaultChildren, function (c) {
+      return c.type === element.type;
+    });
+    delete parentProps.order;
+    var defaultProps = defaultComponent ? defaultComponent.props : {};
+    var props = _extends({}, parentProps, defaultProps, element.props);
+    var e = __WEBPACK_IMPORTED_MODULE_1_react___default.a.cloneElement(element, props, element.props.children);
+    return e;
+  }).sort(function (a, b) {
+    return (a.props.order || defaultOrder) - (b.props.order || defaultOrder);
+  });
+}
+
+/**
+ * Temporary utility for generating the warnings
+ */
+function deprecatedWarning(oldMethodCall, newMethodCall) {
+  // eslint-disable-next-line no-console
+  console.warn('WARNING: ' + oldMethodCall + ' will be deprecated soon! Please use ' + newMethodCall + ' instead.');
+}
+
+function throttle(callback, limit) {
+  var _arguments = arguments;
+
+  var wait = false;
+  return function () {
+    if (!wait) {
+      callback.apply(null, _arguments);
+      wait = true;
+      setTimeout(function () {
+        wait = false;
+      }, limit);
+    }
+  };
+}
+
+var mediaProperties = ['error', 'src', 'srcObject', 'currentSrc', 'crossOrigin', 'networkState', 'preload', 'buffered', 'readyState', 'seeking', 'currentTime', 'duration', 'paused', 'defaultPlaybackRate', 'playbackRate', 'played', 'seekable', 'ended', 'autoplay', 'loop', 'mediaGroup', 'controller', 'controls', 'volume', 'muted', 'defaultMuted', 'audioTracks', 'videoTracks', 'textTracks', 'width', 'height', 'videoWidth', 'videoHeight', 'poster'];
+
+var propTypes$4 = {
+  actions: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.object,
+  player: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.object,
+  children: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.any,
+  startTime: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.number,
+  loop: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.bool,
+  muted: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.bool,
+  autoPlay: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.bool,
+  playsInline: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.bool,
+  src: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.string,
+  poster: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.string,
+  className: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.string,
+  preload: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.oneOf(['auto', 'metadata', 'none']),
+  crossOrigin: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.string,
+
+  onLoadStart: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  onWaiting: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  onCanPlay: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  onCanPlayThrough: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  onPlaying: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  onEnded: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  onSeeking: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  onSeeked: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  onPlay: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  onPause: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  onProgress: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  onDurationChange: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  onError: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  onSuspend: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  onAbort: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  onEmptied: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  onStalled: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  onLoadedMetadata: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  onLoadedData: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  onTimeUpdate: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  onRateChange: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  onVolumeChange: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  onResize: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func
+};
+
+var defaultProps$2 = {
+  preload: 'auto'
+};
+
+var Video = function (_Component) {
+  inherits(Video, _Component);
+
+  function Video(props) {
+    classCallCheck(this, Video);
+
+    var _this = possibleConstructorReturn(this, (Video.__proto__ || Object.getPrototypeOf(Video)).call(this, props));
+
+    _this.video = null; // the html5 video
+    _this.play = _this.play.bind(_this);
+    _this.pause = _this.pause.bind(_this);
+    _this.seek = _this.seek.bind(_this);
+    _this.forward = _this.forward.bind(_this);
+    _this.replay = _this.replay.bind(_this);
+    _this.toggleFullscreen = _this.toggleFullscreen.bind(_this);
+    _this.getProperties = _this.getProperties.bind(_this);
+    _this.renderChildren = _this.renderChildren.bind(_this);
+    _this.handleLoadStart = _this.handleLoadStart.bind(_this);
+    _this.handleCanPlay = _this.handleCanPlay.bind(_this);
+    _this.handleCanPlayThrough = _this.handleCanPlayThrough.bind(_this);
+    _this.handlePlay = _this.handlePlay.bind(_this);
+    _this.handlePlaying = _this.handlePlaying.bind(_this);
+    _this.handlePause = _this.handlePause.bind(_this);
+    _this.handleEnded = _this.handleEnded.bind(_this);
+    _this.handleWaiting = _this.handleWaiting.bind(_this);
+    _this.handleSeeking = _this.handleSeeking.bind(_this);
+    _this.handleSeeked = _this.handleSeeked.bind(_this);
+    _this.handleFullscreenChange = _this.handleFullscreenChange.bind(_this);
+    _this.handleError = _this.handleError.bind(_this);
+    _this.handleSuspend = _this.handleSuspend.bind(_this);
+    _this.handleAbort = _this.handleAbort.bind(_this);
+    _this.handleEmptied = _this.handleEmptied.bind(_this);
+    _this.handleStalled = _this.handleStalled.bind(_this);
+    _this.handleLoadedMetaData = _this.handleLoadedMetaData.bind(_this);
+    _this.handleLoadedData = _this.handleLoadedData.bind(_this);
+    _this.handleTimeUpdate = _this.handleTimeUpdate.bind(_this);
+    _this.handleRateChange = _this.handleRateChange.bind(_this);
+    _this.handleVolumeChange = _this.handleVolumeChange.bind(_this);
+    _this.handleDurationChange = _this.handleDurationChange.bind(_this);
+    _this.handleProgress = throttle(_this.handleProgress.bind(_this), 250);
+    _this.handleKeypress = _this.handleKeypress.bind(_this);
+    return _this;
+  }
+
+  createClass(Video, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.forceUpdate(); // make sure the children can get the video property
+    }
+
+    // get all video properties
+
+  }, {
+    key: 'getProperties',
+    value: function getProperties() {
+      var _this2 = this;
+
+      if (!this.video) {
+        return null;
+      }
+
+      return mediaProperties.reduce(function (properties, key) {
+        properties[key] = _this2.video[key];
+        return properties;
+      }, {});
+    }
+
+    // get playback rate
+
+  }, {
+    key: 'play',
+
+
+    // play the video
+    value: function play() {
+      var promise = this.video.play();
+      if (promise !== undefined) {
+        promise.catch(function (error) {}).then(function () {});
+      }
+    }
+
+    // pause the video
+
+  }, {
+    key: 'pause',
+    value: function pause() {
+      var promise = this.video.pause();
+      if (promise !== undefined) {
+        promise.catch(function (error) {}).then(function () {});
+      }
+    }
+
+    // Change the video source and re-load the video:
+
+  }, {
+    key: 'load',
+    value: function load() {
+      this.video.load();
+    }
+
+    // Add a new text track to the video
+
+  }, {
+    key: 'addTextTrack',
+    value: function addTextTrack() {
+      var _video;
+
+      (_video = this.video).addTextTrack.apply(_video, arguments);
+    }
+
+    // Check if your browser can play different types of video:
+
+  }, {
+    key: 'canPlayType',
+    value: function canPlayType() {
+      var _video2;
+
+      (_video2 = this.video).canPlayType.apply(_video2, arguments);
+    }
+
+    // toggle play
+
+  }, {
+    key: 'togglePlay',
+    value: function togglePlay() {
+      if (this.video.paused) {
+        this.play();
+      } else {
+        this.pause();
+      }
+    }
+
+    // seek video by time
+
+  }, {
+    key: 'seek',
+    value: function seek(time) {
+      try {
+        this.video.currentTime = time;
+      } catch (e) {
+        // console.log(e, 'Video is not ready.')
+      }
+    }
+
+    // jump forward x seconds
+
+  }, {
+    key: 'forward',
+    value: function forward(seconds) {
+      this.seek(this.video.currentTime + seconds);
+    }
+
+    // jump back x seconds
+
+  }, {
+    key: 'replay',
+    value: function replay(seconds) {
+      this.forward(-seconds);
+    }
+
+    // enter or exist full screen
+
+  }, {
+    key: 'toggleFullscreen',
+    value: function toggleFullscreen() {
+      var _props = this.props,
+          player = _props.player,
+          actions = _props.actions;
+
+      actions.toggleFullscreen(player);
+    }
+
+    // Fired when the user agent
+    // begins looking for media data
+
+  }, {
+    key: 'handleLoadStart',
+    value: function handleLoadStart() {
+      var _props2 = this.props,
+          actions = _props2.actions,
+          onLoadStart = _props2.onLoadStart;
+
+      actions.handleLoadStart(this.getProperties());
+      if (onLoadStart) {
+        onLoadStart.apply(undefined, arguments);
+      }
+    }
+
+    // A handler for events that
+    // signal that waiting has ended
+
+  }, {
+    key: 'handleCanPlay',
+    value: function handleCanPlay() {
+      var _props3 = this.props,
+          actions = _props3.actions,
+          onCanPlay = _props3.onCanPlay;
+
+
+      actions.handleCanPlay(this.getProperties());
+
+      if (onCanPlay) {
+        onCanPlay.apply(undefined, arguments);
+      }
+    }
+
+    // A handler for events that
+    // signal that waiting has ended
+
+  }, {
+    key: 'handleCanPlayThrough',
+    value: function handleCanPlayThrough() {
+      var _props4 = this.props,
+          actions = _props4.actions,
+          onCanPlayThrough = _props4.onCanPlayThrough;
+
+      actions.handleCanPlayThrough(this.getProperties());
+
+      if (onCanPlayThrough) {
+        onCanPlayThrough.apply(undefined, arguments);
+      }
+    }
+
+    // A handler for events that
+    // signal that waiting has ended
+
+  }, {
+    key: 'handlePlaying',
+    value: function handlePlaying() {
+      var _props5 = this.props,
+          actions = _props5.actions,
+          onPlaying = _props5.onPlaying;
+
+      actions.handlePlaying(this.getProperties());
+
+      if (onPlaying) {
+        onPlaying.apply(undefined, arguments);
+      }
+    }
+
+    // Fired whenever the media has been started
+
+  }, {
+    key: 'handlePlay',
+    value: function handlePlay() {
+      var _props6 = this.props,
+          actions = _props6.actions,
+          onPlay = _props6.onPlay;
+
+      actions.handlePlay(this.getProperties());
+
+      if (onPlay) {
+        onPlay.apply(undefined, arguments);
+      }
+    }
+
+    // Fired whenever the media has been paused
+
+  }, {
+    key: 'handlePause',
+    value: function handlePause() {
+      var _props7 = this.props,
+          actions = _props7.actions,
+          onPause = _props7.onPause;
+
+      actions.handlePause(this.getProperties());
+
+      if (onPause) {
+        onPause.apply(undefined, arguments);
+      }
+    }
+
+    // Fired when the duration of
+    // the media resource is first known or changed
+
+  }, {
+    key: 'handleDurationChange',
+    value: function handleDurationChange() {
+      var _props8 = this.props,
+          actions = _props8.actions,
+          onDurationChange = _props8.onDurationChange;
+
+      actions.handleDurationChange(this.getProperties());
+
+      if (onDurationChange) {
+        onDurationChange.apply(undefined, arguments);
+      }
+    }
+
+    // Fired while the user agent
+    // is downloading media data
+
+  }, {
+    key: 'handleProgress',
+    value: function handleProgress() {
+      var _props9 = this.props,
+          actions = _props9.actions,
+          onProgress = _props9.onProgress;
+
+      if (this.video) {
+        actions.handleProgressChange(this.getProperties());
+      }
+
+      if (onProgress) {
+        onProgress.apply(undefined, arguments);
+      }
+    }
+
+    // Fired when the end of the media resource
+    // is reached (currentTime == duration)
+
+  }, {
+    key: 'handleEnded',
+    value: function handleEnded() {
+      var _props10 = this.props,
+          loop = _props10.loop,
+          player = _props10.player,
+          actions = _props10.actions,
+          onEnded = _props10.onEnded;
+
+      if (loop) {
+        this.seek(0);
+        this.play();
+      } else if (!player.paused) {
+        this.pause();
+      }
+      actions.handleEnd(this.getProperties());
+
+      if (onEnded) {
+        onEnded.apply(undefined, arguments);
+      }
+    }
+
+    // Fired whenever the media begins waiting
+
+  }, {
+    key: 'handleWaiting',
+    value: function handleWaiting() {
+      var _props11 = this.props,
+          actions = _props11.actions,
+          onWaiting = _props11.onWaiting;
+
+      actions.handleWaiting(this.getProperties());
+
+      if (onWaiting) {
+        onWaiting.apply(undefined, arguments);
+      }
+    }
+
+    // Fired whenever the player
+    // is jumping to a new time
+
+  }, {
+    key: 'handleSeeking',
+    value: function handleSeeking() {
+      var _props12 = this.props,
+          actions = _props12.actions,
+          onSeeking = _props12.onSeeking;
+
+      actions.handleSeeking(this.getProperties());
+
+      if (onSeeking) {
+        onSeeking.apply(undefined, arguments);
+      }
+    }
+
+    // Fired when the player has
+    // finished jumping to a new time
+
+  }, {
+    key: 'handleSeeked',
+    value: function handleSeeked() {
+      var _props13 = this.props,
+          actions = _props13.actions,
+          onSeeked = _props13.onSeeked;
+
+      actions.handleSeeked(this.getProperties());
+
+      if (onSeeked) {
+        onSeeked.apply(undefined, arguments);
+      }
+    }
+
+    // Handle Fullscreen Change
+
+  }, {
+    key: 'handleFullscreenChange',
+    value: function handleFullscreenChange() {}
+
+    // Fires when the browser is
+    // intentionally not getting media data
+
+  }, {
+    key: 'handleSuspend',
+    value: function handleSuspend() {
+      var _props14 = this.props,
+          actions = _props14.actions,
+          onSuspend = _props14.onSuspend;
+
+      actions.handleSuspend(this.getProperties());
+      if (onSuspend) {
+        onSuspend.apply(undefined, arguments);
+      }
+    }
+
+    // Fires when the loading of an audio/video is aborted
+
+  }, {
+    key: 'handleAbort',
+    value: function handleAbort() {
+      var _props15 = this.props,
+          actions = _props15.actions,
+          onAbort = _props15.onAbort;
+
+      actions.handleAbort(this.getProperties());
+      if (onAbort) {
+        onAbort.apply(undefined, arguments);
+      }
+    }
+
+    // Fires when the current playlist is empty
+
+  }, {
+    key: 'handleEmptied',
+    value: function handleEmptied() {
+      var _props16 = this.props,
+          actions = _props16.actions,
+          onEmptied = _props16.onEmptied;
+
+      actions.handleEmptied(this.getProperties());
+      if (onEmptied) {
+        onEmptied.apply(undefined, arguments);
+      }
+    }
+
+    // Fires when the browser is trying to
+    // get media data, but data is not available
+
+  }, {
+    key: 'handleStalled',
+    value: function handleStalled() {
+      var _props17 = this.props,
+          actions = _props17.actions,
+          onStalled = _props17.onStalled;
+
+      actions.handleStalled(this.getProperties());
+
+      if (onStalled) {
+        onStalled.apply(undefined, arguments);
+      }
+    }
+
+    // Fires when the browser has loaded
+    // meta data for the audio/video
+
+  }, {
+    key: 'handleLoadedMetaData',
+    value: function handleLoadedMetaData() {
+      var _props18 = this.props,
+          actions = _props18.actions,
+          onLoadedMetadata = _props18.onLoadedMetadata,
+          startTime = _props18.startTime;
+
+
+      if (startTime && startTime > 0) {
+        this.video.currentTime = startTime;
+      }
+
+      actions.handleLoadedMetaData(this.getProperties());
+
+      if (onLoadedMetadata) {
+        onLoadedMetadata.apply(undefined, arguments);
+      }
+    }
+
+    // Fires when the browser has loaded
+    // the current frame of the audio/video
+
+  }, {
+    key: 'handleLoadedData',
+    value: function handleLoadedData() {
+      var _props19 = this.props,
+          actions = _props19.actions,
+          onLoadedData = _props19.onLoadedData;
+
+      actions.handleLoadedData(this.getProperties());
+
+      if (onLoadedData) {
+        onLoadedData.apply(undefined, arguments);
+      }
+    }
+
+    // Fires when the current
+    // playback position has changed
+
+  }, {
+    key: 'handleTimeUpdate',
+    value: function handleTimeUpdate() {
+      var _props20 = this.props,
+          actions = _props20.actions,
+          onTimeUpdate = _props20.onTimeUpdate;
+
+      actions.handleTimeUpdate(this.getProperties());
+
+      if (onTimeUpdate) {
+        onTimeUpdate.apply(undefined, arguments);
+      }
+    }
+
+    /**
+     * Fires when the playing speed of the audio/video is changed
+     */
+
+  }, {
+    key: 'handleRateChange',
+    value: function handleRateChange() {
+      var _props21 = this.props,
+          actions = _props21.actions,
+          onRateChange = _props21.onRateChange;
+
+      actions.handleRateChange(this.getProperties());
+
+      if (onRateChange) {
+        onRateChange.apply(undefined, arguments);
+      }
+    }
+
+    // Fires when the volume has been changed
+
+  }, {
+    key: 'handleVolumeChange',
+    value: function handleVolumeChange() {
+      var _props22 = this.props,
+          actions = _props22.actions,
+          onVolumeChange = _props22.onVolumeChange;
+
+      actions.handleVolumeChange(this.getProperties());
+
+      if (onVolumeChange) {
+        onVolumeChange.apply(undefined, arguments);
+      }
+    }
+
+    // Fires when an error occurred
+    // during the loading of an audio/video
+
+  }, {
+    key: 'handleError',
+    value: function handleError() {
+      var _props23 = this.props,
+          actions = _props23.actions,
+          onError = _props23.onError;
+
+      actions.handleError(this.getProperties());
+      if (onError) {
+        onError.apply(undefined, arguments);
+      }
+    }
+  }, {
+    key: 'handleResize',
+    value: function handleResize() {
+      var _props24 = this.props,
+          actions = _props24.actions,
+          onResize = _props24.onResize;
+
+      actions.handleResize(this.getProperties());
+      if (onResize) {
+        onResize.apply(undefined, arguments);
+      }
+    }
+  }, {
+    key: 'handleKeypress',
+    value: function handleKeypress() {}
+  }, {
+    key: 'renderChildren',
+    value: function renderChildren() {
+      var _this3 = this;
+
+      var props = _extends({}, this.props, {
+        video: this.video
+      });
+
+      // to make sure the children can get video property
+      if (!this.video) {
+        return null;
+      }
+
+      // only keep <source />, <track />, <MyComponent isVideoChild /> elements
+      return __WEBPACK_IMPORTED_MODULE_1_react___default.a.Children.toArray(this.props.children).filter(isVideoChild).map(function (c) {
+        var cprops = void 0;
+        if (typeof c.type === 'string') {
+          // add onError to <source />
+          if (c.type === 'source') {
+            cprops = _extends({}, c.props);
+            var preOnError = cprops.onError;
+            cprops.onError = function () {
+              if (preOnError) {
+                preOnError.apply(undefined, arguments);
+              }
+              _this3.handleError.apply(_this3, arguments);
+            };
+          }
+        } else {
+          cprops = props;
+        }
+        return __WEBPACK_IMPORTED_MODULE_1_react___default.a.cloneElement(c, cprops);
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this4 = this;
+
+      var _props25 = this.props,
+          loop = _props25.loop,
+          poster = _props25.poster,
+          preload = _props25.preload,
+          src = _props25.src,
+          autoPlay = _props25.autoPlay,
+          playsInline = _props25.playsInline,
+          muted = _props25.muted,
+          crossOrigin = _props25.crossOrigin;
+
+
+      return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+        'video',
+        {
+          className: classnames('video-react-video', this.props.className),
+          crossOrigin: crossOrigin,
+          ref: function ref(c) {
+            _this4.video = c;
+          },
+          muted: muted,
+          preload: preload,
+          loop: loop,
+          playsInline: playsInline,
+          autoPlay: autoPlay,
+          poster: poster,
+          src: src,
+          onLoadStart: this.handleLoadStart,
+          onWaiting: this.handleWaiting,
+          onCanPlay: this.handleCanPlay,
+          onCanPlayThrough: this.handleCanPlayThrough,
+          onPlaying: this.handlePlaying,
+          onEnded: this.handleEnded,
+          onSeeking: this.handleSeeking,
+          onSeeked: this.handleSeeked,
+          onPlay: this.handlePlay,
+          onPause: this.handlePause,
+          onProgress: this.handleProgress,
+          onDurationChange: this.handleDurationChange,
+          onError: this.handleError,
+          onSuspend: this.handleSuspend,
+          onAbort: this.handleAbort,
+          onEmptied: this.handleEmptied,
+          onStalled: this.handleStalled,
+          onLoadedMetadata: this.handleLoadedMetaData,
+          onLoadedData: this.handleLoadedData,
+          onTimeUpdate: this.handleTimeUpdate,
+          onRateChange: this.handleRateChange,
+          onVolumeChange: this.handleVolumeChange
+        },
+        this.renderChildren()
+      );
+    }
+  }, {
+    key: 'playbackRate',
+    get: function get$$1() {
+      return this.video.playbackRate;
+    }
+
+    // set playback rate
+    // speed of video
+    ,
+    set: function set$$1(rate) {
+      this.video.playbackRate = rate;
+    }
+  }, {
+    key: 'muted',
+    get: function get$$1() {
+      return this.video.muted;
+    },
+    set: function set$$1(val) {
+      this.video.muted = val;
+    }
+  }, {
+    key: 'volume',
+    get: function get$$1() {
+      return this.video.volume;
+    },
+    set: function set$$1(val) {
+      if (val > 1) {
+        val = 1;
+      }
+      if (val < 0) {
+        val = 0;
+      }
+      this.video.volume = val;
+    }
+
+    // video width
+
+  }, {
+    key: 'videoWidth',
+    get: function get$$1() {
+      return this.video.videoWidth;
+    }
+
+    // video height
+
+  }, {
+    key: 'videoHeight',
+    get: function get$$1() {
+      return this.video.videoHeight;
+    }
+  }]);
+  return Video;
+}(__WEBPACK_IMPORTED_MODULE_1_react__["Component"]);
+
+Video.propTypes = propTypes$4;
+Video.defaultProps = defaultProps$2;
+
+var propTypes$5 = {
+  manager: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.object,
+  className: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.string
+};
+
+var Bezel = function (_Component) {
+  inherits(Bezel, _Component);
+
+  function Bezel(props, context) {
+    classCallCheck(this, Bezel);
+
+    var _this = possibleConstructorReturn(this, (Bezel.__proto__ || Object.getPrototypeOf(Bezel)).call(this, props, context));
+
+    _this.timer = null;
+    props.manager.subscribeToOperationStateChange(_this.handleStateChange.bind(_this));
+
+    _this.state = {
+      hidden: true,
+      operation: {}
+    };
+    return _this;
+  }
+
+  createClass(Bezel, [{
+    key: 'handleStateChange',
+    value: function handleStateChange(state, prevState) {
+      var _this2 = this;
+
+      if (state.count !== prevState.count && state.operation.source === 'shortcut') {
+        if (this.timer) {
+          // previous animation is not finished
+          clearTimeout(this.timer); // cancel it
+          this.timer = null;
+        }
+
+        // show it
+        // update operation
+        this.setState({
+          hidden: false,
+          count: state.count,
+          operation: state.operation
+        });
+
+        // hide it after 0.5s
+        this.timer = setTimeout(function () {
+          _this2.setState({
+            hidden: true
+          });
+          _this2.timer = null;
+        }, 500);
+      }
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      // only displays for shortcut so far
+      if (this.state.operation.source !== 'shortcut') {
+        return null;
+      }
+      var style = this.state.hidden ? {
+        display: 'none'
+      } : null;
+
+      return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+        'div',
+        {
+          className: classnames({
+            'video-react-bezel': true,
+            'video-react-bezel-animation': this.state.count % 2 === 0,
+            'video-react-bezel-animation-alt': this.state.count % 2 === 1
+          }, this.props.className),
+          style: style,
+          role: 'status',
+          'aria-label': this.state.operation.action
+        },
+        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('div', {
+          className: classnames('video-react-bezel-icon', 'video-react-bezel-icon-' + this.state.operation.action)
+        })
+      );
+    }
+  }]);
+  return Bezel;
+}(__WEBPACK_IMPORTED_MODULE_1_react__["Component"]);
+
+Bezel.propTypes = propTypes$5;
+
+/**
+ * Offset Left
+ * getBoundingClientRect technique from
+ * John Resig http://ejohn.org/blog/getboundingclientrect-is-awesome/
+ *
+ * @function findElPosition
+ * @param {Element} el Element from which to get offset
+ * @return {Object}
+ */
+function findElPosition(el) {
+  var box = void 0;
+
+  if (el.getBoundingClientRect && el.parentNode) {
+    box = el.getBoundingClientRect();
+  }
+
+  if (!box) {
+    return {
+      left: 0,
+      top: 0
+    };
+  }
+
+  var docEl = document.documentElement;
+  var body = document.body;
+
+  var clientLeft = docEl.clientLeft || body.clientLeft || 0;
+  var scrollLeft = window.pageXOffset || body.scrollLeft;
+  var left = box.left + scrollLeft - clientLeft;
+
+  var clientTop = docEl.clientTop || body.clientTop || 0;
+  var scrollTop = window.pageYOffset || body.scrollTop;
+  var top = box.top + scrollTop - clientTop;
+
+  // Android sometimes returns slightly off decimal values, so need to round
+  return {
+    left: Math.round(left),
+    top: Math.round(top)
+  };
+}
+
+/**
+ * Get pointer position in element
+ * Returns an object with x and y coordinates.
+ * The base on the coordinates are the bottom left of the element.
+ *
+ * @function getPointerPosition
+ * @param {Element} el Element on which to get the pointer position on
+ * @param {Event} event Event object
+ * @return {Object} This object will have x and y coordinates corresponding to the mouse position
+ */
+function getPointerPosition(el, event) {
+  var position = {};
+  var box = findElPosition(el);
+  var boxW = el.offsetWidth;
+  var boxH = el.offsetHeight;
+
+  var boxY = box.top;
+  var boxX = box.left;
+  var pageY = event.pageY;
+  var pageX = event.pageX;
+
+  if (event.changedTouches) {
+    pageX = event.changedTouches[0].pageX;
+    pageY = event.changedTouches[0].pageY;
+  }
+
+  position.y = Math.max(0, Math.min(1, (boxY - pageY + boxH) / boxH));
+  position.x = Math.max(0, Math.min(1, (pageX - boxX) / boxW));
+
+  return position;
+}
+
+// blur an element
+
+
+// check if an element has a class name
+function hasClass(elm, cls) {
+  var classes = elm.className.split(' ');
+  for (var i = 0; i < classes.length; i++) {
+    if (classes[i].toLowerCase() === cls.toLowerCase()) {
+      return true;
+    }
+  }
+  return false;
+}
+
+var propTypes$6 = {
+  manager: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.object,
+  actions: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.object,
+  player: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.object,
+  shortcuts: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.array
+};
+
+var Shortcut = function (_Component) {
+  inherits(Shortcut, _Component);
+
+  function Shortcut(props, context) {
+    classCallCheck(this, Shortcut);
+
+    var _this = possibleConstructorReturn(this, (Shortcut.__proto__ || Object.getPrototypeOf(Shortcut)).call(this, props, context));
+
+    _this.defaultShortcuts = [{
+      keyCode: 32, // spacebar
+      handle: _this.togglePlay
+    }, {
+      keyCode: 75, // k
+      handle: _this.togglePlay
+    }, {
+      keyCode: 70, // f
+      handle: _this.toggleFullscreen
+    }, {
+      keyCode: 37, // Left arrow
+      handle: function handle(player, actions) {
+        if (!player.hasStarted) {
+          return;
+        }
+        actions.replay(5, {
+          action: 'replay-5',
+          source: 'shortcut'
+        }); // Go back 5 seconds
+      }
+    }, {
+      keyCode: 74, // j
+      handle: function handle(player, actions) {
+        if (!player.hasStarted) {
+          return;
+        }
+        actions.replay(10, {
+          action: 'replay-10',
+          source: 'shortcut'
+        }); // Go back 10 seconds
+      }
+    }, {
+      keyCode: 39, // Right arrow
+      handle: function handle(player, actions) {
+        if (!player.hasStarted) {
+          return;
+        }
+        actions.forward(5, {
+          action: 'forward-5',
+          source: 'shortcut'
+        }); // Go forward 5 seconds
+      }
+    }, {
+      keyCode: 76, // l
+      handle: function handle(player, actions) {
+        if (!player.hasStarted) {
+          return;
+        }
+        actions.forward(10, {
+          action: 'forward-10',
+          source: 'shortcut'
+        }); // Go forward 10 seconds
+      }
+    }, {
+      keyCode: 36, // Home
+      handle: function handle(player, actions) {
+        if (!player.hasStarted) {
+          return;
+        }
+        actions.seek(0); // Go to beginning of video
+      }
+    }, {
+      keyCode: 35, // End
+      handle: function handle(player, actions) {
+        if (!player.hasStarted) {
+          return;
+        }
+        // Go to end of video
+        actions.seek(player.duration);
+      }
+    }, {
+      keyCode: 38, // Up arrow
+      handle: function handle(player, actions) {
+        // Increase volume 5%
+        var v = player.volume + 0.05;
+        if (v > 1) {
+          v = 1;
+        }
+        actions.changeVolume(v, {
+          action: 'volume-up',
+          source: 'shortcut'
+        });
+      }
+    }, {
+      keyCode: 40, // Down arrow
+      handle: function handle(player, actions) {
+        // Decrease volume 5%
+        var v = player.volume - 0.05;
+        if (v < 0) {
+          v = 0;
+        }
+        var action = v > 0 ? 'volume-down' : 'volume-off';
+        actions.changeVolume(v, {
+          action: action,
+          source: 'shortcut'
+        });
+      }
+    }, {
+      keyCode: 190, // Shift + >
+      shift: true,
+      handle: function handle(player, actions) {
+        // Increase speed
+        var playbackRate = player.playbackRate;
+        if (playbackRate >= 1.5) {
+          playbackRate = 2;
+        } else if (playbackRate >= 1.25) {
+          playbackRate = 1.5;
+        } else if (playbackRate >= 1.0) {
+          playbackRate = 1.25;
+        } else if (playbackRate >= 0.5) {
+          playbackRate = 1.0;
+        } else if (playbackRate >= 0.25) {
+          playbackRate = 0.5;
+        } else if (playbackRate >= 0) {
+          playbackRate = 0.25;
+        }
+        actions.changeRate(playbackRate, {
+          action: 'fast-forward',
+          source: 'shortcut'
+        });
+      }
+    }, {
+      keyCode: 188, // Shift + <
+      shift: true,
+      handle: function handle(player, actions) {
+        // Decrease speed
+        var playbackRate = player.playbackRate;
+        if (playbackRate <= 0.5) {
+          playbackRate = 0.25;
+        } else if (playbackRate <= 1.0) {
+          playbackRate = 0.5;
+        } else if (playbackRate <= 1.25) {
+          playbackRate = 1.0;
+        } else if (playbackRate <= 1.5) {
+          playbackRate = 1.25;
+        } else if (playbackRate <= 2) {
+          playbackRate = 1.5;
+        }
+        actions.changeRate(playbackRate, {
+          action: 'fast-rewind',
+          source: 'shortcut'
+        });
+      }
+    }];
+
+    _this.shortcuts = [].concat(toConsumableArray(_this.defaultShortcuts));
+
+    _this.mergeShortcuts = _this.mergeShortcuts.bind(_this);
+    _this.handleKeyPress = _this.handleKeyPress.bind(_this);
+    _this.handleClick = _this.handleClick.bind(_this);
+    _this.handleDoubleClick = _this.handleDoubleClick.bind(_this);
+    return _this;
+  }
+
+  createClass(Shortcut, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.mergeShortcuts();
+      document.addEventListener('keydown', this.handleKeyPress);
+      document.addEventListener('click', this.handleClick);
+      document.addEventListener('dblclick', this.handleDoubleClick);
+    }
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate(prevProps) {
+      if (prevProps.shortcuts !== this.props.shortcuts) {
+        this.mergeShortcuts();
+      }
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      document.removeEventListener('keydown', this.handleKeyPress);
+    }
+
+    // merge the shortcuts from props
+
+  }, {
+    key: 'mergeShortcuts',
+    value: function mergeShortcuts() {
+      var gradeShortcut = function gradeShortcut(s) {
+        var score = 0;
+        var ps = ['ctrl', 'shift', 'alt'];
+        ps.forEach(function (key) {
+          if (s[key]) {
+            score++;
+          }
+        });
+        return score;
+      };
+
+      var shortcuts = (this.props.shortcuts || []).filter(function (s) {
+        return s.keyCode && s.handle && typeof s.handle === 'function';
+      });
+
+      this.shortcuts = [].concat(toConsumableArray(shortcuts), toConsumableArray(this.defaultShortcuts)).sort(function (a, b) {
+        return gradeShortcut(b) - gradeShortcut(a);
+      });
+    }
+  }, {
+    key: 'togglePlay',
+    value: function togglePlay(player, actions) {
+      if (player.paused) {
+        actions.play({
+          action: 'play',
+          source: 'shortcut'
+        });
+      } else {
+        actions.pause({
+          action: 'pause',
+          source: 'shortcut'
+        });
+      }
+    }
+  }, {
+    key: 'toggleFullscreen',
+    value: function toggleFullscreen(player, actions) {
+      actions.toggleFullscreen(player);
+    }
+  }, {
+    key: 'handleKeyPress',
+    value: function handleKeyPress(e) {
+      var _props = this.props,
+          player = _props.player,
+          actions = _props.actions;
+
+      if (!player.isActive) {
+        return;
+      }
+      if (document.activeElement && (hasClass(document.activeElement, 'video-react-control') || hasClass(document.activeElement, 'video-react-menu-button-active')
+      // || hasClass(document.activeElement, 'video-react-slider')
+      || hasClass(document.activeElement, 'video-react-big-play-button'))) {
+        return;
+      }
+
+      var keyCode = e.keyCode || e.which;
+      var ctrl = e.ctrlKey || e.metaKey;
+      var shift = e.shiftKey;
+      var alt = e.altKey;
+
+      var shortcut = this.shortcuts.filter(function (s) {
+        if (!s.keyCode || s.keyCode - keyCode !== 0) {
+          return false;
+        }
+        if (s.ctrl !== undefined && s.ctrl !== ctrl || s.shift !== undefined && s.shift !== shift || s.alt !== undefined && s.alt !== alt) {
+          return false;
+        }
+        return true;
+      })[0];
+
+      if (shortcut) {
+        shortcut.handle(player, actions);
+        e.preventDefault();
+      }
+    }
+
+    // only if player is active and player is ready
+
+  }, {
+    key: 'canBeClicked',
+    value: function canBeClicked(player, e) {
+      if (!player.isActive || e.target.nodeName !== 'VIDEO' || player.readyState !== 4) {
+        return false;
+      }
+      return true;
+    }
+  }, {
+    key: 'handleClick',
+    value: function handleClick(e) {
+      var _props2 = this.props,
+          player = _props2.player,
+          actions = _props2.actions;
+
+      if (!this.canBeClicked(player, e)) {
+        return;
+      }
+      this.togglePlay(player, actions);
+      // e.preventDefault();
+    }
+  }, {
+    key: 'handleDoubleClick',
+    value: function handleDoubleClick(e) {
+      var _props3 = this.props,
+          player = _props3.player,
+          actions = _props3.actions;
+
+      if (!this.canBeClicked(player, e)) {
+        return;
+      }
+      this.toggleFullscreen(player, actions);
+      // e.preventDefault();
+    }
+
+    // this component dose not render anything
+    // it's just for the key down event
+
+  }, {
+    key: 'render',
+    value: function render() {
+      return null;
+    }
+  }]);
+  return Shortcut;
+}(__WEBPACK_IMPORTED_MODULE_1_react__["Component"]);
+
+Shortcut.propTypes = propTypes$6;
+
+var propTypes$10 = {
+  className: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.string,
+  onMouseDown: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  onMouseMove: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  stepForward: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  stepBack: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  sliderActive: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  sliderInactive: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  onMouseUp: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  onFocus: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  onBlur: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  onClick: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  getPercent: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  vertical: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.bool,
+  children: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.node,
+  label: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.string,
+  valuenow: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.string,
+  valuetext: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.string
+};
+
+var Slider = function (_Component) {
+  inherits(Slider, _Component);
+
+  function Slider(props, context) {
+    classCallCheck(this, Slider);
+
+    var _this = possibleConstructorReturn(this, (Slider.__proto__ || Object.getPrototypeOf(Slider)).call(this, props, context));
+
+    _this.handleMouseDown = _this.handleMouseDown.bind(_this);
+    _this.handleMouseMove = _this.handleMouseMove.bind(_this);
+    _this.handleMouseUp = _this.handleMouseUp.bind(_this);
+    _this.handleFocus = _this.handleFocus.bind(_this);
+    _this.handleBlur = _this.handleBlur.bind(_this);
+    _this.handleClick = _this.handleClick.bind(_this);
+    _this.handleKeyPress = _this.handleKeyPress.bind(_this);
+    _this.stepForward = _this.stepForward.bind(_this);
+    _this.stepBack = _this.stepBack.bind(_this);
+    _this.calculateDistance = _this.calculateDistance.bind(_this);
+    _this.getProgress = _this.getProgress.bind(_this);
+    _this.renderChildren = _this.renderChildren.bind(_this);
+
+    _this.state = {
+      active: false
+    };
+    return _this;
+  }
+
+  createClass(Slider, [{
+    key: 'getProgress',
+    value: function getProgress() {
+      var getPercent = this.props.getPercent;
+
+      if (!getPercent) {
+        return 0;
+      }
+      var progress = getPercent();
+
+      // Protect against no duration and other division issues
+      if (typeof progress !== 'number' || progress < 0 || progress === Infinity) {
+        progress = 0;
+      }
+      return progress;
+    }
+  }, {
+    key: 'handleMouseDown',
+    value: function handleMouseDown(event) {
+      var onMouseDown = this.props.onMouseDown;
+      // event.preventDefault();
+      // event.stopPropagation();
+
+      document.addEventListener('mousemove', this.handleMouseMove, true);
+      document.addEventListener('mouseup', this.handleMouseUp, true);
+      document.addEventListener('touchmove', this.handleMouseMove, true);
+      document.addEventListener('touchend', this.handleMouseUp, true);
+
+      this.setState({
+        active: true,
+        distance: 0
+      });
+
+      if (this.props.sliderActive) {
+        this.props.sliderActive(event);
+      }
+
+      this.handleMouseMove(event);
+
+      if (onMouseDown) {
+        onMouseDown(event);
+      }
+    }
+  }, {
+    key: 'handleMouseMove',
+    value: function handleMouseMove(event) {
+      var onMouseMove = this.props.onMouseMove;
+
+
+      if (onMouseMove) {
+        onMouseMove(event);
+      }
+    }
+  }, {
+    key: 'handleMouseUp',
+    value: function handleMouseUp(event) {
+      var onMouseUp = this.props.onMouseUp;
+
+
+      document.removeEventListener('mousemove', this.handleMouseMove, true);
+      document.removeEventListener('mouseup', this.handleMouseUp, true);
+      document.removeEventListener('touchmove', this.handleMouseMove, true);
+      document.removeEventListener('touchend', this.handleMouseUp, true);
+
+      this.setState({
+        active: false
+      });
+
+      if (this.props.sliderInactive) {
+        this.props.sliderInactive(event);
+      }
+
+      if (onMouseUp) {
+        onMouseUp(event);
+      }
+    }
+  }, {
+    key: 'handleFocus',
+    value: function handleFocus(e) {
+      document.addEventListener('keydown', this.handleKeyPress, true);
+      if (this.props.onFocus) {
+        this.props.onFocus(e);
+      }
+    }
+  }, {
+    key: 'handleBlur',
+    value: function handleBlur(e) {
+      document.removeEventListener('keydown', this.handleKeyPress, true);
+      if (this.props.onBlur) {
+        this.props.onBlur(e);
+      }
+    }
+  }, {
+    key: 'handleClick',
+    value: function handleClick(event) {
+      event.preventDefault();
+      // event.stopPropagation();
+      if (this.props.onClick) {
+        this.props.onClick(event);
+      }
+    }
+  }, {
+    key: 'handleKeyPress',
+    value: function handleKeyPress(event) {
+      if (event.which === 37 || event.which === 40) {
+        // Left and Down Arrows
+        event.preventDefault();
+        event.stopPropagation();
+        this.stepBack();
+      } else if (event.which === 38 || event.which === 39) {
+        // Up and Right Arrows
+        event.preventDefault();
+        event.stopPropagation();
+        this.stepForward();
+      }
+    }
+  }, {
+    key: 'stepForward',
+    value: function stepForward() {
+      if (this.props.stepForward) {
+        this.props.stepForward();
+      }
+    }
+  }, {
+    key: 'stepBack',
+    value: function stepBack() {
+      if (this.props.stepBack) {
+        this.props.stepBack();
+      }
+    }
+  }, {
+    key: 'calculateDistance',
+    value: function calculateDistance(event) {
+      var node = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3_react_dom__["findDOMNode"])(this);
+      var position = getPointerPosition(node, event);
+      if (this.props.vertical) {
+        return position.y;
+      }
+      return position.x;
+    }
+  }, {
+    key: 'renderChildren',
+    value: function renderChildren() {
+      var progress = this.getProgress();
+      var percentage = (progress * 100).toFixed(2) + '%';
+      return __WEBPACK_IMPORTED_MODULE_1_react___default.a.Children.map(this.props.children, function (child) {
+        return __WEBPACK_IMPORTED_MODULE_1_react___default.a.cloneElement(child, { progress: progress, percentage: percentage });
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          vertical = _props.vertical,
+          label = _props.label,
+          valuenow = _props.valuenow,
+          valuetext = _props.valuetext;
+
+
+      return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+        'div',
+        {
+          className: classnames(this.props.className, {
+            'video-react-slider-vertical': vertical,
+            'video-react-slider-horizontal': !vertical,
+            'video-react-sliding': this.state.active
+          }, 'video-react-slider'),
+          tabIndex: '0',
+          onMouseDown: this.handleMouseDown,
+          onTouchStart: this.handleMouseDown,
+          onFocus: this.handleFocus,
+          onBlur: this.handleBlur,
+          onClick: this.handleClick,
+          'aria-label': label || '',
+          'aria-valuenow': valuenow || '',
+          'aria-valuetext': valuetext || '',
+          'aria-valuemin': 0,
+          'aria-valuemax': 100
+        },
+        this.renderChildren()
+      );
+    }
+  }]);
+  return Slider;
+}(__WEBPACK_IMPORTED_MODULE_1_react__["Component"]);
+
+Slider.propTypes = propTypes$10;
+
+var propTypes$11 = {
+  currentTime: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.number,
+  duration: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.number,
+  percentage: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.string,
+  className: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.string
+};
+
+// Shows play progress
+function PlayProgressBar(_ref) {
+  var currentTime = _ref.currentTime,
+      duration = _ref.duration,
+      percentage = _ref.percentage,
+      className = _ref.className;
+
+  return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+    'div',
+    {
+      'data-current-time': formatTime(currentTime, duration),
+      className: classnames('video-react-play-progress video-react-slider-bar', className),
+      style: {
+        width: percentage
+      }
+    },
+    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+      'span',
+      { className: 'video-react-control-text' },
+      __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+        'span',
+        null,
+        'Progress'
+      ),
+      ': ',
+      percentage
+    )
+  );
+}
+
+PlayProgressBar.propTypes = propTypes$11;
+
+var propTypes$12 = {
+  duration: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.number,
+  buffered: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.object,
+  className: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.string
+};
+
+// Shows load progress
+function LoadProgressBar(_ref) {
+  var buffered = _ref.buffered,
+      duration = _ref.duration,
+      className = _ref.className;
+
+  if (!buffered || !buffered.length) {
+    return null;
+  }
+  var bufferedEnd = buffered.end(buffered.length - 1);
+  var style = {};
+
+  if (bufferedEnd > duration) {
+    bufferedEnd = duration;
+  }
+
+  // get the percent width of a time compared to the total end
+  function percentify(time, end) {
+    var percent = time / end || 0; // no NaN
+    return (percent >= 1 ? 1 : percent) * 100 + '%';
+  }
+
+  // the width of the progress bar
+  style.width = percentify(bufferedEnd, duration);
+
+  var parts = [];
+
+  // add child elements to represent the individual buffered time ranges
+  for (var i = 0; i < buffered.length; i++) {
+    var start = buffered.start(i);
+    var end = buffered.end(i);
+    // set the percent based on the width of the progress bar (bufferedEnd)
+    var part = __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('div', {
+      style: {
+        left: percentify(start, bufferedEnd),
+        width: percentify(end - start, bufferedEnd)
+      },
+      key: 'part-' + i
+    });
+    parts.push(part);
+  }
+
+  if (parts.length === 0) {
+    parts = null;
+  }
+
+  return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+    'div',
+    {
+      style: style,
+      className: classnames('video-react-load-progress', className)
+    },
+    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+      'span',
+      { className: 'video-react-control-text' },
+      __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+        'span',
+        null,
+        'Loaded'
+      ),
+      ': 0%'
+    ),
+    parts
+  );
+}
+
+LoadProgressBar.propTypes = propTypes$12;
+
+function MouseTimeDisplay(_ref) {
+  var duration = _ref.duration,
+      mouseTime = _ref.mouseTime,
+      className = _ref.className;
+
+  if (!mouseTime.time) {
+    return null;
+  }
+
+  var time = formatTime(mouseTime.time, duration);
+
+  return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('div', {
+    className: classnames('video-react-mouse-display', className),
+    style: {
+      left: mouseTime.position + 'px'
+    },
+    'data-current-time': time
+  });
+}
+
+MouseTimeDisplay.propTypes = {
+  duration: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.number,
+  mouseTime: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.object,
+  className: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.string
+};
+
+var propTypes$9 = {
+  player: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.object,
+  mouseTime: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.object,
+  actions: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.object,
+  className: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.string
+};
+
+var SeekBar = function (_Component) {
+  inherits(SeekBar, _Component);
+
+  function SeekBar(props, context) {
+    classCallCheck(this, SeekBar);
+
+    var _this = possibleConstructorReturn(this, (SeekBar.__proto__ || Object.getPrototypeOf(SeekBar)).call(this, props, context));
+
+    _this.getPercent = _this.getPercent.bind(_this);
+    _this.getNewTime = _this.getNewTime.bind(_this);
+    _this.stepForward = _this.stepForward.bind(_this);
+    _this.stepBack = _this.stepBack.bind(_this);
+
+    _this.handleMouseDown = _this.handleMouseDown.bind(_this);
+    _this.handleMouseMove = _this.handleMouseMove.bind(_this);
+    _this.handleMouseUp = _this.handleMouseUp.bind(_this);
+    return _this;
+  }
+
+  createClass(SeekBar, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {}
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate() {}
+
+    /**
+     * Get percentage of video played
+     *
+     * @return {Number} Percentage played
+     * @method getPercent
+     */
+
+  }, {
+    key: 'getPercent',
+    value: function getPercent() {
+      var _props$player = this.props.player,
+          currentTime = _props$player.currentTime,
+          seekingTime = _props$player.seekingTime,
+          duration = _props$player.duration;
+
+      var time = seekingTime || currentTime;
+      var percent = time / duration;
+      return percent >= 1 ? 1 : percent;
+    }
+  }, {
+    key: 'getNewTime',
+    value: function getNewTime(event) {
+      var duration = this.props.player.duration;
+
+      var distance = this.slider.calculateDistance(event);
+      var newTime = distance * duration;
+
+      // Don't let video end while scrubbing.
+      return newTime === duration ? newTime - 0.1 : newTime;
+    }
+  }, {
+    key: 'handleMouseDown',
+    value: function handleMouseDown() {}
+  }, {
+    key: 'handleMouseUp',
+    value: function handleMouseUp(event) {
+      var actions = this.props.actions;
+
+      var newTime = this.getNewTime(event);
+      // Set new time (tell video to seek to new time)
+      actions.seek(newTime);
+      actions.handleEndSeeking(newTime);
+    }
+  }, {
+    key: 'handleMouseMove',
+    value: function handleMouseMove(event) {
+      var actions = this.props.actions;
+
+      var newTime = this.getNewTime(event);
+      actions.handleSeekingTime(newTime);
+    }
+  }, {
+    key: 'stepForward',
+    value: function stepForward() {
+      var actions = this.props.actions;
+
+      actions.forward(5);
+    }
+  }, {
+    key: 'stepBack',
+    value: function stepBack() {
+      var actions = this.props.actions;
+
+      actions.replay(5);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      var _props = this.props,
+          _props$player2 = _props.player,
+          currentTime = _props$player2.currentTime,
+          seekingTime = _props$player2.seekingTime,
+          duration = _props$player2.duration,
+          buffered = _props$player2.buffered,
+          mouseTime = _props.mouseTime;
+
+      var time = seekingTime || currentTime;
+
+      return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+        Slider,
+        {
+          ref: function ref(input) {
+            _this2.slider = input;
+          },
+          label: 'video progress bar',
+          className: classnames('video-react-progress-holder', this.props.className),
+          valuenow: (this.getPercent() * 100).toFixed(2),
+          valuetext: formatTime(time, duration),
+          onMouseDown: this.handleMouseDown,
+          onMouseMove: this.handleMouseMove,
+          onMouseUp: this.handleMouseUp,
+          getPercent: this.getPercent,
+          stepForward: this.stepForward,
+          stepBack: this.stepBack
+        },
+        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(LoadProgressBar, {
+          buffered: buffered,
+          currentTime: time,
+          duration: duration
+        }),
+        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(MouseTimeDisplay, {
+          duration: duration,
+          mouseTime: mouseTime
+        }),
+        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(PlayProgressBar, {
+          currentTime: time,
+          duration: duration
+        })
+      );
+    }
+  }]);
+  return SeekBar;
+}(__WEBPACK_IMPORTED_MODULE_1_react__["Component"]);
+
+SeekBar.propTypes = propTypes$9;
+
+var propTypes$8 = {
+  player: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.object,
+  className: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.string
+};
+
+var ProgressControl = function (_Component) {
+  inherits(ProgressControl, _Component);
+
+  function ProgressControl(props, context) {
+    classCallCheck(this, ProgressControl);
+
+    var _this = possibleConstructorReturn(this, (ProgressControl.__proto__ || Object.getPrototypeOf(ProgressControl)).call(this, props, context));
+
+    _this.state = {
+      mouseTime: {
+        time: null,
+        position: 0
+      }
+    };
+
+    _this.handleMouseMoveThrottle = _this.handleMouseMove.bind(_this);
+    return _this;
+  }
+
+  createClass(ProgressControl, [{
+    key: 'handleMouseMove',
+    value: function handleMouseMove(event) {
+      if (!event.pageX) {
+        return;
+      }
+      var duration = this.props.player.duration;
+
+      var node = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3_react_dom__["findDOMNode"])(this.seekBar);
+      var newTime = getPointerPosition(node, event).x * duration;
+      var position = event.pageX - findElPosition(node).left;
+
+      this.setState({
+        mouseTime: {
+          time: newTime,
+          position: position
+        }
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      var className = this.props.className;
+
+      return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+        'div',
+        {
+          onMouseMove: this.handleMouseMoveThrottle,
+          className: classnames('video-react-progress-control video-react-control', className)
+        },
+        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(SeekBar, _extends({
+          mouseTime: this.state.mouseTime,
+          ref: function ref(c) {
+            _this2.seekBar = c;
+          }
+        }, this.props))
+      );
+    }
+  }]);
+  return ProgressControl;
+}(__WEBPACK_IMPORTED_MODULE_1_react__["Component"]);
+
+ProgressControl.propTypes = propTypes$8;
+
+var propTypes$13 = {
+  actions: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.object,
+  player: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.object,
+  className: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.string
+};
+
+var PlayToggle = function (_Component) {
+  inherits(PlayToggle, _Component);
+
+  function PlayToggle(props, context) {
+    classCallCheck(this, PlayToggle);
+
+    var _this = possibleConstructorReturn(this, (PlayToggle.__proto__ || Object.getPrototypeOf(PlayToggle)).call(this, props, context));
+
+    _this.handleClick = _this.handleClick.bind(_this);
+    return _this;
+  }
+
+  createClass(PlayToggle, [{
+    key: 'handleClick',
+    value: function handleClick() {
+      var _props = this.props,
+          actions = _props.actions,
+          player = _props.player;
+
+      if (player.paused) {
+        actions.play();
+      } else {
+        actions.pause();
+      }
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      var _props2 = this.props,
+          player = _props2.player,
+          className = _props2.className;
+
+      var controlText = player.paused ? 'Play' : 'Pause';
+
+      return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+        'button',
+        {
+          ref: function ref(c) {
+            _this2.button = c;
+          },
+          className: classnames(className, {
+            'video-react-play-control': true,
+            'video-react-control': true,
+            'video-react-button': true,
+            'video-react-paused': player.paused,
+            'video-react-playing': !player.paused
+          }),
+          tabIndex: '0',
+          onClick: this.handleClick
+        },
+        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+          'span',
+          { className: 'video-react-control-text' },
+          controlText
+        )
+      );
+    }
+  }]);
+  return PlayToggle;
+}(__WEBPACK_IMPORTED_MODULE_1_react__["Component"]);
+
+PlayToggle.propTypes = propTypes$13;
+
+var propTypes$14 = {
+  actions: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.object,
+  className: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.string,
+  seconds: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.oneOf([5, 10, 30])
+};
+
+var defaultProps$4 = {
+  seconds: 10
+};
+
+var ForwardReplayControl = (function (mode) {
+  var ForwardReplayControl = function (_Component) {
+    inherits(ForwardReplayControl, _Component);
+
+    function ForwardReplayControl(props, context) {
+      classCallCheck(this, ForwardReplayControl);
+
+      var _this = possibleConstructorReturn(this, (ForwardReplayControl.__proto__ || Object.getPrototypeOf(ForwardReplayControl)).call(this, props, context));
+
+      _this.handleClick = _this.handleClick.bind(_this);
+      return _this;
+    }
+
+    createClass(ForwardReplayControl, [{
+      key: 'handleClick',
+      value: function handleClick() {
+        var _props = this.props,
+            actions = _props.actions,
+            seconds = _props.seconds;
+        // Depends mode to implement different actions
+
+        if (mode === 'forward') {
+          actions.forward(seconds);
+        } else {
+          actions.replay(seconds);
+        }
+      }
+    }, {
+      key: 'render',
+      value: function render() {
+        var _this2 = this,
+            _classNames;
+
+        var _props2 = this.props,
+            seconds = _props2.seconds,
+            className = _props2.className;
+
+        return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+          'button',
+          {
+            ref: function ref(c) {
+              _this2.button = c;
+            },
+            className: classnames(className, (_classNames = {}, defineProperty(_classNames, 'video-react-icon-' + mode + '-' + seconds, true), defineProperty(_classNames, 'video-react-' + mode + '-control', true), _classNames), 'video-react-control video-react-button video-react-icon'),
+            onClick: this.handleClick
+          },
+          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+            'span',
+            { className: 'video-react-control-text' },
+            mode + ' ' + seconds + ' seconds'
+          )
+        );
+      }
+    }]);
+    return ForwardReplayControl;
+  }(__WEBPACK_IMPORTED_MODULE_1_react__["Component"]);
+
+  ForwardReplayControl.propTypes = propTypes$14;
+  ForwardReplayControl.defaultProps = defaultProps$4;
+  return ForwardReplayControl;
+});
+
+// Pass mode into parent function
+var ForwardControl = ForwardReplayControl('forward');
+
+// Pass mode into parent function
+var ReplayControl = ForwardReplayControl('replay');
+
+var propTypes$15 = {
+  actions: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.object,
+  player: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.object,
+  className: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.string
+};
+
+var FullscreenToggle = function (_Component) {
+  inherits(FullscreenToggle, _Component);
+
+  function FullscreenToggle(props, context) {
+    classCallCheck(this, FullscreenToggle);
+
+    var _this = possibleConstructorReturn(this, (FullscreenToggle.__proto__ || Object.getPrototypeOf(FullscreenToggle)).call(this, props, context));
+
+    _this.handleClick = _this.handleClick.bind(_this);
+    return _this;
+  }
+
+  createClass(FullscreenToggle, [{
+    key: 'handleClick',
+    value: function handleClick() {
+      var _props = this.props,
+          player = _props.player,
+          actions = _props.actions;
+
+      actions.toggleFullscreen(player);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      var _props2 = this.props,
+          player = _props2.player,
+          className = _props2.className;
+
+      return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+        'button',
+        {
+          className: classnames(className, {
+            'video-react-icon-fullscreen-exit': player.isFullscreen,
+            'video-react-icon-fullscreen': !player.isFullscreen
+          }, 'video-react-fullscreen-control video-react-control video-react-button video-react-icon'),
+          ref: function ref(c) {
+            _this2.button = c;
+          },
+          type: 'button',
+          tabIndex: '0',
+          onClick: this.handleClick
+        },
+        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+          'span',
+          { className: 'video-react-control-text' },
+          'Non-Fullscreen'
+        )
+      );
+    }
+  }]);
+  return FullscreenToggle;
+}(__WEBPACK_IMPORTED_MODULE_1_react__["Component"]);
+
+FullscreenToggle.propTypes = propTypes$15;
+
+var propTypes$16 = {
+  player: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.object,
+  className: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.string
+};
+
+function RemainingTimeDisplay(_ref) {
+  var _ref$player = _ref.player,
+      currentTime = _ref$player.currentTime,
+      duration = _ref$player.duration,
+      className = _ref.className;
+
+  var remainingTime = duration - currentTime;
+  var formattedTime = formatTime(remainingTime);
+  return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+    'div',
+    {
+      className: classnames('video-react-remaining-time video-react-time-control video-react-control', className)
+    },
+    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+      'div',
+      {
+        className: 'video-react-remaining-time-display',
+        'aria-live': 'off'
+      },
+      __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+        'span',
+        { className: 'video-react-control-text' },
+        'Remaining Time '
+      ),
+      '-',
+      formattedTime
+    )
+  );
+}
+
+RemainingTimeDisplay.propTypes = propTypes$16;
+
+var propTypes$17 = {
+  player: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.object,
+  className: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.string
+};
+
+function CurrentTimeDisplay(_ref) {
+  var _ref$player = _ref.player,
+      currentTime = _ref$player.currentTime,
+      duration = _ref$player.duration,
+      className = _ref.className;
+
+  var formattedTime = formatTime(currentTime, duration);
+  return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+    'div',
+    {
+      className: classnames('video-react-current-time video-react-time-control video-react-control', className)
+    },
+    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+      'div',
+      {
+        className: 'video-react-current-time-display',
+        'aria-live': 'off'
+      },
+      __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+        'span',
+        { className: 'video-react-control-text' },
+        'Current Time '
+      ),
+      formattedTime
+    )
+  );
+}
+
+CurrentTimeDisplay.propTypes = propTypes$17;
+
+var propTypes$18 = {
+  player: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.object,
+  className: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.string
+};
+
+function DurationDisplay(_ref) {
+  var duration = _ref.player.duration,
+      className = _ref.className;
+
+  var formattedTime = formatTime(duration);
+  return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+    'div',
+    {
+      className: classnames(className, 'video-react-duration video-react-time-control video-react-control')
+    },
+    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+      'div',
+      {
+        className: 'video-react-duration-display',
+        'aria-live': 'off'
+      },
+      __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+        'span',
+        { className: 'video-react-control-text' },
+        'Duration Time '
+      ),
+      formattedTime
+    )
+  );
+}
+
+DurationDisplay.propTypes = propTypes$18;
+
+var propTypes$19 = {
+  separator: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.string,
+  className: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.string
+};
+
+function TimeDivider(_ref) {
+  var separator = _ref.separator,
+      className = _ref.className;
+
+  var separatorText = separator || '/';
+  return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+    'div',
+    {
+      className: classnames('video-react-time-control video-react-time-divider', className),
+      dir: 'ltr'
+    },
+    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+      'div',
+      null,
+      __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+        'span',
+        null,
+        separatorText
+      )
+    )
+  );
+}
+
+TimeDivider.propTypes = propTypes$19;
+
+var propTypes$22 = {
+  tagName: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.string.isRequired,
+  onClick: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func.isRequired,
+  onFocus: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  onBlur: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  className: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.string
+};
+
+var defaultProps$7 = {
+  tagName: 'div'
+};
+
+var ClickableComponent = function (_Component) {
+  inherits(ClickableComponent, _Component);
+
+  function ClickableComponent(props, context) {
+    classCallCheck(this, ClickableComponent);
+
+    var _this = possibleConstructorReturn(this, (ClickableComponent.__proto__ || Object.getPrototypeOf(ClickableComponent)).call(this, props, context));
+
+    _this.handleClick = _this.handleClick.bind(_this);
+    _this.handleFocus = _this.handleFocus.bind(_this);
+    _this.handleBlur = _this.handleBlur.bind(_this);
+    _this.handleKeypress = _this.handleKeypress.bind(_this);
+    return _this;
+  }
+
+  createClass(ClickableComponent, [{
+    key: 'handleKeypress',
+    value: function handleKeypress(event) {
+      // Support Space (32) or Enter (13) key operation to fire a click event
+      if (event.which === 32 || event.which === 13) {
+        event.preventDefault();
+        this.handleClick(event);
+      }
+    }
+  }, {
+    key: 'handleClick',
+    value: function handleClick(event) {
+      var onClick = this.props.onClick;
+
+      onClick(event);
+    }
+  }, {
+    key: 'handleFocus',
+    value: function handleFocus(e) {
+      document.addEventListener('keydown', this.handleKeypress);
+      if (this.props.onFocus) {
+        this.props.onFocus(e);
+      }
+    }
+  }, {
+    key: 'handleBlur',
+    value: function handleBlur(e) {
+      document.removeEventListener('keydown', this.handleKeypress);
+      if (this.props.onBlur) {
+        this.props.onBlur(e);
+      }
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var Tag = this.props.tagName;
+      var props = _extends({}, this.props);
+      delete props.tagName;
+      delete props.className;
+      return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(Tag, _extends({
+        className: classnames(this.props.className),
+        role: 'button',
+        tabIndex: '0',
+        onClick: this.handleClick,
+        onFocus: this.handleFocus,
+        onBlur: this.handleBlur
+      }, props));
+    }
+  }]);
+  return ClickableComponent;
+}(__WEBPACK_IMPORTED_MODULE_1_react__["Component"]);
+
+ClickableComponent.propTypes = propTypes$22;
+ClickableComponent.defaultProps = defaultProps$7;
+
+var propTypes$23 = {
+  player: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.object,
+  children: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.any
+};
+
+var Popup = function (_Component) {
+  inherits(Popup, _Component);
+
+  function Popup(props, context) {
+    classCallCheck(this, Popup);
+
+    var _this = possibleConstructorReturn(this, (Popup.__proto__ || Object.getPrototypeOf(Popup)).call(this, props, context));
+
+    _this.handleClick = _this.handleClick.bind(_this);
+    return _this;
+  }
+
+  createClass(Popup, [{
+    key: 'handleClick',
+    value: function handleClick(event) {
+      event.preventDefault();
+      // event.stopPropagation();
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var children = this.props.children;
+
+      return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+        'div',
+        {
+          className: 'video-react-menu',
+          onClick: this.handleClick
+        },
+        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+          'div',
+          { className: 'video-react-menu-content' },
+          children
+        )
+      );
+    }
+  }]);
+  return Popup;
+}(__WEBPACK_IMPORTED_MODULE_1_react__["Component"]);
+
+Popup.propTypes = propTypes$23;
+
+var propTypes$21 = {
+  inline: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.bool,
+  onClick: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func.isRequired,
+  onFocus: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  onBlur: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  className: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.string
+};
+
+var defaultProps$6 = {
+  inline: true
+};
+
+function PopupButton(props) {
+  var inline = props.inline,
+      className = props.className;
+
+  var ps = _extends({}, props);
+  delete ps.children;
+  delete ps.inline;
+  delete ps.className;
+  return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+    ClickableComponent,
+    _extends({
+      className: classnames(className, {
+        'video-react-menu-button-inline': !!inline,
+        'video-react-menu-button-popup': !inline
+      }, 'video-react-control video-react-button video-react-menu-button')
+    }, ps),
+    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(Popup, props)
+  );
+}
+
+PopupButton.propTypes = propTypes$21;
+PopupButton.defaultProps = defaultProps$6;
+
+var propTypes$25 = {
+  percentage: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.string,
+  vertical: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.bool,
+  className: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.string
+};
+
+var defaultProps$8 = {
+  percentage: '100%',
+  vertical: false
+};
+
+function VolumeLevel(_ref) {
+  var percentage = _ref.percentage,
+      vertical = _ref.vertical,
+      className = _ref.className;
+
+  var style = {};
+  if (vertical) {
+    style.height = percentage;
+  } else {
+    style.width = percentage;
+  }
+
+  return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+    'div',
+    {
+      className: classnames(className, 'video-react-volume-level'),
+      style: style
+    },
+    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('span', { className: 'video-react-control-text' })
+  );
+}
+
+VolumeLevel.propTypes = propTypes$25;
+VolumeLevel.defaultProps = defaultProps$8;
+
+var propTypes$24 = {
+  actions: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.object,
+  player: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.object,
+  className: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.string,
+  onFocus: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  onBlur: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func
+};
+
+var VolumeBar = function (_Component) {
+  inherits(VolumeBar, _Component);
+
+  function VolumeBar(props, context) {
+    classCallCheck(this, VolumeBar);
+
+    var _this = possibleConstructorReturn(this, (VolumeBar.__proto__ || Object.getPrototypeOf(VolumeBar)).call(this, props, context));
+
+    _this.state = {
+      percentage: '0%'
+    };
+
+    _this.handleMouseMove = _this.handleMouseMove.bind(_this);
+    _this.handlePercentageChange = _this.handlePercentageChange.bind(_this);
+    _this.checkMuted = _this.checkMuted.bind(_this);
+    _this.getPercent = _this.getPercent.bind(_this);
+    _this.stepForward = _this.stepForward.bind(_this);
+    _this.stepBack = _this.stepBack.bind(_this);
+    _this.handleFocus = _this.handleFocus.bind(_this);
+    _this.handleBlur = _this.handleBlur.bind(_this);
+    _this.handleClick = _this.handleClick.bind(_this);
+    return _this;
+  }
+
+  createClass(VolumeBar, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {}
+  }, {
+    key: 'getPercent',
+    value: function getPercent() {
+      var player = this.props.player;
+
+      if (player.muted) {
+        return 0;
+      }
+      return player.volume;
+    }
+  }, {
+    key: 'checkMuted',
+    value: function checkMuted() {
+      var _props = this.props,
+          player = _props.player,
+          actions = _props.actions;
+
+      if (player.muted) {
+        actions.mute(false);
+      }
+    }
+  }, {
+    key: 'handleMouseMove',
+    value: function handleMouseMove(event) {
+      var actions = this.props.actions;
+
+      this.checkMuted();
+      var distance = this.slider.calculateDistance(event);
+      actions.changeVolume(distance);
+    }
+  }, {
+    key: 'stepForward',
+    value: function stepForward() {
+      var _props2 = this.props,
+          player = _props2.player,
+          actions = _props2.actions;
+
+      this.checkMuted();
+      actions.changeVolume(player.volume + 0.1);
+    }
+  }, {
+    key: 'stepBack',
+    value: function stepBack() {
+      var _props3 = this.props,
+          player = _props3.player,
+          actions = _props3.actions;
+
+      this.checkMuted();
+      actions.changeVolume(player.volume - 0.1);
+    }
+  }, {
+    key: 'handleFocus',
+    value: function handleFocus(e) {
+      if (this.props.onFocus) {
+        this.props.onFocus(e);
+      }
+    }
+  }, {
+    key: 'handleBlur',
+    value: function handleBlur(e) {
+      if (this.props.onBlur) {
+        this.props.onBlur(e);
+      }
+    }
+  }, {
+    key: 'handlePercentageChange',
+    value: function handlePercentageChange(percentage) {
+      if (percentage !== this.state.percentage) {
+        this.setState({
+          percentage: percentage
+        });
+      }
+    }
+  }, {
+    key: 'handleClick',
+    value: function handleClick(event) {
+      event.stopPropagation();
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      var _props4 = this.props,
+          player = _props4.player,
+          className = _props4.className;
+
+
+      var volume = (player.volume * 100).toFixed(2);
+      return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+        Slider,
+        _extends({
+          ref: function ref(c) {
+            _this2.slider = c;
+          },
+          label: 'volume level',
+          valuenow: volume,
+          valuetext: volume + '%',
+          onMouseMove: this.handleMouseMove,
+          onFocus: this.handleFocus,
+          onBlur: this.handleBlur,
+          onClick: this.handleClick,
+          sliderActive: this.handleFocus,
+          sliderInactive: this.handleBlur,
+          getPercent: this.getPercent,
+          onPercentageChange: this.handlePercentageChange,
+          stepForward: this.stepForward,
+          stepBack: this.stepBack,
+          className: classnames(className, 'video-react-volume-bar video-react-slider-bar')
+        }, this.props),
+        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(VolumeLevel, this.props)
+      );
+    }
+  }]);
+  return VolumeBar;
+}(__WEBPACK_IMPORTED_MODULE_1_react__["Component"]);
+
+VolumeBar.propTypes = propTypes$24;
+
+var propTypes$20 = {
+  player: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.object,
+  actions: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.object,
+  vertical: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.bool,
+  className: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.string,
+  alwaysShowVolume: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.bool
+};
+
+var defaultProps$5 = {
+  vertical: false
+};
+
+var VolumeMenuButton = function (_Component) {
+  inherits(VolumeMenuButton, _Component);
+
+  function VolumeMenuButton(props, context) {
+    classCallCheck(this, VolumeMenuButton);
+
+    var _this = possibleConstructorReturn(this, (VolumeMenuButton.__proto__ || Object.getPrototypeOf(VolumeMenuButton)).call(this, props, context));
+
+    _this.state = {
+      active: false
+    };
+
+    _this.handleClick = _this.handleClick.bind(_this);
+    _this.handleFocus = _this.handleFocus.bind(_this);
+    _this.handleBlur = _this.handleBlur.bind(_this);
+    return _this;
+  }
+
+  createClass(VolumeMenuButton, [{
+    key: 'handleClick',
+    value: function handleClick() {
+      var _props = this.props,
+          player = _props.player,
+          actions = _props.actions;
+
+      actions.mute(!player.muted);
+    }
+  }, {
+    key: 'handleFocus',
+    value: function handleFocus() {
+      this.setState({
+        active: true
+      });
+    }
+  }, {
+    key: 'handleBlur',
+    value: function handleBlur() {
+      this.setState({
+        active: false
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _props2 = this.props,
+          vertical = _props2.vertical,
+          player = _props2.player,
+          className = _props2.className;
+
+      var inline = !vertical;
+      var level = this.volumeLevel;
+      return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+        PopupButton,
+        {
+          className: classnames(className, {
+            'video-react-volume-menu-button-vertical': vertical,
+            'video-react-volume-menu-button-horizontal': !vertical,
+            'video-react-vol-muted': player.muted,
+            'video-react-vol-0': level === 0 && !player.muted,
+            'video-react-vol-1': level === 1,
+            'video-react-vol-2': level === 2,
+            'video-react-vol-3': level === 3,
+            'video-react-slider-active': this.props.alwaysShowVolume || this.state.active,
+            'video-react-lock-showing': this.props.alwaysShowVolume || this.state.active
+          }, 'video-react-volume-menu-button'),
+          onClick: this.handleClick,
+          inline: inline
+        },
+        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(VolumeBar, _extends({
+          onFocus: this.handleFocus,
+          onBlur: this.handleBlur
+        }, this.props))
+      );
+    }
+  }, {
+    key: 'volumeLevel',
+    get: function get$$1() {
+      var _props$player = this.props.player,
+          volume = _props$player.volume,
+          muted = _props$player.muted;
+
+      var level = 3;
+      if (volume === 0 || muted) {
+        level = 0;
+      } else if (volume < 0.33) {
+        level = 1;
+      } else if (volume < 0.67) {
+        level = 2;
+      }
+      return level;
+    }
+  }]);
+  return VolumeMenuButton;
+}(__WEBPACK_IMPORTED_MODULE_1_react__["Component"]);
+
+VolumeMenuButton.propTypes = propTypes$20;
+VolumeMenuButton.defaultProps = defaultProps$5;
+
+var propTypes$28 = {
+  children: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.any
+};
+
+var Menu = function (_Component) {
+  inherits(Menu, _Component);
+
+  function Menu(props, context) {
+    classCallCheck(this, Menu);
+
+    var _this = possibleConstructorReturn(this, (Menu.__proto__ || Object.getPrototypeOf(Menu)).call(this, props, context));
+
+    _this.handleClick = _this.handleClick.bind(_this);
+    return _this;
+  }
+
+  createClass(Menu, [{
+    key: 'handleClick',
+    value: function handleClick(event) {
+      event.preventDefault();
+      // event.stopPropagation();
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+        'div',
+        {
+          className: 'video-react-menu video-react-lock-showing',
+          role: 'presentation',
+          onClick: this.handleClick
+        },
+        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+          'ul',
+          { className: 'video-react-menu-content' },
+          this.props.children
+        )
+      );
+    }
+  }]);
+  return Menu;
+}(__WEBPACK_IMPORTED_MODULE_1_react__["Component"]);
+
+Menu.propTypes = propTypes$28;
+
+var propTypes$29 = {
+  item: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.object,
+  index: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.number,
+  activateIndex: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.number,
+  onSelectItem: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func
+};
+
+var MenuItem = function (_Component) {
+  inherits(MenuItem, _Component);
+
+  function MenuItem(props, context) {
+    classCallCheck(this, MenuItem);
+
+    var _this = possibleConstructorReturn(this, (MenuItem.__proto__ || Object.getPrototypeOf(MenuItem)).call(this, props, context));
+
+    _this.handleClick = _this.handleClick.bind(_this);
+    return _this;
+  }
+
+  createClass(MenuItem, [{
+    key: 'handleClick',
+    value: function handleClick() {
+      var _props = this.props,
+          index = _props.index,
+          onSelectItem = _props.onSelectItem;
+
+      onSelectItem(index);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _props2 = this.props,
+          item = _props2.item,
+          index = _props2.index,
+          activateIndex = _props2.activateIndex;
+
+      return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+        'li',
+        {
+          className: classnames({
+            'video-react-menu-item': true,
+            'video-react-selected': index === activateIndex
+          }),
+          onClick: this.handleClick
+        },
+        item.label,
+        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('span', { className: 'video-react-control-text' })
+      );
+    }
+  }]);
+  return MenuItem;
+}(__WEBPACK_IMPORTED_MODULE_1_react__["Component"]);
+
+MenuItem.propTypes = propTypes$29;
+
+var propTypes$27 = {
+  inline: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.bool,
+  items: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.array,
+  className: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.string,
+  onSelectItem: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  children: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.any,
+  selectedIndex: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.number
+};
+
+var MenuButton = function (_Component) {
+  inherits(MenuButton, _Component);
+
+  function MenuButton(props, context) {
+    classCallCheck(this, MenuButton);
+
+    var _this = possibleConstructorReturn(this, (MenuButton.__proto__ || Object.getPrototypeOf(MenuButton)).call(this, props, context));
+
+    _this.state = {
+      active: false,
+      activateIndex: props.selectedIndex || 0
+    };
+
+    _this.commitSelection = _this.commitSelection.bind(_this);
+    _this.activateMenuItem = _this.activateMenuItem.bind(_this);
+    _this.handleClick = _this.handleClick.bind(_this);
+    _this.renderMenu = _this.renderMenu.bind(_this);
+    _this.handleFocus = _this.handleFocus.bind(_this);
+    _this.handleBlur = _this.handleBlur.bind(_this);
+    _this.handleUpArrow = _this.handleUpArrow.bind(_this);
+    _this.handleDownArrow = _this.handleDownArrow.bind(_this);
+    _this.handleEscape = _this.handleEscape.bind(_this);
+    _this.handleReturn = _this.handleReturn.bind(_this);
+    _this.handleTab = _this.handleTab.bind(_this);
+    _this.handleKeyPress = _this.handleKeyPress.bind(_this);
+    _this.handleSelectItem = _this.handleSelectItem.bind(_this);
+    _this.handleIndexChange = _this.handleIndexChange.bind(_this);
+    return _this;
+  }
+
+  // componentDidUpdate(prevProps) {
+  // }
+
+  createClass(MenuButton, [{
+    key: 'commitSelection',
+    value: function commitSelection(index) {
+      this.setState({
+        activateIndex: index,
+        active: false
+      });
+      this.handleIndexChange(index);
+    }
+  }, {
+    key: 'activateMenuItem',
+    value: function activateMenuItem(index) {
+      this.setState({
+        activateIndex: index
+      });
+      this.handleIndexChange(index);
+    }
+  }, {
+    key: 'handleIndexChange',
+    value: function handleIndexChange(index) {
+      var onSelectItem = this.props.onSelectItem;
+
+      onSelectItem(index);
+    }
+  }, {
+    key: 'handleClick',
+    value: function handleClick() {
+      this.setState({
+        active: !this.state.active
+      });
+    }
+  }, {
+    key: 'handleFocus',
+    value: function handleFocus() {
+      document.addEventListener('keydown', this.handleKeyPress);
+    }
+  }, {
+    key: 'handleBlur',
+    value: function handleBlur() {
+      this.setState({
+        active: false
+      });
+      document.removeEventListener('keydown', this.handleKeyPress);
+    }
+  }, {
+    key: 'handleUpArrow',
+    value: function handleUpArrow(e) {
+      var items = this.props.items;
+
+      if (this.state.active) {
+        e.preventDefault();
+        var newIndex = this.state.activateIndex - 1;
+        if (newIndex < 0) {
+          newIndex = items.length ? items.length - 1 : 0;
+        }
+        this.activateMenuItem(newIndex);
+      }
+    }
+  }, {
+    key: 'handleDownArrow',
+    value: function handleDownArrow(e) {
+      var items = this.props.items;
+
+      if (this.state.active) {
+        e.preventDefault();
+        var newIndex = this.state.activateIndex + 1;
+        if (newIndex >= items.length) {
+          newIndex = 0;
+        }
+        this.activateMenuItem(newIndex);
+      }
+    }
+  }, {
+    key: 'handleTab',
+    value: function handleTab(e) {
+      if (this.state.active) {
+        e.preventDefault();
+        this.commitSelection(this.state.activateIndex);
+      }
+    }
+  }, {
+    key: 'handleReturn',
+    value: function handleReturn(e) {
+      e.preventDefault();
+      if (this.state.active) {
+        this.commitSelection(this.state.activateIndex);
+      } else {
+        this.setState({
+          active: true
+        });
+      }
+    }
+  }, {
+    key: 'handleEscape',
+    value: function handleEscape() {
+      this.setState({
+        active: false,
+        activateIndex: 0
+      });
+    }
+  }, {
+    key: 'handleKeyPress',
+    value: function handleKeyPress(event) {
+      // Escape (27) key
+      if (event.which === 27) {
+        this.handleEscape(event);
+      } else if (event.which === 9) {
+        // Tab (9) key
+        this.handleTab(event);
+      } else if (event.which === 13) {
+        // Enter (13) key
+        this.handleReturn(event);
+      } else if (event.which === 38) {
+        // Up (38) key
+        this.handleUpArrow(event);
+      } else if (event.which === 40) {
+        // Down (40) key press
+        this.handleDownArrow(event);
+      }
+    }
+  }, {
+    key: 'handleSelectItem',
+    value: function handleSelectItem(i) {
+      this.commitSelection(i);
+    }
+  }, {
+    key: 'renderMenu',
+    value: function renderMenu() {
+      var _this2 = this;
+
+      if (!this.state.active) {
+        return null;
+      }
+
+      var items = this.props.items;
+
+      return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+        Menu,
+        null,
+        items.map(function (item, i) {
+          return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(MenuItem, {
+            item: item,
+            index: i,
+            onSelectItem: _this2.handleSelectItem,
+            activateIndex: _this2.state.activateIndex,
+            key: 'item-' + i++
+          });
+        })
+      );
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this3 = this;
+
+      var _props = this.props,
+          inline = _props.inline,
+          className = _props.className;
+
+
+      return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+        ClickableComponent,
+        {
+          className: classnames(className, {
+            'video-react-menu-button-inline': !!inline,
+            'video-react-menu-button-popup': !inline,
+            'video-react-menu-button-active': this.state.active
+          }, 'video-react-control video-react-button video-react-menu-button'),
+          role: 'presentation',
+          tabIndex: '0',
+          ref: function ref(c) {
+            _this3.menuButton = c;
+          },
+          onClick: this.handleClick,
+          onFocus: this.handleFocus,
+          onBlur: this.handleBlur
+        },
+        this.props.children,
+        this.renderMenu()
+      );
+    }
+  }]);
+  return MenuButton;
+}(__WEBPACK_IMPORTED_MODULE_1_react__["Component"]);
+
+MenuButton.propTypes = propTypes$27;
+
+var propTypes$26 = {
+  player: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.object,
+  actions: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.object,
+  rates: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.array,
+  className: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.string
+};
+
+var defaultProps$9 = {
+  rates: [2, 1.5, 1.25, 1, 0.5, 0.25]
+};
+
+var PlaybackRateMenuButton = function (_Component) {
+  inherits(PlaybackRateMenuButton, _Component);
+
+  function PlaybackRateMenuButton(props, context) {
+    classCallCheck(this, PlaybackRateMenuButton);
+
+    var _this = possibleConstructorReturn(this, (PlaybackRateMenuButton.__proto__ || Object.getPrototypeOf(PlaybackRateMenuButton)).call(this, props, context));
+
+    _this.handleSelectItem = _this.handleSelectItem.bind(_this);
+    return _this;
+  }
+
+  createClass(PlaybackRateMenuButton, [{
+    key: 'handleSelectItem',
+    value: function handleSelectItem(index) {
+      var _props = this.props,
+          rates = _props.rates,
+          actions = _props.actions;
+
+      if (index >= 0 && index < rates.length) {
+        actions.changeRate(rates[index]);
+      }
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _props2 = this.props,
+          rates = _props2.rates,
+          player = _props2.player;
+
+      var items = rates.map(function (rate) {
+        return {
+          label: rate + 'x',
+          value: rate
+        };
+      });
+      var selectedIndex = rates.indexOf(player.playbackRate) || 0;
+
+      return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+        MenuButton,
+        {
+          className: classnames('video-react-playback-rate', this.props.className),
+          onSelectItem: this.handleSelectItem,
+          items: items,
+          selectedIndex: selectedIndex
+        },
+        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+          'span',
+          { className: 'video-react-control-text' },
+          'Playback Rate'
+        ),
+        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+          'div',
+          { className: 'video-react-playback-rate-value' },
+          player.playbackRate.toFixed(2),
+          'x'
+        )
+      );
+    }
+  }]);
+  return PlaybackRateMenuButton;
+}(__WEBPACK_IMPORTED_MODULE_1_react__["Component"]);
+
+PlaybackRateMenuButton.propTypes = propTypes$26;
+PlaybackRateMenuButton.defaultProps = defaultProps$9;
+
+var propTypes$7 = {
+  children: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.any,
+  autoHide: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.bool,
+  disableDefaultControls: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.bool,
+  className: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.string
+};
+
+var defaultProps$3 = {
+  autoHide: true
+};
+
+var ControlBar = function (_Component) {
+  inherits(ControlBar, _Component);
+
+  function ControlBar(props) {
+    classCallCheck(this, ControlBar);
+
+    var _this = possibleConstructorReturn(this, (ControlBar.__proto__ || Object.getPrototypeOf(ControlBar)).call(this, props));
+
+    _this.getDefaultChildren = _this.getDefaultChildren.bind(_this);
+    _this.getFullChildren = _this.getFullChildren.bind(_this);
+    return _this;
+  }
+
+  createClass(ControlBar, [{
+    key: 'getDefaultChildren',
+    value: function getDefaultChildren() {
+      return [__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(PlayToggle, _extends({}, this.props, {
+        key: 'play-toggle',
+        order: 1
+      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(VolumeMenuButton, _extends({}, this.props, {
+        key: 'volume-menu-button',
+        order: 4
+      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(CurrentTimeDisplay, _extends({}, this.props, {
+        key: 'current-time-display',
+        order: 5.1
+      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(TimeDivider, _extends({}, this.props, {
+        key: 'time-divider',
+        order: 5.2
+      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(DurationDisplay, _extends({}, this.props, {
+        key: 'duration-display',
+        order: 5.3
+      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(ProgressControl, _extends({}, this.props, {
+        key: 'progress-control',
+        order: 6
+      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(FullscreenToggle, _extends({}, this.props, {
+        key: 'fullscreen-toggle',
+        order: 8
+      }))];
+    }
+  }, {
+    key: 'getFullChildren',
+    value: function getFullChildren() {
+      return [__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(PlayToggle, _extends({}, this.props, {
+        key: 'play-toggle',
+        order: 1
+      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(ReplayControl, _extends({}, this.props, {
+        key: 'replay-control',
+        order: 2
+      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(ForwardControl, _extends({}, this.props, {
+        key: 'forward-control',
+        order: 3
+      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(VolumeMenuButton, _extends({}, this.props, {
+        key: 'volume-menu-button',
+        order: 4
+      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(CurrentTimeDisplay, _extends({}, this.props, {
+        key: 'current-time-display',
+        order: 5
+      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(TimeDivider, _extends({}, this.props, {
+        key: 'time-divider',
+        order: 6
+      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(DurationDisplay, _extends({}, this.props, {
+        key: 'duration-display',
+        order: 7
+      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(ProgressControl, _extends({}, this.props, {
+        key: 'progress-control',
+        order: 8
+      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(RemainingTimeDisplay, _extends({}, this.props, {
+        key: 'remaining-time-display',
+        order: 9
+      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(PlaybackRateMenuButton, _extends({}, this.props, {
+        rates: [1, 1.25, 1.5, 2],
+        key: 'playback-rate',
+        order: 10
+      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(FullscreenToggle, _extends({}, this.props, {
+        key: 'fullscreen-toggle',
+        order: 11
+      }))];
+    }
+  }, {
+    key: 'getChildren',
+    value: function getChildren() {
+      var children = __WEBPACK_IMPORTED_MODULE_1_react___default.a.Children.toArray(this.props.children);
+      var defaultChildren = this.props.disableDefaultControls ? [] : this.getDefaultChildren();
+      return mergeAndSortChildren(defaultChildren, children, this.props);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          autoHide = _props.autoHide,
+          className = _props.className;
+
+      var children = this.getChildren();
+      return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+        'div',
+        {
+          className: classnames('video-react-control-bar', {
+            'video-react-control-bar-auto-hide': autoHide
+          }, className)
+        },
+        children
+      );
+    }
+  }]);
+  return ControlBar;
+}(__WEBPACK_IMPORTED_MODULE_1_react__["Component"]);
+
+ControlBar.propTypes = propTypes$7;
+ControlBar.defaultProps = defaultProps$3;
+
+var USER_AGENT = typeof window !== 'undefined' && window.navigator ? window.navigator.userAgent : '';
+// const webkitVersionMap = (/AppleWebKit\/([\d.]+)/i).exec(USER_AGENT);
+// const appleWebkitVersion = webkitVersionMap ? parseFloat(webkitVersionMap.pop()) : null;
+
+/*
+ * Device is an iPhone
+ *
+ * @type {Boolean}
+ * @constant
+ * @private
+ */
+var IS_IPAD = /iPad/i.test(USER_AGENT);
+
+// The Facebook app's UIWebView identifies as both an iPhone and iPad, so
+// to identify iPhones, we need to exclude iPads.
+// http://artsy.github.io/blog/2012/10/18/the-perils-of-ios-user-agent-sniffing/
+var IS_IPHONE = /iPhone/i.test(USER_AGENT) && !IS_IPAD;
+var IS_IPOD = /iPod/i.test(USER_AGENT);
+var IS_IOS = IS_IPHONE || IS_IPAD || IS_IPOD;
+
+var propTypes = {
+  children: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.any,
+
+  width: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.number,
+  height: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.number,
+  fluid: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.bool,
+  muted: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.bool,
+  playsInline: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.bool,
+  aspectRatio: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.string,
+  className: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.string,
+
+  startTime: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.number,
+  loop: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.bool,
+  autoPlay: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.bool,
+  src: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.string,
+  poster: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.string,
+  preload: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.oneOf(['auto', 'metadata', 'none']),
+
+  onLoadStart: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  onWaiting: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  onCanPlay: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  onCanPlayThrough: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  onPlaying: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  onEnded: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  onSeeking: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  onSeeked: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  onPlay: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  onPause: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  onProgress: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  onDurationChange: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  onError: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  onSuspend: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  onAbort: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  onEmptied: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  onStalled: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  onLoadedMetadata: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  onLoadedData: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  onTimeUpdate: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  onRateChange: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func,
+  onVolumeChange: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.func
+};
+
+var defaultProps = {
+  fluid: true,
+  muted: false,
+  playsInline: false,
+  aspectRatio: 'auto'
+};
+
+var Player = function (_Component) {
+  inherits(Player, _Component);
+
+  function Player(props) {
+    classCallCheck(this, Player);
+
+    var _this = possibleConstructorReturn(this, (Player.__proto__ || Object.getPrototypeOf(Player)).call(this, props));
+
+    _this.controlsHideTimer = null;
+
+    _this.video = null; // the Video component
+    _this.manager = new Manager();
+    _this.actions = _this.manager.getActions();
+    _this.manager.subscribeToPlayerStateChange(_this.handleStateChange.bind(_this));
+
+    _this.getStyle = _this.getStyle.bind(_this);
+    _this.handleResize = _this.handleResize.bind(_this);
+    _this.getChildren = _this.getChildren.bind(_this);
+    _this.handleMouseMove = throttle(_this.handleMouseMove.bind(_this), 250);
+    _this.handleMouseDown = _this.handleMouseDown.bind(_this);
+    _this.startControlsTimer = _this.startControlsTimer.bind(_this);
+    _this.handleFullScreenChange = _this.handleFullScreenChange.bind(_this);
+    _this.handleKeyDown = _this.handleKeyDown.bind(_this);
+    _this.handleFocus = _this.handleFocus.bind(_this);
+    _this.handleBlur = _this.handleBlur.bind(_this);
+    return _this;
+  }
+
+  createClass(Player, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.handleResize();
+      window.addEventListener('resize', this.handleResize);
+
+      fullscreen.addEventListener(this.handleFullScreenChange);
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      // Remove event listener
+      window.addEventListener('resize', this.handleResize);
+      fullscreen.removeEventListener(this.handleFullScreenChange);
+      if (this.controlsHideTimer) {
+        window.clearTimeout(this.controlsHideTimer);
+      }
+    }
+  }, {
+    key: 'getDefaultChildren',
+    value: function getDefaultChildren(props, fullProps) {
+      var _this2 = this;
+
+      return [__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(Video, _extends({
+        ref: function ref(c) {
+          _this2.video = c;
+          _this2.manager.video = _this2.video;
+        },
+        key: 'video',
+        order: 0.0
+      }, fullProps)), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(PosterImage, _extends({
+        key: 'poster-image',
+        order: 1.0
+      }, props)), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(LoadingSpinner, _extends({
+        key: 'loading-spinner',
+        order: 2.0
+      }, props)), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(Bezel, _extends({
+        key: 'bezel',
+        order: 3.0
+      }, props)), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(BigPlayButton, _extends({
+        key: 'big-play-button',
+        order: 4.0
+      }, props)), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(ControlBar, _extends({
+        key: 'control-bar',
+        order: 5.0
+      }, props)), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(Shortcut, _extends({
+        key: 'shortcut',
+        order: 99.0
+      }, props))];
+    }
+  }, {
+    key: 'getChildren',
+    value: function getChildren(props) {
+      var propsWithoutChildren = _extends({}, props, {
+        children: null
+      });
+      var children = __WEBPACK_IMPORTED_MODULE_1_react___default.a.Children.toArray(this.props.children).filter(function (e) {
+        return !isVideoChild(e);
+      });
+      var defaultChildren = this.getDefaultChildren(propsWithoutChildren, props);
+      return mergeAndSortChildren(defaultChildren, children, propsWithoutChildren);
+    }
+  }, {
+    key: 'getStyle',
+    value: function getStyle() {
+      var fluid = this.props.fluid;
+
+      var _manager$getState = this.manager.getState(),
+          player = _manager$getState.player;
+
+      var style = {};
+      var width = void 0;
+      var height = void 0;
+      var aspectRatio = void 0;
+
+      // The aspect ratio is either used directly or to calculate width and height.
+      if (this.props.aspectRatio !== undefined && this.props.aspectRatio !== 'auto') {
+        // Use any aspectRatio that's been specifically set
+        aspectRatio = this.props.aspectRatio;
+      } else if (player.videoWidth) {
+        // Otherwise try to get the aspect ratio from the video metadata
+        aspectRatio = player.videoWidth + ':' + player.videoHeight;
+      } else {
+        // Or use a default. The video element's is 2:1, but 16:9 is more common.
+        aspectRatio = '16:9';
+      }
+
+      // Get the ratio as a decimal we can use to calculate dimensions
+      var ratioParts = aspectRatio.split(':');
+      var ratioMultiplier = ratioParts[1] / ratioParts[0];
+
+      if (this.props.width !== undefined) {
+        // Use any width that's been specifically set
+        width = this.props.width;
+      } else if (this.props.height !== undefined) {
+        // Or calulate the width from the aspect ratio if a height has been set
+        width = this.props.height / ratioMultiplier;
+      } else {
+        // Or use the video's metadata, or use the video el's default of 300
+        width = player.videoWidth || 400;
+      }
+
+      if (this.props.height !== undefined) {
+        // Use any height that's been specifically set
+        height = this.props.height;
+      } else {
+        // Otherwise calculate the height from the ratio and the width
+        height = width * ratioMultiplier;
+      }
+
+      if (fluid) {
+        style.paddingTop = ratioMultiplier * 100 + '%';
+      } else {
+        style.width = width + 'px';
+        style.height = height + 'px';
+      }
+
+      return style;
+    }
+
+    // get redux state
+    // { player, operation }
+
+  }, {
+    key: 'getState',
+    value: function getState() {
+      return this.manager.getState();
+    }
+
+    // get playback rate
+
+  }, {
+    key: 'play',
+
+
+    // play the video
+    value: function play() {
+      this.video.play();
+    }
+
+    // pause the video
+
+  }, {
+    key: 'pause',
+    value: function pause() {
+      this.video.pause();
+    }
+
+    // Change the video source and re-load the video:
+
+  }, {
+    key: 'load',
+    value: function load() {
+      this.video.load();
+    }
+
+    // Add a new text track to the video
+
+  }, {
+    key: 'addTextTrack',
+    value: function addTextTrack() {
+      var _video;
+
+      (_video = this.video).addTextTrack.apply(_video, arguments);
+    }
+
+    // Check if your browser can play different types of video:
+
+  }, {
+    key: 'canPlayType',
+    value: function canPlayType() {
+      var _video2;
+
+      (_video2 = this.video).canPlayType.apply(_video2, arguments);
+    }
+
+    // seek video by time
+
+  }, {
+    key: 'seek',
+    value: function seek(time) {
+      this.video.seek(time);
+    }
+
+    // jump forward x seconds
+
+  }, {
+    key: 'forward',
+    value: function forward(seconds) {
+      this.video.forward(seconds);
+    }
+
+    // jump back x seconds
+
+  }, {
+    key: 'replay',
+    value: function replay(seconds) {
+      this.video.replay(seconds);
+    }
+
+    // enter or exist full screen
+
+  }, {
+    key: 'toggleFullscreen',
+    value: function toggleFullscreen() {
+      this.video.toggleFullscreen();
+    }
+
+    // subscribe to player state change
+
+  }, {
+    key: 'subscribeToStateChange',
+    value: function subscribeToStateChange(listener) {
+      this.manager.subscribeToPlayerStateChange(listener);
+    }
+
+    // player resize
+
+  }, {
+    key: 'handleResize',
+    value: function handleResize() {}
+  }, {
+    key: 'handleFullScreenChange',
+    value: function handleFullScreenChange() {
+      this.actions.handleFullscreenChange(fullscreen.isFullscreen);
+    }
+  }, {
+    key: 'handleMouseDown',
+    value: function handleMouseDown() {
+      this.startControlsTimer();
+    }
+  }, {
+    key: 'handleMouseMove',
+    value: function handleMouseMove() {
+      this.startControlsTimer();
+    }
+  }, {
+    key: 'handleKeyDown',
+    value: function handleKeyDown() {
+      this.startControlsTimer();
+    }
+  }, {
+    key: 'startControlsTimer',
+    value: function startControlsTimer() {
+      var _this3 = this;
+
+      this.actions.userActivate(true);
+      clearTimeout(this.controlsHideTimer);
+      this.controlsHideTimer = setTimeout(function () {
+        _this3.actions.userActivate(false);
+      }, 3000);
+    }
+  }, {
+    key: 'handleStateChange',
+    value: function handleStateChange(state, prevState) {
+      if (state.isFullscreen !== prevState.isFullscreen) {
+        this.handleResize();
+      }
+      this.forceUpdate(); // re-render
+    }
+  }, {
+    key: 'handleFocus',
+    value: function handleFocus() {
+      this.actions.activate(true);
+    }
+  }, {
+    key: 'handleBlur',
+    value: function handleBlur() {
+      this.actions.activate(false);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this4 = this;
+
+      var fluid = this.props.fluid;
+
+      var _manager$getState2 = this.manager.getState(),
+          player = _manager$getState2.player;
+
+      var paused = player.paused,
+          hasStarted = player.hasStarted,
+          waiting = player.waiting,
+          seeking = player.seeking,
+          isFullscreen = player.isFullscreen,
+          userActivity = player.userActivity;
+
+      var props = _extends({}, this.props, {
+        player: player,
+        actions: this.actions,
+        manager: this.manager,
+        store: this.manager.store,
+        video: this.video ? this.video.video : null
+      });
+      var children = this.getChildren(props);
+
+      return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+        'div',
+        {
+          className: classnames({
+            'video-react-controls-enabled': true,
+            'video-react-has-started': hasStarted,
+            'video-react-paused': paused,
+            'video-react-playing': !paused,
+            'video-react-waiting': waiting,
+            'video-react-seeking': seeking,
+            'video-react-fluid': fluid,
+            'video-react-fullscreen': isFullscreen,
+            'video-react-user-inactive': !userActivity,
+            'video-react-user-active': userActivity,
+            'video-react-workinghover': !IS_IOS
+          }, 'video-react', this.props.className),
+          style: this.getStyle(),
+          ref: function ref(c) {
+            _this4.manager.rootElement = c;
+          },
+          onTouchStart: this.handleMouseDown,
+          onMouseDown: this.handleMouseDown,
+          onMouseMove: this.handleMouseMove,
+          onKeyDown: this.handleKeyDown,
+          onFocus: this.handleFocus,
+          onBlur: this.handleBlur,
+          tabIndex: '-1'
+        },
+        children
+      );
+    }
+  }, {
+    key: 'playbackRate',
+    get: function get$$1() {
+      return this.video.playbackRate;
+    }
+
+    // set playback rate
+    // speed of video
+    ,
+    set: function set$$1(rate) {
+      this.video.playbackRate = rate;
+    }
+  }, {
+    key: 'muted',
+    get: function get$$1() {
+      return this.video.muted;
+    },
+    set: function set$$1(val) {
+      this.video.muted = val;
+    }
+  }, {
+    key: 'volume',
+    get: function get$$1() {
+      return this.video.volume;
+    },
+    set: function set$$1(val) {
+      this.video.volume = val;
+    }
+
+    // video width
+
+  }, {
+    key: 'videoWidth',
+    get: function get$$1() {
+      return this.video.videoWidth;
+    }
+
+    // video height
+
+  }, {
+    key: 'videoHeight',
+    get: function get$$1() {
+      return this.video.videoHeight;
+    }
+  }]);
+  return Player;
+}(__WEBPACK_IMPORTED_MODULE_1_react__["Component"]);
+
+Player.propTypes = propTypes;
+Player.defaultProps = defaultProps;
+
+var PlaybackRate = function (_Component) {
+  inherits(PlaybackRate, _Component);
+
+  function PlaybackRate(props, context) {
+    classCallCheck(this, PlaybackRate);
+
+    var _this = possibleConstructorReturn(this, (PlaybackRate.__proto__ || Object.getPrototypeOf(PlaybackRate)).call(this, props, context));
+
+    deprecatedWarning('PlaybackRate', 'PlaybackRateMenuButton');
+    return _this;
+  }
+
+  createClass(PlaybackRate, [{
+    key: 'render',
+    value: function render() {
+      return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(PlaybackRateMenuButton, this.props);
+    }
+  }]);
+  return PlaybackRate;
+}(__WEBPACK_IMPORTED_MODULE_1_react__["Component"]);
+
+// import '../styles/scss/video-react.scss';
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/video-react/dist/video-react.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"D:/projects/oyapeyzaj/oya/src/styles\"]}!./node_modules/video-react/dist/video-react.css");
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__("./node_modules/style-loader/addStyles.js")(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(true) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"D:/projects/oyapeyzaj/oya/src/styles\"]}!./node_modules/video-react/dist/video-react.css", function() {
+			var newContent = __webpack_require__("./node_modules/css-loader/index.js?{\"sourceMap\":true,\"minimize\":{\"autoprefixer\":{\"add\":true,\"remove\":true,\"browsers\":[\"last 2 versions\"]},\"discardComments\":{\"removeAll\":true},\"discardUnused\":false,\"mergeIdents\":false,\"reduceIdents\":false,\"safe\":true,\"sourcemap\":true}}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true,\"includePaths\":[\"D:/projects/oyapeyzaj/oya/src/styles\"]}!./node_modules/video-react/dist/video-react.css");
+			if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ "./src/routes/Project/components/Project.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_classCallCheck__ = __webpack_require__("./node_modules/babel-runtime/helpers/classCallCheck.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_classCallCheck___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_classCallCheck__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_createClass__ = __webpack_require__("./node_modules/babel-runtime/helpers/createClass.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_createClass___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_createClass__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_babel_runtime_helpers_possibleConstructorReturn__ = __webpack_require__("./node_modules/babel-runtime/helpers/possibleConstructorReturn.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_babel_runtime_helpers_possibleConstructorReturn___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_babel_runtime_helpers_possibleConstructorReturn__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_babel_runtime_helpers_inherits__ = __webpack_require__("./node_modules/babel-runtime/helpers/inherits.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_babel_runtime_helpers_inherits___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_babel_runtime_helpers_inherits__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_react__ = __webpack_require__("./node_modules/react/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react_prism__ = __webpack_require__("./node_modules/react-prism/lib/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react_prism___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_react_prism__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_video_react__ = __webpack_require__("./node_modules/video-react/dist/index.es.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_reactstrap__ = __webpack_require__("./node_modules/reactstrap/dist/reactstrap.es.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__node_modules_video_react_dist_video_react_css__ = __webpack_require__("./node_modules/video-react/dist/video-react.css");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__node_modules_video_react_dist_video_react_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__node_modules_video_react_dist_video_react_css__);
+
+
+
+
+
+
+
+
+
+
+
+var sources = {
+  //HortumluCalismalar:'../UygulamaVideolar/HortumluCalismalar.3gp',
+  OlayYeri: '../UygulamaVideolar/OlayYeri.3gp',
+  SulamaSistemleri: '../UygulamaVideolar/SulamaSistemleri.3gp',
+  SulamaSistemleri2: '../UygulamaVideolar/SulamaSistemleri2.3gp',
+  SuPatlamasiMudahale: '../UygulamaVideolar/SuPatlamasiMudahale.3gp',
+  VanaBaglama: '../UygulamaVideolar/VanaBaglama.3gp',
+  VanaCalismasi: '../UygulamaVideolar/VanaCalismasi.3gp',
+  YolSulamaSistemi: '../UygulamaVideolar/YolSulamaSistemi.3gp'
+
+};
+
+var Project = function (_Component) {
+  __WEBPACK_IMPORTED_MODULE_3_babel_runtime_helpers_inherits___default()(Project, _Component);
+
+  function Project(props, context) {
+    __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_classCallCheck___default()(this, Project);
+
+    var _this = __WEBPACK_IMPORTED_MODULE_2_babel_runtime_helpers_possibleConstructorReturn___default()(this, (Project.__proto__ || Object.getPrototypeOf(Project)).call(this, props, context));
+
+    _this.state = {
+      source: sources['bunnyMovie']
+    };
+
+    //this.play = this.play.bind(this);
+    //this.pause = this.pause.bind(this);
+    //this.load = this.load.bind(this);
+    return _this;
+  }
+
+  __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_createClass___default()(Project, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      // subscribe state change
+      this.refs.player.subscribeToStateChange(this.handleStateChange.bind(this));
+    }
+  }, {
+    key: 'handleStateChange',
+    value: function handleStateChange(state, prevState) {
+      // copy player state to this component's state
+      this.setState({
+        player: state
+      });
+    }
+  }, {
+    key: 'play',
+    value: function play() {
+      this.refs.player.play();
+    }
+  }, {
+    key: 'pause',
+    value: function pause() {
+      this.refs.player.pause();
+    }
+  }, {
+    key: 'load',
+    value: function load() {
+      this.refs.player.load();
+    }
+  }, {
+    key: 'changeSource',
+    value: function changeSource(name) {
+      var _this2 = this;
+
+      return function () {
+        _this2.setState({
+          source: sources[name]
+        });
+        _this2.refs.player.load();
+      };
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement(
+        'div',
+        null,
+        __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement(
+          __WEBPACK_IMPORTED_MODULE_6_video_react__["a" /* Player */],
+          {
+            ref: 'player' },
+          __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement('source', { src: this.state.source })
+        ),
+        __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement('br', null),
+        __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement(
+          'div',
+          { className: 'pb-3' },
+          __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement(
+            __WEBPACK_IMPORTED_MODULE_7_reactstrap__["a" /* Button */],
+            { onClick: this.changeSource('OlayYeri'), className: 'mr-3' },
+            'Olay Yerleri'
+          ),
+          __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement(
+            __WEBPACK_IMPORTED_MODULE_7_reactstrap__["a" /* Button */],
+            { onClick: this.changeSource('SulamaSistemleri'), className: 'mr-3' },
+            'Sulama Sistemi'
+          ),
+          __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement('br', null),
+          __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement('br', null),
+          __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement(
+            __WEBPACK_IMPORTED_MODULE_7_reactstrap__["a" /* Button */],
+            { onClick: this.changeSource('SulamaSistemleri2'), className: 'mr-3' },
+            'Sulama Sistemi 2'
+          ),
+          __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement(
+            __WEBPACK_IMPORTED_MODULE_7_reactstrap__["a" /* Button */],
+            { onClick: this.changeSource('SuPatlamasiMudahale'), className: 'mr-3' },
+            'Su Patlamas\u0131'
+          ),
+          __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement('br', null),
+          __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement('br', null),
+          __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement(
+            __WEBPACK_IMPORTED_MODULE_7_reactstrap__["a" /* Button */],
+            { onClick: this.changeSource('VanaCalismasi'), className: 'mr-3' },
+            'Vana \xC7al\u0131\u015Fmas\u0131'
+          ),
+          __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement(
+            __WEBPACK_IMPORTED_MODULE_7_reactstrap__["a" /* Button */],
+            { onClick: this.changeSource('YolSulamaSistemi'), className: 'mr-3' },
+            'Yol Sulama Sistemi'
+          )
+        )
+      );
+    }
+  }]);
+
+  return Project;
+}(__WEBPACK_IMPORTED_MODULE_4_react__["Component"]);
+
+/* harmony default export */ __webpack_exports__["a"] = (Project);
+
+/***/ }),
+
+/***/ "./src/routes/Project/containers/ProjectContainer.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_redux__ = __webpack_require__("./node_modules/react-redux/es/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modules_project__ = __webpack_require__("./src/routes/Project/modules/project.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Project__ = __webpack_require__("./src/routes/Project/components/Project.js");
+
+
+
+/*  This is a container component. Notice it does not contain any JSX,
+    nor does it import React. This component is **only** responsible for
+    wiring in the actions and state necessary to render a presentational
+    component - in this case, the project:   */
+
+
+
+/*  Object of action creators (can also be function that returns object).
+    Keys will be passed as props to presentational components. Here we are
+    implementing our wrapper around increment; the component doesn't care   */
+
+var mapDispatchToProps = {
+    // increment : () => increment(1),
+    // doubleAsync
+};
+
+var mapStateToProps = function mapStateToProps(state) {
+    return {
+        project: state.project
+    };
+};
+
+/*  Note: mapStateToProps is where you should use `reselect` to create selectors, ie:
+
+    import { createSelector } from 'reselect'
+    const counprojectter = (state) => state.project
+    const tripleCount = createSelector(project, (count) => count * 3)
+    const mapStateToProps = (state) => ({
+      project: tripleCount(state)
+    })
+
+    Selectors can compute derived data, allowing Redux to store the minimal possible state.
+    Selectors are efficient. A selector is not recomputed unless one of its arguments change.
+    Selectors are composable. They can be used as input to other selectors.
+    https://github.com/reactjs/reselect    */
+
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_react_redux__["connect"])(mapStateToProps, mapDispatchToProps)(__WEBPACK_IMPORTED_MODULE_2__components_Project__["a" /* default */]));
+
+/***/ }),
+
+/***/ "./src/routes/Project/modules/project.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PROJECT_INCREMENT", function() { return PROJECT_INCREMENT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PROJECT_DOUBLE_ASYNC", function() { return PROJECT_DOUBLE_ASYNC; });
+/* harmony export (immutable) */ __webpack_exports__["increment"] = increment;
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "doubleAsync", function() { return doubleAsync; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "actions", function() { return actions; });
+/* harmony export (immutable) */ __webpack_exports__["default"] = projectReducer;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_defineProperty__ = __webpack_require__("./node_modules/babel-runtime/helpers/defineProperty.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_defineProperty___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_defineProperty__);
+
+
+var _ACTION_HANDLERS;
+
+// ------------------------------------
+// Constants
+// ------------------------------------
+var PROJECT_INCREMENT = 'PROJECT_INCREMENT';
+var PROJECT_DOUBLE_ASYNC = 'PROJECT_DOUBLE_ASYNC';
+
+// ------------------------------------
+// Actions
+// ------------------------------------
+function increment() {
+  var value = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
+
+  return {
+    type: PROJECT_INCREMENT,
+    payload: value
+  };
+}
+
+/*  This is a thunk, meaning it is a function that immediately
+    returns a function for lazy evaluation. It is incredibly useful for
+    creating async actions, especially when combined with redux-thunk! */
+
+var doubleAsync = function doubleAsync() {
+  return function (dispatch, getState) {
+    return new Promise(function (resolve) {
+      setTimeout(function () {
+        dispatch({
+          type: PROJECT_DOUBLE_ASYNC,
+          payload: getState().project
+        });
+        resolve();
+      }, 200);
+    });
+  };
+};
+
+var actions = {
+  increment: increment,
+  doubleAsync: doubleAsync
+
+  // ------------------------------------
+  // Action Handlers
+  // ------------------------------------
+};var ACTION_HANDLERS = (_ACTION_HANDLERS = {}, __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_defineProperty___default()(_ACTION_HANDLERS, PROJECT_INCREMENT, function (state, action) {
+  return state + action.payload;
+}), __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_defineProperty___default()(_ACTION_HANDLERS, PROJECT_DOUBLE_ASYNC, function (state, action) {
+  return state * 2;
+}), _ACTION_HANDLERS);
+
+// ------------------------------------
+// Reducer
+// ------------------------------------
+var initialState = 0;
+function projectReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
+  var action = arguments[1];
+
+  var handler = ACTION_HANDLERS[action.type];
+
+  return handler ? handler(state, action) : state;
+}
+
+/***/ })
+
+});
+//# sourceMappingURL=0.js.map
